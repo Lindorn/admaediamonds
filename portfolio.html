@@ -132,44 +132,49 @@
         
         .story-image {
             width: 100%;
-            height: 70%;
+            height: 65%;
             object-fit: cover;
             transition: all 0.3s ease;
         }
-        
+
         .story-card:hover .story-image {
             transform: scale(1.05);
         }
-        
+
         .story-content {
-            padding: 25px 20px 20px 20px;
-            height: 30%;
+            padding: 15px 20px 20px 20px;
+            height: 40%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: flex-start;
+            overflow: visible;
+            position: relative;
         }
-        
+
         .story-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #d4af37;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             line-height: 1.2;
         }
-        
+
         .journeys-grid .story-title {
             font-size: 1.1rem;
         }
-        
+
         .story-preview {
-            font-size: 0.9rem;
-            color: #ccc;
-            line-height: 1.4;
+            font-size: 0.85rem;
+            color: #ccc !important;
+            line-height: 1.3;
             overflow: hidden;
             text-overflow: ellipsis;
-            display: -webkit-box;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            max-height: 3.9em;
             -webkit-line-clamp: 3;
+            line-clamp: 3;
             -webkit-box-orient: vertical;
         }
         
@@ -551,7 +556,7 @@
                 
                 <!-- Featured Story 6 - Berlin Iron Earrings -->
                 <div class="story-card" data-category="anniversary" data-story="berliniron">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1d0e9a34-85da-4f81-a9d6-34e00917ae73/20250318_135901.jpeg?content-type=image%2Fjpeg" alt="Berlin Iron Earrings" loading="lazy">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ff469a96-6302-4406-8275-e870e6a32781/IMG_4629.jpeg?content-type=image%2Fjpeg" alt="Berlin Iron Earrings" loading="lazy">
                     <div class="story-content">
                         <h3 class="story-title">A Tradition Transformed</h3>
                         <p class="story-preview">Transforming travel memories into Anniversary Tradition</p>
@@ -560,22 +565,31 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Client Journeys Section -->
+
+        <!-- Coming Soon Section -->
+        <section class="coming-soon-section">
+            <div class="section-header">
+                <h2 class="section-title">More Client Stories Coming Soon!</h2>
+                <p class="section-subtitle">We're currently documenting more incredible journeys of personal transformation through custom jewelry design</p>
+            </div>
+        </section>
+
+        <!-- Client Journeys Section - DISABLED FOR NOW -->
+        <!--
         <section class="journeys-section">
             <div class="section-header">
                 <h2 class="section-title">Client Journeys</h2>
                 <p class="section-subtitle">More stories of personal transformation through custom jewelry design</p>
             </div>
-            
+
             <div class="journeys-grid">
-                <!-- Journeys cards will be populated here -->
                 <div class="loading">
                     <div class="spinner"></div>
                     <p>Loading more stories...</p>
                 </div>
             </div>
         </section>
+        -->
     </div>
     
     <!-- Modal Template -->
@@ -740,7 +754,7 @@
                     {
                         title: "Special Moments Engrained",
                         description: "That special metal they bonded over is now part of her daily life. A travel memory she can touch.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1d0e9a34-85da-4f81-a9d6-34e00917ae73/20250318_135901.jpeg?content-type=image%2Fjpeg"
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ff469a96-6302-4406-8275-e870e6a32781/IMG_4629.jpeg?content-type=image%2Fjpeg"
                     }
                 ]
             }
@@ -760,11 +774,11 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             initializeEventListeners();
-            
-            // Load additional journey stories (simulate)
-            setTimeout(() => {
-                loadJourneyStories();
-            }, 1000);
+
+            // Load additional journey stories - DISABLED FOR NOW
+            // setTimeout(() => {
+            //     loadJourneyStories();
+            // }, 1000);
         });
         
         function initializeEventListeners() {
