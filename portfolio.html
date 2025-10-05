@@ -133,7 +133,7 @@
 
         .story-image {
             width: 100%;
-            height: 65%;
+            aspect-ratio: 4/3;
             object-fit: cover;
             transition: all 0.3s ease;
         }
@@ -245,7 +245,7 @@
         .story-progression {
             padding: 30px 20px;
             position: relative;
-            min-height: 700px;
+            min-height: 750px;
         }
 
         .story-step {
@@ -348,7 +348,7 @@
             padding: 0 20px;
             text-align: center;
             max-width: 600px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 30px auto;
         }
 
         /* Navigation Dots */
@@ -395,6 +395,14 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Tablet Optimizations */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .portfolio-container {
@@ -407,6 +415,7 @@
 
             .featured-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .story-card {
@@ -433,7 +442,7 @@
 
             .story-progression {
                 padding: 20px 15px;
-                min-height: 550px;
+                min-height: 650px;
             }
 
             .story-step {
@@ -510,7 +519,7 @@
             <div class="featured-grid">
                 <!-- Featured Story 1 - Art Deco Engagement Ring -->
                 <div class="story-card" data-category="engagement" data-story="artdeco">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/35060318-15a8-4a8d-b72c-d1d82e50c6b2/IMG_6823.jpeg?content-type=image%2Fjpeg" alt="Art Deco Engagement Ring" loading="lazy">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/35060318-15a8-4a8d-b72c-d1d82e50c6b2/IMG_6823.jpeg?content-type=image%2Fjpeg" alt="Art Deco Engagement Ring">
                     <div class="story-content">
                         <h3 class="story-title">The Impossible Diamond Engagement Ring</h3>
                         <p class="story-preview">A quest for the perfect 1920's style diamond cut that they said couldn't be found.</p>
@@ -520,7 +529,7 @@
 
                 <!-- Featured Story 2 - Rock Star Necklace -->
                 <div class="story-card" data-category="artist personal" data-story="rockstar">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3b1f7d-c846-4241-b8fa-6af12347ec11/File_000.jpeg?content-type=image%2Fjpeg" alt="Rockstar Stage Performance" loading="lazy">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3b1f7d-c846-4241-b8fa-6af12347ec11/File_000.jpeg?content-type=image%2Fjpeg" alt="Rockstar Stage Performance">
                     <div class="story-content">
                         <h3 class="story-title">The Rockstar's Vision</h3>
                         <p class="story-preview">From Glam-Rock dreams to stage-ready statement</p>
