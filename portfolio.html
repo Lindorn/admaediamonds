@@ -181,6 +181,17 @@
             font-weight: 600;
         }
 
+        /* Hide Squarespace header when modal is open */
+        body.modal-open header,
+        body.modal-open .header,
+        body.modal-open #header,
+        body.modal-open .Header,
+        body.modal-open [data-header-style] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -190,7 +201,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
+            z-index: 9999 !important;
             overflow-y: auto;
         }
 
@@ -221,7 +232,7 @@
             font-size: 35px;
             color: #d4af37;
             cursor: pointer;
-            z-index: 1001;
+            z-index: 10001 !important;
             background: rgba(0, 0, 0, 0.5);
             width: 45px;
             height: 45px;
@@ -238,20 +249,22 @@
 
         /* Story Progression */
         .story-progression {
-            padding: 30px 20px;
-            position: relative;
-            min-height: 750px;
+            padding: 30px 20px !important;
+            position: relative !important;
+            min-height: 750px !important;
+            width: 100% !important;
         }
 
         .story-step {
             opacity: 0;
             transition: opacity 0.3s ease;
-            position: absolute;
-            top: 30px;
-            left: 20px;
-            right: 20px;
-            margin: 0;
-            padding: 0;
+            position: absolute !important;
+            top: 30px !important;
+            left: 20px !important;
+            right: 20px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: auto !important;
         }
 
         .story-step.visible {
@@ -259,22 +272,23 @@
         }
 
         .step-image-container {
-            position: relative;
-            margin: 0;
-            padding: 0;
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
         }
 
         .step-image {
-            width: 100%;
-            max-width: 400px;
-            height: 500px;
-            object-fit: cover;
+            width: 100% !important;
+            max-width: 400px !important;
+            height: 500px !important;
+            object-fit: cover !important;
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            margin: 0 auto;
-            display: block;
+            margin: 0 auto !important;
+            display: block !important;
         }
 
         .step-image:hover {
@@ -484,7 +498,7 @@
             <div class="featured-grid">
                 <!-- Featured Story 1 - Art Deco Engagement Ring -->
                 <div class="story-card" data-category="engagement" data-story="artdeco">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/35060318-15a8-4a8d-b72c-d1d82e50c6b2/IMG_6823.jpeg?content-type=image%2Fjpeg" alt="Art Deco Engagement Ring">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/16fbe92d-283d-46e5-a470-929e1591cc9c/1_b.jpg?content-type=image%2Fjpeg" alt="Art Deco Engagement Ring">
                     <div class="story-content">
                         <h3 class="story-title">The Impossible Diamond Engagement Ring</h3>
                         <p class="story-preview">A quest for the perfect 1920's style diamond cut that they said couldn't be found.</p>
@@ -534,10 +548,40 @@
 
                 <!-- Featured Story 6 - Berlin Iron Earrings -->
                 <div class="story-card" data-category="anniversary" data-story="berliniron">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ff469a96-6302-4406-8275-e870e6a32781/IMG_4629.jpeg?content-type=image%2Fjpeg" alt="Berlin Iron Earrings" loading="lazy">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg" alt="Berlin Iron Earrings" loading="lazy" style="object-position: center 40%;">
                     <div class="story-content">
                         <h3 class="story-title">A Tradition Transformed</h3>
                         <p class="story-preview">Transforming travel memories into Anniversary Tradition</p>
+                    </div>
+                    <span class="story-tag">Anniversary</span>
+                </div>
+
+                <!-- Featured Story 7 - Truly Seen -->
+                <div class="story-card" data-category="personal" data-story="trulyseen">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39fcbc61-a001-4d05-925a-be053f63cac1/IMG_6530+%281%29.jpg?content-type=image%2Fjpeg" alt="Emerald Ring" loading="lazy">
+                    <div class="story-content">
+                        <h3 class="story-title">Truly Seen</h3>
+                        <p class="story-preview">Surprising her with her dream Emerald Ring</p>
+                    </div>
+                    <span class="story-tag">Personal</span>
+                </div>
+
+                <!-- Featured Story 8 - Old Mine Cut with Modern Style -->
+                <div class="story-card" data-category="engagement" data-story="oldminecut">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5393a587-e501-4d73-98e3-879f433835a5/2F468A45-9F54-451E-A216-2E9EDB7BF839.jpeg?content-type=image%2Fjpeg" alt="Old Mine Cut Diamond Ring" loading="lazy">
+                    <div class="story-content">
+                        <h3 class="story-title">Old Mine Cut with Modern Style</h3>
+                        <p class="story-preview">She fell in love with unique diamond</p>
+                    </div>
+                    <span class="story-tag">Engagement</span>
+                </div>
+
+                <!-- Featured Story 9 - An Emerald Gift for his Wife -->
+                <div class="story-card" data-category="anniversary" data-story="emeraldgift">
+                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2a097bce-747a-4304-8b83-64d843a2e5ac/IMG_0198+%281%29.JPG?content-type=image%2Fjpeg" alt="Emerald Necklace" loading="lazy">
+                    <div class="story-content">
+                        <h3 class="story-title">An Emerald Gift for his Wife</h3>
+                        <p class="story-preview">Emerald was both of their birthstones. He'd been planning this for some time.</p>
                     </div>
                     <span class="story-tag">Anniversary</span>
                 </div>
@@ -567,7 +611,7 @@
     </div>
 
     <script>
-        // Story data structure with all 6 completed stories
+        // Story data structure with all completed stories
         const stories = {
             artdeco: {
                 title: "The Impossible Diamond Engagement Ring",
@@ -580,7 +624,7 @@
                     {
                         title: "Designed to Express Her Style.",
                         description: "Cast in 18k gold, a filigree gallery with a two \"A's\" for her and her fiancé, with a knife edge band, including small diamonds on each side, accented by black rhodium",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/0c865515-105c-44ca-a41b-ffc02bd0e6c3/IMG_8782.jpg?content-type=image%2Fjpeg"
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/c926094f-fda8-49a1-90ff-d6425a5ac7ce/IMG_8782.jpg?content-type=image%2Fjpeg"
                     },
                     {
                         title: "Finally the Diamond!",
@@ -590,7 +634,7 @@
                     {
                         title: "A Personal Statement to Last a Lifetime.",
                         description: "After waiting so long to find all of the right pieces, she finally had the engagement ring she had been dreaming of since she was a young girl.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/35060318-15a8-4a8d-b72c-d1d82e50c6b2/IMG_6823.jpeg?content-type=image%2Fjpeg"
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/d44cffc3-5243-4b93-94e1-b23812271956/1_a.jpg?content-type=image%2Fjpeg"
                     }
                 ]
             },
@@ -680,7 +724,7 @@
                     {
                         title: "Stories in Stone",
                         description: "He discovered jewelry could tell stories connecting him to history and ancient craftsmanship.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1092f6c1-5548-4808-96b5-ea8f05e5c3eb/IMG_8492.jpeg?content-type=image%2Fjpeg"
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2b8596ef-eddd-4125-82ad-b36e45efea49/2IMG_8782.jpg?content-type=image%2Fjpeg"
                     },
                     {
                         title: "The Perfect Ring",
@@ -715,7 +759,82 @@
                     {
                         title: "Special Moments Engrained",
                         description: "That special metal they bonded over is now part of her daily life. A travel memory she can touch.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ff469a96-6302-4406-8275-e870e6a32781/IMG_4629.jpeg?content-type=image%2Fjpeg"
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg"
+                    }
+                ]
+            },
+            trulyseen: {
+                title: "Truly Seen",
+                steps: [
+                    {
+                        title: "Visualizing her Dream Ring",
+                        description: "She'd had the idea for a long time. Fashion was her form of self-expression.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a9d46d97-755d-4f12-8ab7-8ba04892512c/Untitled+design.jpg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "Making it Personal",
+                        description: "She wanted an emerald. We found the perfect one. We took her inspiration pics and transformed them into something uniquely hers.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/dc124eb9-49b8-4ca1-b55e-bedd18fc392f/Untitled+design+%281%29.png?content-type=image%2Fpng"
+                    },
+                    {
+                        title: "Seen and Surprised",
+                        description: "The plan was to surprise her on her birthday with her dream ring. Her fantasy of \"one day\" became a reality.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1ba5437c-75f4-4893-9d2f-f964794da16f/IMG_1586+%281%29.jpg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "The Ring for a Woman with Style",
+                        description: "Stylish, elegant, and beautiful like the woman who wears it.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39fcbc61-a001-4d05-925a-be053f63cac1/IMG_6530+%281%29.jpg?content-type=image%2Fjpeg"
+                    }
+                ]
+            },
+            oldminecut: {
+                title: "Old Mine Cut with Modern Style",
+                steps: [
+                    {
+                        title: "When the stone steals the show",
+                        description: "She saw the diamond online and was instantly inspired",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/126e2e79-ef2d-4256-adb4-af5f07ac7868/36439574-ECEB-482D-92D6-1FF3ED2C8477+%281%29.jpg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "Re-imagining the setting",
+                        description: "She wanted the style to match her bracelet, which was deeply personal.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5fa88a3f-bf1f-432b-94ca-e2b8f6059a60/TY60132-%28ADM-MINE-CUT+102324%29-U-3+%281%29.jpg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "The final Product",
+                        description: "After building the 3D model, we turned inspiration into custom piece.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5393a587-e501-4d73-98e3-879f433835a5/2F468A45-9F54-451E-A216-2E9EDB7BF839.jpeg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "The proposal",
+                        description: "Made uniquely for them and built to last a lifetime.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eff358b4-a932-4b7a-a94b-efbb492e68ea/IMG_0507.JPG?content-type=image%2Fjpeg"
+                    }
+                ]
+            },
+            emeraldgift: {
+                title: "An Emerald Gift for his Wife",
+                steps: [
+                    {
+                        title: "Napkin math",
+                        description: "He drew out some crude ideas on a piece of paper, hoping Ali could translate it into something meaningful.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/0e505dcb-453d-4f6f-971a-2cab2956a7d6/IMG_20251203_150825.jpg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "Picking the perfect Emerald",
+                        description: "Ali sourced a top quality Columbian Emerald at an incredible price.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/7c790e97-0888-466b-8a6f-27fbc2b5c3ca/att.m6vRBvUYLSz-y1BWL8j2HrtJqZKu-PgJ2tJq8sTfO3o.jpeg?content-type=image%2Fjpeg"
+                    },
+                    {
+                        title: "Bringing it all together",
+                        description: "Her love of period pieces inspired the chain - it had to be perfect in the 3D model.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eb355c4f-d6d6-497d-a6d2-2049586902b2/Untitled+design+-+2.PNG?content-type=image%2Fpng"
+                    },
+                    {
+                        title: "A Necklace fit for a Queen",
+                        description: "Bringing her love of history, their birthstones, and his passion for gold all together in this 18k Emerald beauty.",
+                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3eb7ce-8f54-43ef-a2e1-53242daa60c8/IMG_0208.JPG?content-type=image%2Fjpeg"
                     }
                 ]
             }
@@ -817,6 +936,7 @@
 
             // Show modal
             modal.style.display = 'block';
+            document.body.classList.add('modal-open');
             // Only disable body scroll on desktop
             if (window.innerWidth > 768) {
                 document.body.style.overflow = 'hidden';
@@ -838,6 +958,7 @@
             `;
             storyNav.innerHTML = '';
             modal.style.display = 'block';
+            document.body.classList.add('modal-open');
             if (window.innerWidth > 768) {
                 document.body.style.overflow = 'hidden';
             }
@@ -941,6 +1062,7 @@
 
         function closeModal() {
             modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
             document.body.style.overflow = '';
         }
 
