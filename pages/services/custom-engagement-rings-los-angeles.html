@@ -1,0 +1,831 @@
+<!--
+  A. D'Mae Diamonds — Custom Engagement Rings Los Angeles
+  Service / Money Page — For Squarespace Code Block Injection
+  
+  INSTRUCTIONS:
+  1. Create a new page in Squarespace at URL slug: /custom-engagement-rings-los-angeles
+  2. In Page Settings > SEO:
+     - Title: Custom Engagement Rings Los Angeles | A. D'Mae Diamonds
+     - Description: Design your dream engagement ring with Alexandria, a GIA Graduate Gemologist and third-generation jeweler in Los Angeles. One-on-one consultations. No pressure. No showroom. Just your story, your vision, your ring.
+  3. Add a "Code" block to the page and paste this entire file
+  4. Replace placeholder image URLs with your actual Squarespace-hosted image URLs
+  5. Add this page to your main navigation menu
+  6. Add internal links to this page from: Homepage, About, FAQ, Design Process pages
+-->
+
+<style>
+  /* ============================================
+     CUSTOM ENGAGEMENT RINGS LA — PAGE STYLES
+     Designed to harmonize with A. D'Mae Squarespace theme
+     ============================================ */
+
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  /* — Hero — */
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 620px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  /* — Section Dividers — */
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  /* — Section Headings — */
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* — Why Section (Differentiators) — */
+  .admae-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+
+  .admae-why-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 32px 28px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-why-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .admae-why-card p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* — Process Steps — */
+  .admae-process {
+    counter-reset: process-step;
+  }
+
+  .admae-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 36px;
+    counter-increment: process-step;
+  }
+
+  .admae-step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #d4af37;
+    font-weight: 300;
+    margin-top: 2px;
+  }
+
+  .admae-step-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+
+  .admae-step-content p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* — Portfolio Grid — */
+  .admae-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .admae-portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    aspect-ratio: 1;
+  }
+
+  .admae-portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .admae-portfolio-item:hover img {
+    transform: scale(1.04);
+  }
+
+  .admae-portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 0.8rem;
+    color: #e0dbd2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .admae-portfolio-item:hover .admae-portfolio-caption {
+    opacity: 1;
+  }
+
+  .admae-portfolio-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .admae-portfolio-link a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.3s;
+  }
+
+  .admae-portfolio-link a:hover {
+    border-color: #d4af37;
+  }
+
+  /* — Lightbox Modal — */
+  .admae-portfolio-item {
+    cursor: pointer;
+  }
+
+  .admae-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: pointer;
+  }
+
+  .admae-lightbox.active {
+    display: flex;
+  }
+
+  .admae-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    cursor: default;
+  }
+
+  .admae-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 2rem;
+    color: #f0ece4;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .admae-lightbox-close:hover {
+    color: #d4af37;
+  }
+
+  .admae-lightbox-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #c4bfb4;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* — Testimonials — */
+  .admae-testimonial {
+    border-left: 2px solid #d4af37;
+    padding: 24px 0 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .admae-testimonial blockquote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #e0dbd2;
+    margin: 0 0 12px;
+    line-height: 1.7;
+  }
+
+  .admae-testimonial cite {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: #d4af37;
+    letter-spacing: 0.05em;
+  }
+
+  /* — FAQ Section — */
+  .admae-faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0;
+  }
+
+  .admae-faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .admae-faq-q {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .admae-faq-q::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #d4af37;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .admae-faq-item.open .admae-faq-q::after {
+    transform: rotate(45deg);
+  }
+
+  .admae-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-a {
+    max-height: 400px;
+  }
+
+  .admae-faq-a p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.7;
+    padding: 16px 0 4px;
+  }
+
+  /* — Final CTA — */
+  .admae-final-cta {
+    text-align: center;
+    padding: 56px 24px;
+    margin-top: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 12px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+  }
+
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* — Responsive — */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding: 40px 18px 60px;
+    }
+
+    .admae-why-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .admae-portfolio-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .admae-step {
+      gap: 16px;
+    }
+
+    .admae-step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 0.95rem;
+    }
+
+    .admae-testimonial {
+      padding-left: 20px;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="admae-hero">
+    <h1>Custom Engagement Rings<br>in <em>Los Angeles</em></h1>
+    <p class="hero-sub">
+      Your ring is YOUR story, not a jeweler's inventory. Work one-on-one with Alexandria, a GIA Graduate Gemologist and third generation jeweler, to design a ring that captures that story forever.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== WHY US ===================== -->
+  <section>
+    <h2>Why Clients Choose A. D'Mae</h2>
+    <p class="admae-section-intro">
+      No showrooms. No inventory. Our only priority is you. We'll sit down with you, hear your story, and learn what you love. To create something that didn't exist before you walked through the door.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>GIA Graduate Gemologist</h3>
+        <p>Alexandria holds credentials from the Gemological Institute of America, the global standard in diamond and gemstone expertise. She evaluates every stone personally, so you know exactly what you're getting.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Truly One-on-One</h3>
+        <p>No sales team. No handoffs. From your first conversation through final delivery, you work directly with Ali. She gets to know you before she ever picks up a pencil.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Third-Generation Jeweler</h3>
+        <p>Ali's grandfather opened his first jewelry store after WWII. Her father carried the tradition forward. She grew up surrounded by this craft. It's in her DNA.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>No Pressure, Ever</h3>
+        <p>We'll walk you through lab-grown vs. natural diamonds, alternative gemstones, metal choices, and budget tradeoffs. Openly and honestly. We educate. You decide.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== PROCESS ===================== -->
+  <section>
+    <h2>How It Works</h2>
+    <p class="admae-section-intro">
+      Every ring starts the same way: with a conversation. Here's what the journey looks like from first meeting to final reveal.
+    </p>
+
+    <div class="admae-process">
+      <div class="admae-step">
+        <div class="admae-step-number">1</div>
+        <div class="admae-step-content">
+          <h3>We Get to Know You</h3>
+          <p>Your free 90-minute consultation isn't a sales pitch. It's a conversation. We learn about your relationship, your style, your priorities, and what this ring means to you. In person in our Los Angeles studio or virtually from anywhere.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">2</div>
+        <div class="admae-step-content">
+          <h3>Sketches &amp; Design</h3>
+          <p>Ali drafts initial sketches based on your vision. You give feedback, we refine, and we keep going until it feels exactly right. Most clients nail it in the first round.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">3</div>
+        <div class="admae-step-content">
+          <h3>Stone Selection</h3>
+          <p>Ali hand-selects stones tailored to your design and budget. Natural diamonds, lab-grown diamonds, sapphires, emeralds, or whatever your heart is set on. Every option is GIA Graduate Gemologist or independently verified. No mystery sourcing.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">4</div>
+        <div class="admae-step-content">
+          <h3>CAD Rendering &amp; Production</h3>
+          <p>You'll see a photorealistic 3D render of your ring before it's ever made. Once you approve, your ring goes into production with our trusted Los Angeles artisan partners. Precision casting, hand-setting, polishing, and finishing.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">5</div>
+        <div class="admae-step-content">
+          <h3>The Big Reveal</h3>
+          <p>Your finished ring arrives with a professional appraisal, a presentation box, and care instructions. Most custom engagement rings are completed in 6–8 weeks from your first sketch.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 8px;">
+      <a href="/customjewelrydesignprocess" style="color: #d4af37; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 2px;">See the full design process →</a>
+    </p>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== PORTFOLIO ===================== -->
+  <section>
+    <h2>Recent Custom Engagement Rings</h2>
+    <p class="admae-section-intro">
+      Every piece tells a story. These are a few of the engagement rings we've designed for clients in Los Angeles and beyond.
+    </p>
+
+    <div class="admae-portfolio-grid">
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2aa8e91b-4e62-4426-b9a6-ca47990a8adc/IMG_6530.jpeg?content-type=image%2Fjpeg" alt="Custom Emerald Engagement Ring designed by A. D'Mae Diamonds in Los Angeles">
+        <div class="admae-portfolio-caption">Custom Emerald Engagement Ring</div>
+      </div>
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/45c1e25e-9f81-4f38-a9fc-ebec89383c30/20241118_150133.jpg?content-type=image%2Fjpeg" alt="Custom Old Mine Cut Diamond Engagement Ring by Los Angeles jeweler A. D'Mae Diamonds">
+        <div class="admae-portfolio-caption">Old Mine Cut Diamond Engagement Ring</div>
+      </div>
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a4768015-dec4-492e-8d49-d4cb3af3bed6/Group.jpg?content-type=image%2Fjpeg" alt="His and Hers custom engagement rings - Asscher cut and Lozenge cut by A. D'Mae Diamonds Los Angeles">
+        <div class="admae-portfolio-caption">His &amp; Hers: Asscher Cut + Lozenge Cut</div>
+      </div>
+    </div>
+
+    <p class="admae-portfolio-link">
+      <a href="/portfolio-client-journeys">Explore the full portfolio →</a>
+    </p>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section>
+    <h2>What Our Clients Say</h2>
+    <p class="admae-section-intro">
+      Don't take our word for it. Hear from the people who've been through the process.
+    </p>
+
+    <div class="admae-testimonial">
+      <blockquote>"Working with Ali to bring my dream engagement ring to life was truly one of the most magical parts of our entire engagement journey. She didn't just design a ring. She designed OUR ring. A piece that tells our story, that feels like me, and that I'll cherish for the rest of my life. Every time someone compliments my ring (which is literally all the time), I get to tell them the story of the amazing woman who made it all happen."</blockquote>
+      <cite>- H Renee</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"I'm lucky we found Alexandria. I looked everywhere for an engagement ring, and nothing I found felt special. I don't know a thing about jewelry, so we had a conversation about what I thought I was looking for, and I can't believe how perfect the result is. If you're looking for something truly unique and beautiful, you want to go to A. D'Mae!"</blockquote>
+      <cite>- S C</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"I cannot tell you how many coffee-breathed, stale old men I had to talk to before finding Alexandria. She was truly a breath of fresh air to work with and made the process fun. She carefully evaluated my taste and budget, and offered me solutions or ideas that I would not have otherwise thought of. I highly recommend her as your go-to gal if you're seeking a personalized experience."</blockquote>
+      <cite>- Sydney Smith</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== FAQ WITH SCHEMA ===================== -->
+  <section>
+    <h2>Common Questions About Custom Engagement Rings</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much does a custom engagement ring cost in Los Angeles?
+      </div>
+      <div class="admae-faq-a">
+        <p>Every ring is designed from scratch, so pricing depends on your stone choice, metal, and design complexity. Most of our engagement rings fall between $3,000 and $20,000+, though we've created beautiful pieces at every price point. We're transparent about what drives cost and we'll work within your budget. No surprises. Your initial consultation is free, and we'll provide a detailed estimate after we understand your vision.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does it take to make a custom engagement ring?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most custom engagement rings take 6–8 weeks from your first sketch to the finished piece. If you're working on a tighter timeline (say, a surprise proposal date), let us know upfront. We can often accommodate rush timelines depending on design complexity and stone availability.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you work with lab-grown diamonds?
+      </div>
+      <div class="admae-faq-a">
+        <p>Absolutely. We work with both natural and lab-grown diamonds, as well as a wide range of colored gemstones. Ali will walk you through the differences in quality, value, and sourcing so you can make the right choice for your priorities and budget. We don't push one over the other. We educate, and you decide.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can I use my own diamond or a family heirloom stone?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. Repurposing heirloom stones is one of our specialties. Ali will evaluate your stone for quality, durability, and design compatibility. If it passes her standards, we'll design a new setting that gives it a second life. This can also significantly reduce cost since you're not purchasing a new center stone.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do I need an appointment, or do you have a showroom?
+      </div>
+      <div class="admae-faq-a">
+        <p>We work by appointment only from our private studio in West Los Angeles. This means your consultation is completely private — no crowds, no distractions, no sales floor. We also offer virtual consultations for clients outside of LA. Every meeting is one-on-one with Alexandria.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What makes A. D'Mae different from the jewelry stores in the LA Diamond District?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most jewelers in the Diamond District sell from existing inventory and work on commission. We don't carry inventory and we don't have a sales team. When you work with A. D'Mae, you're working directly with a GIA Graduate Gemologist who designs your piece from scratch. Every stone is hand-selected for your specific project, and every design decision is made together. It's a fundamentally different experience. Personal, unhurried, and built around you.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="admae-final-cta">
+    <h2>Ready to Start Your Ring?</h2>
+    <p>
+      Book a free, no-pressure consultation with Alexandria. In person at our Los Angeles studio or virtually from wherever you are.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book 1:1 Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">Free Consultation</span>
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">6–8 Week Turnaround</span>
+      <span class="admae-trust-item">Financing Available</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===================== LIGHTBOX MODAL ===================== -->
+<div class="admae-lightbox" id="admae-lightbox" onclick="closeLightbox()">
+  <button class="admae-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="admae-lightbox-img" src="" alt="">
+  <div class="admae-lightbox-caption" id="admae-lightbox-caption"></div>
+</div>
+
+<script>
+(function() {
+  var items = document.querySelectorAll('.admae-portfolio-item');
+  var lightbox = document.getElementById('admae-lightbox');
+  var lbImg = document.getElementById('admae-lightbox-img');
+  var lbCap = document.getElementById('admae-lightbox-caption');
+
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var img = item.querySelector('img');
+      var caption = item.querySelector('.admae-portfolio-caption');
+      if (img) {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = caption ? caption.textContent : '';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+
+function closeLightbox() {
+  var lightbox = document.getElementById('admae-lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+
+<!-- ===================== FAQ SCHEMA MARKUP ===================== -->
+<!-- This structured data helps Google display FAQ rich results in search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a custom engagement ring cost in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every ring is designed from scratch, so pricing depends on your stone choice, metal, and design complexity. Most of our engagement rings fall between $3,000 and $20,000+, though we've created beautiful pieces at every price point. Your initial consultation is free, and we'll provide a detailed estimate after we understand your vision."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to make a custom engagement ring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most custom engagement rings take 6–8 weeks from your first sketch to the finished piece. Rush timelines can often be accommodated depending on design complexity and stone availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with lab-grown diamonds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. A. D'Mae works with both natural and lab-grown diamonds, as well as a wide range of colored gemstones. Alexandria will walk you through the differences in quality, value, and sourcing so you can make the right choice for your priorities and budget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own diamond or a family heirloom stone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Repurposing heirloom stones is one of our specialties. Alexandria will evaluate your stone for quality, durability, and design compatibility. If it passes her standards, we'll design a new setting that gives it a second life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an appointment, or do you have a showroom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A. D'Mae works by appointment only from a private studio in West Los Angeles. Every consultation is completely private and one-on-one with Alexandria. Virtual consultations are also available for clients outside of LA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes A. D'Mae different from the jewelry stores in the LA Diamond District?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most jewelers in the Diamond District sell from existing inventory and work on commission. A. D'Mae doesn't carry inventory or have a sales team. You work directly with a GIA Graduate Gemologist who designs your piece from scratch. Every stone is hand-selected for your specific project, and every design decision is made together."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ===================== LOCAL BUSINESS SCHEMA ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "description": "Custom engagement rings and fine jewelry designed by Alexandria D'Mae Necker, a GIA Graduate Gemologist and third-generation jeweler in Los Angeles.",
+  "url": "https://www.admaediamonds.com",
+  "telephone": "+17204762215",
+  "email": "alexandria@admaediamonds.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1832 S. Barrington Ave",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90025",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0369,
+    "longitude": -118.4580
+  },
+  "openingHours": "Mo-Fr 12:00-19:00",
+  "priceRange": "$$$",
+  "image": "https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/1c605bc2-37f1-46f7-bf62-6f4de6ecca8e/small+website+logo.png",
+  "sameAs": [
+    "https://maps.app.goo.gl/i5tYdY5PPwPr7JgY7"
+  ]
+}
+</script>

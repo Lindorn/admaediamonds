@@ -1,0 +1,615 @@
+<!--
+  A. D'Mae Diamonds - Free Engagement Ring Consultation Los Angeles
+  Service Page - For Squarespace Page Header Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /engagement-ring-consultation-los-angeles
+  2. SEO Title: Free Engagement Ring Consultation Los Angeles | A. D'Mae Diamonds
+  3. SEO Description: Not sure where to start with a custom engagement ring? Book a free 90-minute design consultation with Alexandria, a GIA Graduate Gemologist in Los Angeles. No pressure. No sales tactics. Just honest guidance from someone you can trust.
+  4. Add to "Services" nav folder
+  5. Set top padding to 340px (same as engagement rings page)
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 0px 0px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  /* Hero */
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 620px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  /* Dividers */
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  /* Section Headings */
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* Reassurance Cards */
+  .admae-reassure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+
+  .admae-reassure-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 32px 28px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-reassure-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .admae-reassure-card p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* What Happens Section */
+  .admae-expect-item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .admae-expect-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-top: 2px;
+  }
+
+  .admae-expect-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+
+  .admae-expect-content p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* Testimonials */
+  .admae-testimonial {
+    border-left: 2px solid #d4af37;
+    padding: 24px 0 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .admae-testimonial blockquote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #e0dbd2;
+    margin: 0 0 12px;
+    line-height: 1.7;
+  }
+
+  .admae-testimonial cite {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: #d4af37;
+    letter-spacing: 0.05em;
+  }
+
+  /* FAQ Section */
+  .admae-faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0;
+  }
+
+  .admae-faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .admae-faq-q {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .admae-faq-q::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #d4af37;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .admae-faq-item.open .admae-faq-q::after {
+    transform: rotate(45deg);
+  }
+
+  .admae-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-a {
+    max-height: 400px;
+  }
+
+  .admae-faq-a p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.7;
+    padding: 16px 0 4px;
+  }
+
+  /* Final CTA */
+  .admae-final-cta {
+    text-align: center;
+    padding: 56px 24px;
+    margin-top: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 12px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+  }
+
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Highlight box */
+  .admae-highlight-box {
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    border-radius: 3px;
+    padding: 36px 32px;
+    margin: 48px 0;
+    background: rgba(212, 175, 55, 0.04);
+    text-align: center;
+  }
+
+  .admae-highlight-box h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d4af37;
+    margin: 0 0 12px;
+  }
+
+  .admae-highlight-box p {
+    font-size: 1rem;
+    color: #c4bfb4;
+    margin: 0;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 60px;
+    }
+
+    .admae-reassure-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .admae-expect-item {
+      gap: 16px;
+    }
+
+    .admae-expect-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .admae-testimonial {
+      padding-left: 20px;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Free Engagement Ring<br>Consultation in <em>Los Angeles</em></h1>
+    <p class="hero-sub">
+      You don't need to spend weeks on Reddit and YouTube trying to figure out the 4 C's before talking to a jeweler. Book a free 90-minute conversation with Alexandria, a GIA Graduate Gemologist, and get real answers from someone who's got your back. We have no inventory to sell and no agenda other than you. Our goal is to bring you the perfect moment and the happiness that goes with it. Most clients say the same thing: "I wish I came here first."
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT THIS IS NOT -->
+  <section>
+    <h2>This Isn't What You're Expecting</h2>
+    <p class="admae-section-intro">
+      If you've ever walked into a jewelry store and felt like the person across the counter knew more than you and was using that to their advantage, you already know why this is different.
+    </p>
+
+    <div class="admae-reassure-grid">
+      <div class="admae-reassure-card">
+        <h3>Skip the Research Rabbit Hole</h3>
+        <p>Ali founded this company because she was tired of watching people get burned. She grew up in the jewelry industry (third generation, starting with her grandfather's shop after WWII) and spent years inside it, including time working for retailers whose practices she couldn't stand behind. She left to do it differently. When you sit down with her, she'll teach you what actually matters about diamonds and gemstones, what doesn't, and what the internet gets wrong. Not because she wants to impress you with credentials, but because she's been on the other side and knows what it feels like to not be told the whole truth.</p>
+      </div>
+      <div class="admae-reassure-card">
+        <h3>You Don't Need a Clear Vision</h3>
+        <p>Some people come with Pinterest boards and detailed sketches. Others come with "I want something incredible but I have no idea where to start." Both are perfect. Ali's process begins with getting to know you and the person you're designing for. The vision comes from that conversation, not from a display case.</p>
+      </div>
+      <div class="admae-reassure-card">
+        <h3>Your Budget Can Work</h3>
+        <p>Whatever your number is, Ali can show you options that will genuinely surprise you. Especially with lab-grown diamonds and creative design choices, "what's possible at my budget" is almost always more than you think. Ali will walk you through the tradeoffs honestly so you can decide what matters most. No judgment, no upselling, just real options laid out clearly so you can make a confident choice.</p>
+      </div>
+      <div class="admae-reassure-card">
+        <h3>No Obligation. No Follow-Up Pressure.</h3>
+        <p>Some people book a consultation and decide to move forward the same day. Others take weeks or months. Some decide custom isn't for them. All of that is completely fine. There's no expiration on your consultation, no aggressive follow-up calls, and no guilt. You come back when you're ready, or you don't. Either way, you'll leave with more clarity than you walked in with.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT ACTUALLY HAPPENS -->
+  <section>
+    <h2>What Happens During Your Consultation</h2>
+    <p class="admae-section-intro">
+      Here's exactly what to expect when you sit down with Ali. No surprises.
+    </p>
+
+    <div>
+      <div class="admae-expect-item">
+        <div class="admae-expect-icon">1</div>
+        <div class="admae-expect-content">
+          <h3>We Start With You, Not With Jewelry</h3>
+          <p>Before we talk about a single stone or setting, we talk about you. Who is this piece for? What's the story behind it? What does this person love, what do they wear every day, what makes them feel seen? Ali approaches every project like a coach. She puts you at the center, listens first, and asks the questions that help both of you understand what this ring really needs to be.</p>
+        </div>
+      </div>
+
+      <div class="admae-expect-item">
+        <div class="admae-expect-icon">2</div>
+        <div class="admae-expect-content">
+          <h3>Diamond and Gemstone Education</h3>
+          <p>Ali will walk you through the fundamentals: the 4 C's, the difference between natural and lab-grown diamonds, colored gemstones, and how each choice affects look, durability, and cost. As a GIA Graduate Gemologist, she can answer questions that most salespeople can't. This part alone is worth the meeting.</p>
+        </div>
+      </div>
+
+      <div class="admae-expect-item">
+        <div class="admae-expect-icon">3</div>
+        <div class="admae-expect-content">
+          <h3>Design Exploration</h3>
+          <p>We'll look at styles, settings, metals, and design references. You can bring inspiration photos, or Ali can show you examples from her portfolio. By the end of this conversation, you'll have a much clearer sense of what direction feels right, even if you walked in with no idea.</p>
+        </div>
+      </div>
+
+      <div class="admae-expect-item">
+        <div class="admae-expect-icon">4</div>
+        <div class="admae-expect-content">
+          <h3>Budget and Timeline</h3>
+          <p>We'll discuss your budget honestly and show you realistic options within it. We'll also cover timeline: most custom engagement rings take 6 to 8 weeks from sketch to finished piece, and rush options are available if you're working toward a specific date.</p>
+        </div>
+      </div>
+
+      <div class="admae-expect-item">
+        <div class="admae-expect-icon">5</div>
+        <div class="admae-expect-content">
+          <h3>Your Next Steps (If You Want Them)</h3>
+          <p>If you're ready to move forward, great. A $500 deposit starts the design process, and it's applied toward your final price. If you want to think about it, also great. There's no expiration, no follow-up pressure, and no hard sell. You come back when you're ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>Already Working With Another Jeweler?</h3>
+    <p>Not sure about a stone you've been shown elsewhere? Feeling uncertain about a quote? Ali offers free second opinions on diamonds, gemstones, and designs from other jewelers. No strings attached. Many clients who come in for a second look end up staying, but that's their choice, not a sales tactic. A GIA Graduate Gemologist checking someone else's work is the kind of honesty this industry needs more of.</p>
+  </div>
+
+  <div class="admae-highlight-box">
+    <h3>Available In Person or Virtually</h3>
+    <p>Visit our private studio in West Los Angeles, or book a virtual consultation from anywhere. Same 90 minutes, same personal attention, same experience. FaceTime, Zoom, or Google Meet.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say About the Experience</h2>
+    <p class="admae-section-intro">
+      The consultation is often the moment people realize this is going to be different from every other jewelry experience they've had.
+    </p>
+
+    <div class="admae-testimonial">
+      <blockquote>"I was looking to get my girlfriend something special, but jewelry is totally not my area, and I didn't know where to start. I felt pretty overwhelmed, but Ali made everything really easy for me. She was super easy to talk to, organized, and made the whole process feel relaxed."</blockquote>
+      <cite>- Travis Koenigsknecht</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"As someone new to buying jewelry, I was intimidated by the prospect of visiting a high-end jeweler. Alexandria was the complete opposite of stuffy! She made me feel so comfortable with her down to earth vibe. I love how she explained where the stones came from and how the earrings were made. It felt so honest."</blockquote>
+      <cite>- Michael Walker</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria was so patient, asking questions about my wife's personality and style to make sure the ring was perfect. She even helped me keep it a secret! The whole process was so clear. She walked me through the materials and timeline, which made me feel at ease."</blockquote>
+      <cite>- Joe Blancato</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About the Consultation</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Is the consultation really free?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. The 90-minute design consultation is completely free with no strings attached. If you choose to move forward with a custom piece, a $500 deposit starts the design process. That deposit is applied toward your final price. If you decide not to move forward, you owe nothing.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can I bring my partner to the consultation?
+      </div>
+      <div class="admae-faq-a">
+        <p>Of course. Many couples come together to design their ring as a shared experience. If you're planning a surprise proposal and want to come alone, that works too. Ali has helped plenty of clients keep the secret.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What if I have no idea what I want?
+      </div>
+      <div class="admae-faq-a">
+        <p>That's one of the most common starting points and it's totally fine. Ali will ask you questions about your partner's style, your lifestyle, what metals and colors they gravitate toward, and what feels meaningful to you as a couple. By the end of the conversation, you'll have a direction. That's the whole purpose of the meeting.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How do I book a virtual consultation?
+      </div>
+      <div class="admae-faq-a">
+        <p>Same booking process. When you schedule your appointment, just let us know you'd like to meet virtually. We'll send you a link for FaceTime, Zoom, or Google Meet. The virtual experience is the same full 90-minute consultation, and Ali can share her screen to walk you through design references, diamond options, and portfolio examples in real time.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do I need to have a budget in mind before the consultation?
+      </div>
+      <div class="admae-faq-a">
+        <p>It helps, but it's not required. If you have a range in mind, Ali can tailor the conversation to options that fit. If you're not sure, she can walk you through what different budgets typically look like so you can find a range that feels comfortable. Either way, there's no minimum spend and no judgment.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Where is the studio located?
+      </div>
+      <div class="admae-faq-a">
+        <p>Our private studio is located at 1832 S. Barrington Ave in West Los Angeles (Brentwood/Westwood area), near the intersection of Barrington and Sunset. Because we work by appointment only, your consultation is completely private. No walk-in traffic, no waiting, no distractions.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Ready to Start the Conversation?</h2>
+    <p>
+      Book your free consultation with Alexandria. 90 minutes, no pressure, no obligation. In person in West LA or virtually from anywhere.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">Always Free</span>
+      <span class="admae-trust-item">90 Minutes</span>
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">In Person or Virtual</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the engagement ring consultation really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The 90-minute design consultation at A. D'Mae Diamonds is completely free with no strings attached. If you choose to move forward with a custom piece, a $500 deposit starts the design process and is applied toward your final price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring my partner to the engagement ring consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Of course. Many couples come together to design their ring as a shared experience. If you're planning a surprise proposal and want to come alone, that works too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I have no idea what engagement ring I want?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's one of the most common starting points. Alexandria will ask questions about your partner's style, lifestyle, and preferences. By the end of the conversation, you'll have a clear direction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer virtual engagement ring consultations in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A. D'Mae offers the same full 90-minute consultation virtually via FaceTime, Zoom, or Google Meet. Alexandria can share her screen to walk through design references, diamond options, and portfolio examples in real time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a budget before the engagement ring consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It helps but is not required. Alexandria can tailor the conversation to your budget range, or walk you through what different budgets typically look like so you can find a comfortable range. There is no minimum spend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is A. D'Mae Diamonds located in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A. D'Mae Diamonds is located at 1832 S. Barrington Ave in West Los Angeles, near Brentwood and Westwood. The studio is appointment-only, so every consultation is completely private."
+      }
+    }
+  ]
+}
+</script>

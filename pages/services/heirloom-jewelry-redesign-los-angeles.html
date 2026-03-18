@@ -1,0 +1,858 @@
+<!--
+  A. D'Mae Diamonds - Heirloom Jewelry Redesign Los Angeles
+  Service Page - For Squarespace Page Header Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /heirloom-jewelry-redesign-los-angeles
+  2. SEO Title: Heirloom Jewelry Redesign Los Angeles | A. D'Mae Diamonds
+  3. SEO Description: Give your family jewelry a second life. Alexandria, a GIA Graduate Gemologist in Los Angeles, specializes in redesigning heirloom rings, resetting inherited stones, and transforming sentimental pieces into something you'll wear every day. Free consultation.
+  4. Add to "Services" nav folder
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: homepage, about, FAQ, pricing, other service pages
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* Why Redesign Cards */
+  .admae-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+
+  .admae-why-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 32px 28px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-why-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .admae-why-card p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* Process Steps */
+  .admae-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .admae-step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #d4af37;
+    font-weight: 300;
+    margin-top: 2px;
+  }
+
+  .admae-step-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+
+  .admae-step-content p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* Testimonials */
+  .admae-testimonial {
+    border-left: 2px solid #d4af37;
+    padding: 24px 0 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .admae-testimonial blockquote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #e0dbd2;
+    margin: 0 0 12px;
+    line-height: 1.7;
+  }
+
+  .admae-testimonial cite {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: #d4af37;
+    letter-spacing: 0.05em;
+  }
+
+  /* FAQ */
+  .admae-faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0;
+  }
+
+  .admae-faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .admae-faq-q {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .admae-faq-q::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #d4af37;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .admae-faq-item.open .admae-faq-q::after {
+    transform: rotate(45deg);
+  }
+
+  .admae-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-a {
+    max-height: 400px;
+  }
+
+  .admae-faq-a p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.7;
+    padding: 16px 0 4px;
+  }
+
+  /* Highlight Box */
+  .admae-highlight-box {
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    border-radius: 3px;
+    padding: 36px 32px;
+    margin: 48px 0;
+    background: rgba(212, 175, 55, 0.04);
+    text-align: center;
+  }
+
+  .admae-highlight-box h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d4af37;
+    margin: 0 0 12px;
+  }
+
+  .admae-highlight-box p {
+    font-size: 1rem;
+    color: #c4bfb4;
+    margin: 0 auto;
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  /* Final CTA */
+  .admae-final-cta {
+    text-align: center;
+    padding: 56px 24px;
+    margin-top: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 12px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+  }
+
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Portfolio Grid */
+  .admae-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .admae-portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+
+  .admae-portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .admae-portfolio-item:hover img {
+    transform: scale(1.04);
+  }
+
+  .admae-portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 0.8rem;
+    color: #e0dbd2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .admae-portfolio-item:hover .admae-portfolio-caption {
+    opacity: 1;
+  }
+
+  .admae-portfolio-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .admae-portfolio-link a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.3s;
+  }
+
+  .admae-portfolio-link a:hover {
+    border-color: #d4af37;
+  }
+
+  /* Lightbox */
+  .admae-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: pointer;
+  }
+
+  .admae-lightbox.active {
+    display: flex;
+  }
+
+  .admae-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    cursor: default;
+  }
+
+  .admae-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 2rem;
+    color: #f0ece4;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .admae-lightbox-close:hover {
+    color: #d4af37;
+  }
+
+  .admae-lightbox-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #c4bfb4;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 60px;
+    }
+
+    .admae-why-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .admae-portfolio-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .admae-step {
+      gap: 16px;
+    }
+
+    .admae-step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 0.95rem;
+    }
+
+    .admae-testimonial {
+      padding-left: 20px;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Heirloom Jewelry Redesign<br>in <em>Los Angeles</em></h1>
+    <p class="hero-sub">
+      Some jewelry sits in a safe for decades because it feels too important to wear - and too meaningful to change. Alexandria specializes in honoring that legacy while finding a way forward. Whether you want to preserve a family tradition in a new form or breathe life into a piece that hasn't been worn in years, every project starts with understanding what this jewelry means to your family.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY REDESIGN -->
+  <section>
+    <h2>Carrying the Legacy Forward</h2>
+    <p class="admae-section-intro">
+      Family jewelry carries weight that goes beyond carats. For many families, these pieces represent identity, tradition, and a connection across generations. The question isn't whether to change it - it's how to honor it while giving it a future.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Preservation Doesn't Mean a Safe Deposit Box</h3>
+        <p>A ring locked away for thirty years isn't being preserved - it's being forgotten. True preservation means the piece continues to live, to be worn, to be part of someone's daily life. Ali's approach is to find the version of this piece that you'll actually reach for every morning, so the legacy stays visible rather than hidden in a drawer.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Honor the Tradition. Make It Yours.</h3>
+        <p>Some families carry symbols, mottos, emblems, or design signatures that span generations. Ali can weave those elements into a redesign - a family crest engraved inside the band, a grandmother's birthstone set alongside the original diamond, initials hidden in the metalwork. The old tradition moves forward in a new form that still feels sacred to the family.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>One Piece Can Become Many</h3>
+        <p>When an estate includes a significant piece, sometimes the most meaningful thing is to create something for each family member. A single ring with multiple stones can become a pendant for one sibling, a ring for another, and earrings for a third - each carrying part of the original, each connected to the same story. Nobody has to choose who gets the ring when everyone can share in it.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>A GIA Gemologist Protects What Matters</h3>
+        <p>Before anything is touched, Ali evaluates every stone with a trained eye. She assesses quality, structural integrity, and what the stone can safely withstand. If there's damage, fractures, or risk in resetting an older stone, she'll tell you before we start - not after. That honesty is especially important when the piece is irreplaceable.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT WE REDESIGN -->
+  <section>
+    <h2>What Clients Bring Us</h2>
+    <p class="admae-section-intro">
+      Every project is different, but they all start the same way: with something that matters to someone. Here are some of the most common heirloom projects we take on.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Reset Grandmother's Ring</h3>
+        <p>The most common request we get. You've inherited a beautiful diamond or gemstone in a setting that's fragile, dated, or simply not your style. We remove the stone, design a new setting that fits your life, and give it a future it'll actually be worn in - while keeping the part that holds the memory.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Continue a Family Tradition</h3>
+        <p>For some families, a piece of jewelry carries the weight of generations. It feels almost sacrosanct to alter it. Ali understands that gravity. She can incorporate family emblems, crests, meaningful dates, or design motifs that echo the original piece - so the new version feels like a continuation, not a departure. The tradition doesn't end. It evolves.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Create Multiple Pieces From One</h3>
+        <p>When a loved one leaves behind a significant piece, dividing it can feel impossible. But a ring with multiple stones can become a pendant for one sibling, a ring for another, and earrings for a third. Ali designs each piece as part of a set - connected by the original stone, the original metal, or a shared design element - so every family member carries part of the legacy.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Turn Old Jewelry Into an Engagement Ring</h3>
+        <p>Some of the most meaningful engagement rings we've designed started as someone else's piece. A mother's pendant becomes a daughter's ring. A great-aunt's cocktail ring becomes a proposal story. When the stone has history behind it, the proposal carries an extra layer of weight that a brand new diamond simply can't replicate.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- PORTFOLIO -->
+  <section>
+    <h2>Heirloom Pieces We've Redesigned</h2>
+    <p class="admae-section-intro">
+      Every piece starts with someone's story. These are a few of the heirloom transformations we've created for clients.
+    </p>
+
+    <!-- 
+      PLACEHOLDER: Replace these with actual heirloom redesign portfolio images.
+      Use the same Squarespace image URL format as other pages.
+      Ideal: 3 images showing before/after or finished heirloom redesigns.
+      The "Grandmother's Love" portfolio story (rainbow stone ring from inherited colored stones) is a perfect candidate.
+    -->
+    <div class="admae-portfolio-grid">
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5d11b586-ea1c-40df-a9b7-67551c9153cd/20250307_131021.jpeg?content-type=image%2Fjpeg" alt="Heirloom diamond cluster engagement ring redesigned by A. D'Mae Diamonds in Los Angeles">
+        <div class="admae-portfolio-caption">Heirloom Diamond Cluster Engagement Ring</div>
+      </div>
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/9a105c27-e45d-41b3-848f-bc55ec52d694/20250320_162054.jpg?content-type=image%2Fjpeg" alt="Heirloom yellow diamond halo engagement ring redesigned by Los Angeles jeweler A. D'Mae Diamonds">
+        <div class="admae-portfolio-caption">Heirloom Yellow Diamond Halo Engagement Ring</div>
+      </div>
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg" alt="Custom Berlin iron and pearl earrings crafted from heirloom materials by A. D'Mae Diamonds Los Angeles">
+        <div class="admae-portfolio-caption">Berlin Iron Custom Pearl Earrings</div>
+      </div>
+    </div>
+
+    <p class="admae-portfolio-link">
+      <a href="/portfolio-client-journeys">Explore the full portfolio →</a>
+    </p>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- PROCESS -->
+  <section>
+    <h2>How Heirloom Redesign Works</h2>
+    <p class="admae-section-intro">
+      The process is personal and careful. Here's what to expect from start to finish.
+    </p>
+
+    <div>
+      <div class="admae-step">
+        <div class="admae-step-number">1</div>
+        <div class="admae-step-content">
+          <h3>Bring Us What You Have</h3>
+          <p>Your free consultation starts with showing Ali the piece or pieces you're working with. A ring, loose stones, a pendant, a broken bracelet - whatever it is. She'll listen to the story behind it and what you want the new piece to feel like. If you're not local, we can start virtually and arrange secure shipping for the physical evaluation.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">2</div>
+        <div class="admae-step-content">
+          <h3>Gemological Evaluation</h3>
+          <p>Ali evaluates every stone for quality, structural integrity, and design compatibility. As a GIA Graduate Gemologist, she can identify issues that most jewelers miss - internal fractures, treatments, or stability concerns that could affect the reset. She'll give you an honest assessment of what's usable and what needs caution. We require proper documentation of your stone, and it must meet our standards for quality and durability before we proceed.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">3</div>
+        <div class="admae-step-content">
+          <h3>Design the New Piece</h3>
+          <p>Once we know what we're working with, the creative process begins. Ali sketches designs based on your vision - whether that's a completely modern reimagining or a subtle update that preserves the original spirit. You'll refine together until it feels right.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">4</div>
+        <div class="admae-step-content">
+          <h3>CAD Rendering and Production</h3>
+          <p>You'll see a photorealistic 3D render of the new design with your actual stone dimensions before anything is made. Once approved, your piece goes into production with our trusted LA artisan partners. Most heirloom redesigns are completed in 6 to 8 weeks.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">5</div>
+        <div class="admae-step-content">
+          <h3>The Legacy Continues</h3>
+          <p>Your finished piece arrives with a professional appraisal, a presentation box, and care instructions. The stone that sat in a safe for years now lives on your hand, around your neck, or in your ears - carrying the same story it always did, just in a form that belongs to this chapter of your family.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 8px;">
+      <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 2px;">Learn more about the consultation →</a>
+    </p>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>Worried About "Ruining" a Family Piece?</h3>
+    <p>This is the most common hesitation we hear - and it's completely valid. These pieces feel sacred. That's exactly why Ali starts every heirloom project with a thorough gemological evaluation and an honest conversation about what's possible, what's reversible, and what carries risk. Nothing happens until you're confident the plan respects the piece and the person it came from. No pressure, no rush.</p>
+  </div>
+
+  <div class="admae-highlight-box">
+    <h3>Inheriting a Jewelry Collection?</h3>
+    <p>When a loved one passes and leaves behind multiple pieces, it can feel overwhelming to figure out what to do with everything. Ali can evaluate an entire collection - identify the most significant stones, assess what's wearable versus what needs attention, and help you decide what to redesign, what to preserve as-is, and how to divide pieces among family members in a way that feels fair and meaningful.</p>
+  </div>
+
+  <div class="admae-highlight-box">
+    <h3>It Can Also Save You Thousands</h3>
+    <p>When you already have the center stone, you skip the most expensive part of a custom piece. A quality heirloom diamond that would cost $5,000 or $10,000 to buy new is already in your family. We design and build the new setting around it - which means the finished piece can cost a fraction of what a full custom ring with a new stone would run. The sentimental value is priceless, but the financial savings are real.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say</h2>
+    <p class="admae-section-intro">
+      Heirloom projects are some of the most emotional work we do. Here's what clients have said about the experience.
+    </p>
+
+    <div class="admae-testimonial">
+      <blockquote>"When his grandmother died, she left him a box full of colored stones. He wanted to honor her memory by turning them into something wearable. Ali designed a rainbow ring that uses every stone his grandmother collected - each one placed with intention. It's the most personal piece we've ever created."</blockquote>
+      <cite>- A. D'Mae Portfolio: A Grandmother's Love</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Working with Ali to bring my dream engagement ring to life was truly one of the most magical parts of our entire engagement journey. She didn't just design a ring. She designed OUR ring. A piece that tells our story, that feels like me, and that I'll cherish for the rest of my life."</blockquote>
+      <cite>- H Renee</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"I cannot tell you how many coffee-breathed, stale old men I had to talk to before finding Alexandria. She was truly a breath of fresh air to work with and made the process fun. She carefully evaluated my taste and budget, and offered me solutions or ideas that I would not have otherwise thought of."</blockquote>
+      <cite>- Sydney Smith</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About Heirloom Jewelry Redesign</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much does it cost to redesign an heirloom ring?
+      </div>
+      <div class="admae-faq-a">
+        <p>It depends on the new design, the metal, and any additional stones needed. But because you're bringing your own center stone, you're skipping the most expensive part of a custom piece. A straightforward reset into a new setting will cost significantly less than a full custom ring with a new stone. We'll provide a detailed estimate after your free consultation - no surprises.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can any stone be reset into a new piece?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most can, but not all. Ali evaluates every stone for structural integrity before we proceed. Older stones may have internal fractures, chips, or treatments that make resetting risky. If your stone isn't a good candidate, Ali will tell you honestly and discuss alternatives - including sourcing a similar stone that honors the original while being structurally sound.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do I need documentation for my heirloom stone?
+      </div>
+      <div class="admae-faq-a">
+        <p>We require proper documentation of the stone in order to use it in a new design. If you don't have existing paperwork, Ali can evaluate the stone during your consultation and help you get it appraised or certified if needed. This protects both of us and ensures accurate insurance coverage for the finished piece.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What if I'm not sure what I want to do with the piece?
+      </div>
+      <div class="admae-faq-a">
+        <p>That's perfectly fine and extremely common. Many clients come in with a vague sense that they want to do "something" with an inherited piece but no clear vision. Ali's consultation process is designed for exactly this. She'll learn about you, the history of the piece, and what you want to feel when you wear it - then she'll sketch ideas and help you find the direction that feels right.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can you use gold from the original piece in the new design?
+      </div>
+      <div class="admae-faq-a">
+        <p>In some cases, yes. If the original piece has enough high-quality gold, we can melt it down and incorporate it into the new setting. This adds another layer of continuity to the redesign. However, not all gold is suitable for reuse - older alloys, plated pieces, or very small amounts may not be practical. Ali will assess what's possible during your consultation.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does an heirloom redesign take?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most heirloom redesigns follow the same 6 to 8 week timeline as our other custom work, from approved sketch to finished piece. If the project involves multiple stones, complex design work, or sourcing additional materials, it may take slightly longer. We'll give you a realistic timeline after your consultation so you can plan accordingly.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Ready to Give It a Future?</h2>
+    <p>
+      Book a free consultation with Alexandria. Bring the piece, share its story, and let's find the version of it that honors where it came from and fits where it's going. In person in West LA or virtually from anywhere.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">Free Consultation</span>
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">6-8 Week Turnaround</span>
+      <span class="admae-trust-item">Your Stone, Your Story</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="admae-lightbox" id="admae-lightbox" onclick="closeLightbox()">
+  <button class="admae-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="admae-lightbox-img" src="" alt="">
+  <div class="admae-lightbox-caption" id="admae-lightbox-caption"></div>
+</div>
+
+<script>
+(function() {
+  var items = document.querySelectorAll('.admae-portfolio-item');
+  var lightbox = document.getElementById('admae-lightbox');
+  var lbImg = document.getElementById('admae-lightbox-img');
+  var lbCap = document.getElementById('admae-lightbox-caption');
+
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var img = item.querySelector('img');
+      var caption = item.querySelector('.admae-portfolio-caption');
+      if (img) {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = caption ? caption.textContent : '';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+
+function closeLightbox() {
+  var lightbox = document.getElementById('admae-lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to redesign an heirloom ring in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cost depends on the new design, metal, and any additional stones needed. Because you bring your own center stone, you skip the most expensive part of a custom piece. A. D'Mae provides a detailed estimate after a free consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can any heirloom stone be reset into a new ring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most stones can be reset, but not all. Alexandria evaluates every heirloom stone for structural integrity, internal fractures, chips, and treatments before proceeding. If a stone isn't suitable, she'll discuss alternatives honestly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need documentation for my heirloom diamond or gemstone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A. D'Mae requires proper documentation of the stone before using it in a new design. If you don't have existing paperwork, Alexandria can evaluate the stone and help you get it appraised or certified."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you reuse gold from the original heirloom jewelry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In some cases, yes. If the original piece has enough high-quality gold, it can be melted down and incorporated into the new setting. Alexandria will assess what's practical during your consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does an heirloom jewelry redesign take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most heirloom redesigns take 6 to 8 weeks from approved sketch to finished piece. Projects involving multiple stones or complex designs may take slightly longer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't know what I want to do with my inherited jewelry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's very common. Alexandria's consultation process is designed for clients who have a piece with sentimental value but no clear vision. She'll learn about you and the piece's history, then sketch ideas to help you find the right direction."
+      }
+    }
+  ]
+}
+</script>

@@ -1,0 +1,791 @@
+<!--
+  A. D'Mae Diamonds - Custom Men's Wedding Bands Los Angeles
+  Service Page - For Squarespace Page Header Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /custom-mens-wedding-bands-los-angeles
+  2. SEO Title: Custom Men's Wedding Bands Los Angeles | A. D'Mae Diamonds
+  4. Add to "Services" nav folder
+  5. Padding already set to 340px
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* Why Custom Cards */
+  .admae-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+
+  .admae-why-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 32px 28px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-why-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .admae-why-card p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* Portfolio Grid */
+  .admae-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .admae-portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+
+  .admae-portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .admae-portfolio-item:hover img {
+    transform: scale(1.04);
+  }
+
+  .admae-portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 0.8rem;
+    color: #e0dbd2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .admae-portfolio-item:hover .admae-portfolio-caption {
+    opacity: 1;
+  }
+
+  .admae-portfolio-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .admae-portfolio-link a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.3s;
+  }
+
+  .admae-portfolio-link a:hover {
+    border-color: #d4af37;
+  }
+
+  /* Testimonials */
+  .admae-testimonial {
+    border-left: 2px solid #d4af37;
+    padding: 24px 0 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .admae-testimonial blockquote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #e0dbd2;
+    margin: 0 0 12px;
+    line-height: 1.7;
+  }
+
+  .admae-testimonial cite {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: #d4af37;
+    letter-spacing: 0.05em;
+  }
+
+  /* Process Steps */
+  .admae-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .admae-step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #d4af37;
+    font-weight: 300;
+    margin-top: 2px;
+  }
+
+  .admae-step-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+
+  .admae-step-content p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* FAQ */
+  .admae-faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0;
+  }
+
+  .admae-faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .admae-faq-q {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .admae-faq-q::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #d4af37;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .admae-faq-item.open .admae-faq-q::after {
+    transform: rotate(45deg);
+  }
+
+  .admae-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-a {
+    max-height: 400px;
+  }
+
+  .admae-faq-a p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.7;
+    padding: 16px 0 4px;
+  }
+
+  /* Highlight Box */
+  .admae-highlight-box {
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    border-radius: 3px;
+    padding: 36px 32px;
+    margin: 48px 0;
+    background: rgba(212, 175, 55, 0.04);
+    text-align: center;
+  }
+
+  .admae-highlight-box h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d4af37;
+    margin: 0 0 12px;
+  }
+
+  .admae-highlight-box p {
+    font-size: 1rem;
+    color: #c4bfb4;
+    margin: 0 auto;
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  /* Final CTA */
+  .admae-final-cta {
+    text-align: center;
+    padding: 56px 24px;
+    margin-top: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 12px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+  }
+
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Lightbox */
+  .admae-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: pointer;
+  }
+
+  .admae-lightbox.active {
+    display: flex;
+  }
+
+  .admae-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    cursor: default;
+  }
+
+  .admae-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 2rem;
+    color: #f0ece4;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .admae-lightbox-close:hover {
+    color: #d4af37;
+  }
+
+  .admae-lightbox-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #c4bfb4;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 60px;
+    }
+
+    .admae-why-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .admae-portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .admae-step {
+      gap: 16px;
+    }
+
+    .admae-step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 0.95rem;
+    }
+
+    .admae-testimonial {
+      padding-left: 20px;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Custom Men's Wedding Bands<br>in <em>Los Angeles</em></h1>
+    <p class="hero-sub">
+      His ring should mean something too. Work with Alexandria to design a men's wedding band that reflects who he is, not just what was available in a display case. Every band is designed from scratch, one-on-one, for the person who'll wear it every day.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY CUSTOM -->
+  <section>
+    <h2>Why His Ring Deserves More Than "Pick One"</h2>
+    <p class="admae-section-intro">
+      Most guys end up with a plain band grabbed off a rack as an afterthought. The engagement ring gets months of thought and planning. The wedding band gets 15 minutes at a counter and a question like "can I get something in tungsten or wood?" Ali pushes back on that. She believes men deserve to feel just as considered, just as celebrated, and just as excited about their ring as their partner is. When she gets a groom thinking bigger about what's possible, that's one of her favorite parts of the job.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Designed for Him Specifically</h3>
+        <p>Ali starts by getting to know the person who'll wear the ring. What does he do with his hands every day? What materials and textures is he drawn to? Does he want something bold or understated? The answers shape the design, not the other way around.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Built for Real Life</h3>
+        <p>A custom band can be designed around his actual lifestyle. If he works with his hands, we choose materials and profiles that hold up. If he's never worn jewelry before, we design for comfort first. If he wants something with edge, we go there. No compromises.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Designed as a Pair</h3>
+        <p>Most couples who come to us design their bands together. Her ring and his ring don't have to match, but they can share a thread: a material, a design detail, an engraving, a hidden element that only the two of you know about. That's the kind of detail custom makes possible.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Beyond Plain Gold Bands</h3>
+        <p>Custom means anything is possible. Hand-engraved landscapes. Mixed metals. Inlay work. Diamonds or gemstones set flush into the band. Art deco geometry. Textures and finishes you won't find at any retail store. If he can imagine it, Ali can design it.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- PORTFOLIO -->
+  <section>
+    <h2>Men's Bands We've Designed</h2>
+    <p class="admae-section-intro">
+      Every ring has a story. These are a few of the custom men's pieces we've created for clients.
+    </p>
+
+    <div class="admae-portfolio-grid">
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/3de5db46-47bc-469e-b7d3-65259b37831c/20250220_143404.jpg?content-type=image%2Fjpeg" alt="Custom men's wedding band by A. D'Mae Diamonds Los Angeles">
+        <div class="admae-portfolio-caption">Custom Men's Wedding Band</div>
+      </div>
+      <div class="admae-portfolio-item">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/3503b575-2943-493b-9157-a46842e4d8bc/20241217_110539.jpeg?content-type=image%2Fjpeg" alt="Custom designed men's wedding band by Los Angeles jeweler A. D'Mae Diamonds">
+        <div class="admae-portfolio-caption">Custom Men's Wedding Band</div>
+      </div>
+      <div class="admae-portfolio-item" style="aspect-ratio: auto;">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/e7a8990a-b4df-498a-a9c9-2cf9bd60923d/Screenshot+2026-03-06+212848.png?content-type=image%2Fpng" alt="Custom men's wedding band design by A. D'Mae Diamonds in Los Angeles" style="object-fit: contain; background: #0a0a0a;">
+        <div class="admae-portfolio-caption">Custom Men's Wedding Band</div>
+      </div>
+    </div>
+
+    <p class="admae-portfolio-link">
+      <a href="/portfolio-client-journeys">Explore the full portfolio</a>
+    </p>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- PROCESS -->
+  <section>
+    <h2>How It Works</h2>
+    <p class="admae-section-intro">
+      Designing a custom men's wedding band follows the same thoughtful process as everything we create.
+    </p>
+
+    <div>
+      <div class="admae-step">
+        <div class="admae-step-number">1</div>
+        <div class="admae-step-content">
+          <h3>A Conversation (Not a Sales Pitch)</h3>
+          <p>Your free 90-minute consultation starts with getting to know you. Most couples come together to design their bands, but plenty of guys come solo too. Either way, we'll talk about style, lifestyle, what he wears, what he does with his hands, and what this ring should feel like. Ali's goal is to get you excited about what's possible, not just settle for what's available.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">2</div>
+        <div class="admae-step-content">
+          <h3>Sketches and Design</h3>
+          <p>Ali drafts sketches based on your conversation. You give feedback, refine, and iterate until it feels right. Whether it's a sleek minimal band or something with serious detail work, the design is driven by your input.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">3</div>
+        <div class="admae-step-content">
+          <h3>Materials and Details</h3>
+          <p>We'll select metals (gold, platinum, palladium, mixed metals), finishes (polished, brushed, hammered, sandblasted), and any details like engraving, diamonds, gemstones, or inlay. Ali walks you through every option and how it affects durability, comfort, and cost.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">4</div>
+        <div class="admae-step-content">
+          <h3>CAD Rendering and Production</h3>
+          <p>You'll see a photorealistic 3D render before anything is made. Once approved, the ring goes into production with our trusted LA artisan partners. Most custom wedding bands are completed in 6 to 8 weeks.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top: 8px;">
+      <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 2px;">Learn more about the consultation</a>
+    </p>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>Designing Bands as a Couple?</h3>
+    <p>Many of our couples design their wedding bands together in the same consultation. It's one of the most personal parts of the wedding planning process, and Ali loves helping you find rings that feel connected without being identical. Book one consultation for both of you.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Couples Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria made our wedding bands, and I can't say enough about how special the experience was! She spent time getting to know us as a couple (no, really!) which made the bands feel like an extension of our relationship. The craftsmanship is incredible, and I love that we have something absolutely no one else does. Unlike big jewelry stores, A. D'Mae felt more like a friend guiding us through the process."</blockquote>
+      <cite>- Chris Vaughn</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Ali was absolutely amazing in putting together my wedding band. She was attentive, communicative, and drafted up multiple options for my husband and me. Her work is gorgeous, and I highly recommend her for anyone looking for a customized, highly personal jewelry experience!"</blockquote>
+      <cite>- Maggie Gehlsen-Burnett</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"We are working with her remotely to design our wedding bands and I have full confidence she will get us something we both love!"</blockquote>
+      <cite>- Jay Miller</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About Custom Men's Wedding Bands</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much does a custom men's wedding band cost?
+      </div>
+      <div class="admae-faq-a">
+        <p>Every band is different, so the cost depends on the metal, the complexity of the design, and whether stones or engraving are involved. A simple band in precious metal will be less than a detailed design with mixed metals, hand engraving, or diamond accents. We'll give you a clear, detailed estimate after your consultation so there are no surprises. Your consultation is free, and there's no obligation to move forward.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can we design both wedding bands in the same consultation?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes, and most couples do exactly that. Your 90-minute consultation gives us plenty of time to discuss both rings, explore how they relate to each other, and start the design process for both. One meeting, two rings, one experience.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What if he's never worn jewelry before?
+      </div>
+      <div class="admae-faq-a">
+        <p>That's extremely common. Ali designs with comfort as a top priority for first-time ring wearers. We'll discuss band width, profile (flat vs. rounded), interior finish (comfort fit is standard), and weight so the ring feels natural from day one. Most guys are surprised by how quickly they get used to it.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does a custom men's wedding band take?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most custom wedding bands take 6 to 8 weeks from sketch to finished piece. If you're on a tighter timeline, let us know and we can often accommodate rush orders depending on the design. We recommend booking your consultation at least 3 months before the wedding to give plenty of breathing room.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you work with alternative metals like titanium or tungsten?
+      </div>
+      <div class="admae-faq-a">
+        <p>We can. Our preference is precious metals like 14k and 18k gold, platinum, and palladium because they can be resized, repaired, and maintained for a lifetime. Alternative metals like titanium and tungsten are durable but come with tradeoffs: most can't be resized, and repairs are limited. It's also worth knowing that alternative metals aren't necessarily cheaper for a custom piece, since the majority of the cost comes from the craftsmanship and design work, not the raw material. That said, if titanium or tungsten is what you want, we can make it happen. Ali will walk you through the pros and cons so you can make the call that's right for you.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can you add hidden details or personal touches?
+      </div>
+      <div class="admae-faq-a">
+        <p>This is one of our favorite things to do. Hidden engravings, birthstones set on the interior of the band, initials worked into the design, meaningful dates, symbols, or inside jokes that only the two of you know about. These details don't add much to the cost but they make the ring irreplaceable.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Ready to Design His Ring?</h2>
+    <p>
+      Book a free consultation with Alexandria. Come as a couple or come solo. In person in West LA or virtually from anywhere.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">Free Consultation</span>
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">6-8 Week Turnaround</span>
+      <span class="admae-trust-item">Couples Welcome</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="admae-lightbox" id="admae-lightbox" onclick="closeLightbox()">
+  <button class="admae-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="admae-lightbox-img" src="" alt="">
+  <div class="admae-lightbox-caption" id="admae-lightbox-caption"></div>
+</div>
+
+<script>
+(function() {
+  var items = document.querySelectorAll('.admae-portfolio-item');
+  var lightbox = document.getElementById('admae-lightbox');
+  var lbImg = document.getElementById('admae-lightbox-img');
+  var lbCap = document.getElementById('admae-lightbox-caption');
+
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var img = item.querySelector('img');
+      var caption = item.querySelector('.admae-portfolio-caption');
+      if (img) {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = caption ? caption.textContent : '';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+
+function closeLightbox() {
+  var lightbox = document.getElementById('admae-lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a custom men's wedding band cost in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cost depends on the metal, design complexity, and whether stones or engraving are involved. A. D'Mae provides a clear, detailed estimate after your free consultation with no obligation to move forward."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we design both wedding bands in the same consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most couples design both wedding bands together in a single 90-minute consultation at A. D'Mae Diamonds in Los Angeles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the groom has never worn jewelry before?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Very common. Alexandria designs with comfort as a top priority for first-time ring wearers, considering band width, profile, interior finish, and weight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a custom men's wedding band take to make?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most custom wedding bands take 6 to 8 weeks from sketch to finished piece. Rush orders can often be accommodated. Booking at least 3 months before the wedding is recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you add hidden details to a men's wedding band?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Hidden engravings, interior birthstones, initials, meaningful dates, and personal symbols are some of the most popular custom details at A. D'Mae Diamonds."
+      }
+    }
+  ]
+}
+</script>

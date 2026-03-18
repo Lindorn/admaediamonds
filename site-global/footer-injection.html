@@ -1,0 +1,72 @@
+<!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "104881721389440");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+<!--- Change 0.00 prices to POA on Squarespace 7.1 -------------->
+<!--- Copyright Soundfocus Digital [sf.digital] ----------------->
+<!--- Use freely in your code injection. Do NOT re-publish ------>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var products = document.querySelectorAll('.product-price'), sf;
+    for (sf=0; sf<products.length; sf++) {
+      var price = products[sf];
+      if (price.innerText.replace(/[^\d\.]+/g , "") === '0.00') {
+        price.textContent = 'Contact for Pricing';  
+      }
+    }
+  });
+</script>
+
+<!-- Sticky Mobile CTA -->
+<style>
+  .admae-sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #d4af37;
+    text-align: center;
+    padding: 14px 20px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.3);
+  }
+
+  .admae-sticky-cta a {
+    color: #111;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+
+  @media (max-width: 768px) {
+    .admae-sticky-cta {
+      display: block;
+    }
+  }
+</style>
+<div class="admae-sticky-cta">
+  <a href="/schedule-an-appointment">Book Free Consultation</a>
+</div>

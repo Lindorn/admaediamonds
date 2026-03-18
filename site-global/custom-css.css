@@ -1,0 +1,46 @@
+/* 2 Column Product Grid */
+@media only screen and (max-width:640px) {
+.products .list-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.products .grid-item {
+width: 48%;
+}
+}
+
+#collection-618b0fa78ed6656004d9ebbb {
+
+      header, footer, .sqs-announcement-bar-dropzone, .Mobile {
+
+             display: none !important;
+
+     }
+
+ }
+
+#collection-618b0fa78ed6656004d9ebbb { .sqs-block-button-element { width: 80% !important; } }
+
+/* Hide the price */
+.tag-poa .product-price .sqs-money-native {
+  display: none;
+}
+
+/* Hide the add-to-cart button */
+.tag-poa .ProductItem-summary .ProductItem-details {
+  .sqs-add-to-cart-button-wrapper, .product-quantity-input {
+  display: none;
+  }
+}
+
+
+
+div.header-nav-item:not(.header-nav-item--active)>a:hover {
+    text-decoration: none !important;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 100%;
+    background-position: 0 calc(~"100% - 0.1em");
+}
