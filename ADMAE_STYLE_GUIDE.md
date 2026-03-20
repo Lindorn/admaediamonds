@@ -92,6 +92,25 @@ Typography is inherited from Squarespace's site-wide font settings. The style gu
 
 ## Layout & Spacing
 
+### Universal Top Spacing
+
+Applied site-wide via Squarespace Custom CSS to normalize the gap between the top navigation and page content across all pages:
+
+```css
+/* Universal top spacing fix - normalizes header gap across all pages */
+#page .page-section:first-child .content-wrapper {
+  padding-top: 4vw !important;
+  padding-bottom: 2vw !important;
+}
+#page .page-section:first-child {
+  min-height: unset !important;
+}
+```
+
+- This ensures consistent spacing regardless of Squarespace section settings
+- `4vw` top padding scales proportionally with viewport width
+- `min-height: unset` prevents Squarespace from forcing tall first sections
+
 ### Page Structure
 
 | Element | Max Width | Notes |
@@ -406,5 +425,5 @@ Before deploying any new page:
 
 ---
 
-*Last updated: March 19, 2026*
+*Last updated: March 20, 2026*
 *Maintained by: Aaron (strategy/operations) with Claude Code for QA*
