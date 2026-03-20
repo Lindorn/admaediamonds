@@ -10,6 +10,21 @@
   5. SEO Description: A GIA Graduate Gemologist breaks down the real differences between lab grown and natural diamonds. No agenda. No sales pitch. Just the honest information you need to make the right choice for you.
   6. Push index in Search Console after publishing
   7. DO NOT enter anything in the Squarespace title field within the code - use their native title field
+
+  UPDATED: March 2026 - P3.5 Conversion Optimization
+  Changes made:
+  - Added global link styles (a, a:hover) matching BE post
+  - Added inline link to About page in intro ("GIA Graduate Gemologist")
+  - Added inline link to BE blog post in Eco-Friendly Myth section
+  - Added inline link to cost blog post in "What I Actually Tell Clients"
+  - Added inline link to pricing page in budget conversation
+  - Added mid-article CTA after "The One Question That Changes Everything"
+  - Added inline link to heirloom page in value retention section
+  - Added inline link to custom engagement rings page in "How to Evaluate"
+  - Added inline link to design process page in "So Which Should You Get?"
+  - Added .blog-mid-cta and .blog-keep-reading styles
+  - Added "Keep Reading" section before end CTA
+  - Kept existing consultation link in "So Which Should You Get?"
 -->
 
 <style>
@@ -42,6 +57,17 @@
     line-height: 1.8;
   }
 
+  .admae-blog a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .admae-blog a:hover {
+    border-color: #d4af37;
+  }
+
   .admae-blog .blog-pullquote {
     border-left: 2px solid #d4af37;
     padding: 16px 0 16px 28px;
@@ -60,6 +86,67 @@
     border: none;
   }
 
+  /* Mid-article CTA */
+  .admae-blog .blog-mid-cta {
+    text-align: center;
+    padding: 36px 24px;
+    margin: 48px 0;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-blog .blog-mid-cta p {
+    color: #c4bfb4;
+    font-size: 1.05rem;
+    margin: 0 auto 16px;
+    max-width: 520px;
+  }
+
+  .admae-blog .blog-mid-cta a {
+    color: #d4af37;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 2px;
+  }
+
+  .admae-blog .blog-mid-cta a:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  /* Keep Reading section */
+  .admae-blog .blog-keep-reading {
+    margin: 48px 0;
+  }
+
+  .admae-blog .blog-keep-reading h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .admae-blog .blog-keep-reading p {
+    text-align: center;
+    color: #c4bfb4;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .admae-blog .blog-keep-reading a {
+    color: #d4af37;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-blog .blog-keep-reading a:hover {
+    border-color: #d4af37;
+  }
+
+  /* End CTA */
   .admae-blog .blog-cta {
     text-align: center;
     padding: 48px 24px;
@@ -119,7 +206,7 @@
 
   <p>The lab diamond companies want you to believe their stones are identical to natural diamonds in every way, just cheaper and more ethical. The traditional jewelers want you to believe lab diamonds are worthless fakes that will embarrass you. Neither camp is being fully honest with you.</p>
 
-  <p>I'm a GIA Graduate Gemologist. I work with both lab grown and natural diamonds every day. I don't carry inventory of either, so I have no financial incentive to push you one direction or the other. What I care about is that you have the real information - not marketing spin - so you can make the choice that's actually right for your situation.</p>
+  <p>I'm a <a href="/aboutadmaediamonds">GIA Graduate Gemologist</a>. I work with both lab grown and natural diamonds every day. I don't carry inventory of either, so I have no financial incentive to push you one direction or the other. What I care about is that you have the real information - not marketing spin - so you can make the choice that's actually right for your situation.</p>
 
   <p>Here's everything I wish someone would have told me when I was starting out in this industry. And everything I tell my clients when they sit across from me and ask, "So which one should I get?"</p>
 
@@ -159,7 +246,7 @@
 
   <p>Meanwhile, what most people don't know is that natural diamond mines are actually required to go through extensive environmental review processes before they start, and they're required to restore the land after they finish. Soil is stockpiled, ecosystems are monitored, and land reclamation is mandated by law in most major diamond-producing regions. That part always gets left out of the conversation.</p>
 
-  <p>I'm not saying natural diamond mining is harmless. I'm saying the idea that lab diamonds are the clean alternative is a marketing narrative, not a scientific one. And once that story gets pushed hard enough with enough money behind it, it's really hard to put it back in the box.</p>
+  <p>I'm not saying natural diamond mining is harmless. I'm saying the idea that lab diamonds are the clean alternative is a marketing narrative, not a scientific one. And once that story gets pushed hard enough with enough money behind it, it's really hard to put it back in the box. (This kind of misleading messaging is part of <a href="/blog/why-i-left-brilliant-earth">why I left Brilliant Earth</a> - I refused to promote claims I knew weren't true.)</p>
 
   <div class="blog-pullquote">
     I don't care what marketing spin you put on it. If you're using massive amounts of energy to recreate a geological process in a factory, that's not eco-friendly. It's just a different kind of impact.
@@ -177,7 +264,7 @@
 
   <p>I've had other clients who are deeply connected to nature. For them, the idea of wearing a stone that came from the earth, that went through a transformative geological journey over millions of years to end up on their hand - that romance and history was what made it special. Of course they should get a natural diamond.</p>
 
-  <p>And then there are clients who say: "We have this vision and this budget. We'd love to travel after the engagement. We're saving for a house. What can we do?" For them, a lab diamond often means getting the look and size they want while freeing up money for the things that matter to them as a couple. That's a perfectly valid reason.</p>
+  <p>And then there are clients who say: "We have this vision and this budget. We'd love to travel after the engagement. We're saving for a house. What can we do?" For them, a lab diamond often means getting the look and size they want while freeing up money for the things that matter to them as a couple. That's a perfectly valid reason. (If you're trying to figure out what's realistic at your budget, I wrote a <a href="/blog/how-much-does-a-custom-engagement-ring-cost">full breakdown of what custom engagement rings actually cost</a>.)</p>
 
   <p>None of these are wrong answers. They're different people with different values making different choices. My job is to help them figure out which choice is theirs - not to make it for them.</p>
 
@@ -185,7 +272,7 @@
 
   <p>There's one question that can override the entire conversation, and it's this: "Will this hold its value?"</p>
 
-  <p>If someone tells me they want a piece that retains value over time, or that they'd like to pass down to their children someday, or that they want the option to resell if circumstances change - that shifts the recommendation toward natural diamonds. Not because lab diamonds are bad, but because the economics are fundamentally different.</p>
+  <p>If someone tells me they want a piece that retains value over time, or that they'd like to <a href="/heirloom-jewelry-redesign-los-angeles">pass it down to their children</a> someday, or that they want the option to resell if circumstances change - that shifts the recommendation toward natural diamonds. Not because lab diamonds are bad, but because the economics are fundamentally different.</p>
 
   <p>Lab grown diamonds have virtually no resale value. You should go in assuming you will never be able to sell that stone. For most people, that's completely fine - most people intend to keep their engagement ring forever. But you need to know that going in.</p>
 
@@ -195,6 +282,12 @@
 
   <div class="blog-pullquote">
     A diamond doesn't need to hold its value to be awesome and special. If she looks at it every day and smiles, it has value. We get to determine what's valuable and meaningful in our lives - not a number on a piece of paper.
+  </div>
+
+  <!-- Mid-article CTA -->
+  <div class="blog-mid-cta">
+    <p>Not sure which direction is right for you? That's exactly what the consultation is for. Ninety minutes, no pressure, no inventory to push.</p>
+    <a href="/schedule-an-appointment">Book a Free Consultation</a>
   </div>
 
   <h2>Can You Actually Tell the Difference?</h2>
@@ -233,7 +326,7 @@
 
   <p>With natural diamonds, you have more flexibility and also more variability. Every natural diamond is genuinely unique - the inclusions, the color, the way it interacts with light. Sometimes a stone's "imperfections" are actually what give it character. I recently sourced a diamond for a client that had a heart-shaped inclusion inside it. On paper, it was an SI2 clarity grade. In reality, it was perfect for her because she loved the idea of a hidden heart inside her stone.</p>
 
-  <p>Cut is still the most important factor for naturals, but you might make different tradeoffs. Maybe you go slightly lower on clarity to get a bigger stone. Maybe you choose a warmer color because it has a romantic, vintage feel. The sourcing process for natural diamonds is more like curating - you're looking for the one that has the right combination of specs and personality for the person who'll wear it.</p>
+  <p>Cut is still the most important factor for naturals, but you might make different tradeoffs. Maybe you go slightly lower on clarity to get a bigger stone. Maybe you choose a warmer color because it has a romantic, vintage feel. The sourcing process for natural diamonds is more like curating - you're looking for the one that has the right combination of specs and personality for the person who'll wear it. That's a big part of what we do when we <a href="/custom-engagement-rings-los-angeles">design a custom engagement ring</a> - the stone selection is just as personal as the setting.</p>
 
   <p>One more thing: be careful with online deals. I do deep research dives with my clients when they bring me stones they've found online. More often than not, the "great deal" has a catch. A stone that looks perfect in the listing photos turns out to be hazy in person. A color grade from EGL instead of GIA means it's probably two to three grades lower than what's on the certificate. Stock photos being used instead of actual images of the diamond you're buying. If a deal looks too good to be true, it almost always is.</p>
 
@@ -249,11 +342,18 @@
 
   <p>What I can tell you is that the decision should start with you - your values, your budget, your priorities, and what this ring needs to represent. Not with a jeweler's inventory. Not with a marketing campaign. Not with a Reddit thread.</p>
 
-  <p>If you want to sit down and talk through it with someone who works with both, has no inventory to push, and will give you the honest version of everything I've written here - that's exactly what our <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37;">free consultation</a> is for. Ninety minutes to ask every question you have and walk away with clarity, not a sales pitch.</p>
+  <p>If you want to sit down and talk through it with someone who works with both, has no inventory to push, and will give you the honest version of everything I've written here - that's exactly what our <a href="/engagement-ring-consultation-los-angeles">free consultation</a> is for. Ninety minutes to ask every question you have and walk away with clarity, not a sales pitch. You can also see exactly how our <a href="/customjewelrydesignprocess">design process</a> works before you commit to anything.</p>
 
   <p>Your ring should represent you and the person you're building a life with. Lab or natural, what matters is that the choice was yours and it was made with real information.</p>
 
   <hr class="blog-divider">
+
+  <!-- Keep Reading -->
+  <div class="blog-keep-reading">
+    <h2>Keep Reading</h2>
+    <p><a href="/blog/why-i-left-brilliant-earth">Why I Left Brilliant Earth</a></p>
+    <p><a href="/blog/how-much-does-a-custom-engagement-ring-cost">How Much Does a Custom Engagement Ring Actually Cost?</a></p>
+  </div>
 
   <div class="blog-cta">
     <h2>Have Questions About Diamonds?</h2>

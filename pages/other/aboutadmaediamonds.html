@@ -1,0 +1,505 @@
+<!--
+  A. D'Mae Diamonds - Meet Alexandria
+  About Page - For Squarespace Code Block (Body-Level) Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /aboutadmaediamonds (existing - keep for now, redirect later if desired)
+  2. SEO Title: Meet Alexandria | GIA Gemologist & Custom Jeweler Los Angeles | A. D'Mae Diamonds
+  3. SEO Description: Alexandria is a GIA Graduate Gemologist and third-generation jeweler in Los Angeles. She left Brilliant Earth to build something better - a custom jewelry studio where your story comes first. Free consultations.
+  4. Replace existing native Squarespace blocks with this single code block
+  5. Set page top padding to match other service pages (340px)
+  6. IMPORTANT: Update the footer on this page - currently shows old Denver number (720) 476-2215 
+     and old hours (12-7pm). Should show (310) 243-6979 and 9am-7pm.
+  
+  P3.5 Conversion Optimization - March 2026
+  - Full redesign from native Squarespace blocks to admae-service-page design system
+  - GIA credentials and third-generation heritage made visually prominent
+  - Stone sourcing expertise added as distinct callout (competitive moat)
+  - Brilliant Earth background mentioned with link to blog post
+  - Testimonials added
+  - Internal links: consultation, BE blog post, design process, portfolio, pricing, engagement rings
+  - Ali's existing copy used as voice foundation, restructured for scannability
+  
+  NOTE: Ali's photo is referenced from the existing Squarespace CDN URL.
+  If the image doesn't render, replace the src with the current image URL from the live page.
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  /* Hero */
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 620px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  /* CTAs */
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  /* Divider */
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  /* Section headings */
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Links */
+  .admae-service-page a:not(.admae-cta):not(.admae-cta-filled) {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .admae-service-page a:not(.admae-cta):not(.admae-cta-filled):hover {
+    border-color: #d4af37;
+  }
+
+  /* Photo + intro layout */
+  .admae-about-intro {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 16px;
+  }
+
+  .admae-about-photo {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+  }
+
+  .admae-about-text p {
+    font-size: 1.1rem;
+    color: #e0dbd2;
+    line-height: 1.8;
+    margin: 0 0 20px;
+  }
+
+  .admae-about-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .admae-about-text strong {
+    color: #fff;
+  }
+
+  /* Credential badges */
+  .admae-credentials {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .admae-credential {
+    font-size: 0.8rem;
+    color: #d4af37;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 8px 16px;
+    border-radius: 2px;
+  }
+
+  /* Why cards */
+  .admae-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .admae-why-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 28px 24px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-why-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 10px;
+  }
+
+  .admae-why-card p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Pullquote */
+  .admae-pullquote {
+    border-left: 2px solid #d4af37;
+    padding: 16px 0 16px 28px;
+    margin: 48px auto;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #d4af37;
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  /* Sourcing callout */
+  .admae-sourcing-callout {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+    padding: 36px 32px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .admae-sourcing-callout h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+
+  .admae-sourcing-callout p {
+    font-size: 1rem;
+    color: #c4bfb4;
+    line-height: 1.7;
+    margin: 0 0 16px;
+    text-align: center;
+  }
+
+  .admae-sourcing-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Testimonials */
+  .admae-testimonial {
+    border-left: 2px solid #d4af37;
+    padding: 0 0 0 24px;
+    margin: 0 auto 32px;
+    max-width: 680px;
+  }
+
+  .admae-testimonial blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #e0dbd2;
+    line-height: 1.7;
+    margin: 0 0 8px;
+  }
+
+  .admae-testimonial cite {
+    font-size: 0.85rem;
+    color: #999;
+    font-style: normal;
+    letter-spacing: 0.03em;
+  }
+
+  /* Final CTA */
+  .admae-final-cta {
+    text-align: center;
+    padding: 56px 24px;
+    margin-top: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 12px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+  }
+
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 60px;
+    }
+
+    .admae-about-intro {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .admae-about-photo {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .admae-why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .admae-credentials {
+      justify-content: center;
+    }
+
+    .admae-pullquote {
+      padding-left: 20px;
+      font-size: 1rem;
+    }
+
+    .admae-testimonial {
+      padding-left: 18px;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+
+    .admae-sourcing-callout {
+      padding: 28px 24px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="admae-hero">
+    <h1>Meet <em>Alexandria</em></h1>
+    <p class="hero-sub">
+      Your guide through the custom jewelry experience. Not a salesperson - a GIA Graduate Gemologist, a third-generation jeweler, and someone who genuinely cares about getting this right.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== INTRO WITH PHOTO ===================== -->
+  <section>
+    <div class="admae-about-intro">
+      <img 
+        src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/1cb77317-2a91-4a97-ab96-310ba0fc901b/68A5543D-811B-4ACD-81AF-47AB748609F1.PNG?format=750w" 
+        alt="Alexandria Necker - GIA Graduate Gemologist and custom jeweler in Los Angeles" 
+        class="admae-about-photo"
+        loading="lazy"
+      >
+      <div class="admae-about-text">
+        <p>My grandfather opened a jewelry store in Iowa after becoming a watchmaker through the GI Bill after World War II. He built Necker's Jewelers from scratch, side by side with my grandmother. Their legacy inspired my dad, and now me.</p>
+
+        <p><strong>For as long as I can remember, jewelry has fascinated me.</strong> The blending of ancient stones, billions of years old, with deep human experiences. An engagement ring, a graduation signet, an heirloom from someone we love - these aren't just objects. They're our stories and our legacy.</p>
+
+        <p>Yet I've always disliked the typical jewelry shopping experience. Pushy sales floors, impersonal interactions, and corporate priorities that leave people feeling unheard and pressured into buying whatever is in stock. It never felt right. I realized that as an industry, we were losing trust - and instead of addressing it, we were digging in deeper.</p>
+
+        <p>I founded A. D'Mae Diamonds to rebuild that trust. (If you want the full story, including <a href="/blog/why-i-left-brilliant-earth">why I left Brilliant Earth</a>, I wrote about it on the blog.)</p>
+
+        <div class="admae-credentials">
+          <span class="admae-credential">GIA Graduate Gemologist</span>
+          <span class="admae-credential">Third-Generation Jeweler</span>
+          <span class="admae-credential">Los Angeles Studio</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== MY COMMITMENT ===================== -->
+  <section>
+    <h2>My Commitment to You</h2>
+    <p class="admae-section-intro">
+      I'm here to honor your story, creating jewelry that genuinely reflects who you are - not a fleeting trend from a showcase. My goal is simple: to make you feel seen, understood, and respected at every step.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Undivided Attention</h3>
+        <p>No sales team. No handoffs. From your first conversation through final delivery, you work directly with me. I get to know you before I ever pick up a pencil.</p>
+      </div>
+
+      <div class="admae-why-card">
+        <h3>Honest Education</h3>
+        <p>I promise to educate you openly, never pressuring you. From the 4Cs to alloy mixtures, from <a href="/blog/lab-grown-vs-natural-diamonds">lab grown vs natural</a> to alternative gemstones - you'll always get the whole truth about sourcing, quality, and value.</p>
+      </div>
+
+      <div class="admae-why-card">
+        <h3>Your Story, Not My Inventory</h3>
+        <p>I don't carry inventory, so I have no incentive to push anything. Every stone is hand-selected for your project. Every design is <a href="/customjewelrydesignprocess">built from scratch</a> around the person who'll wear it.</p>
+      </div>
+
+      <div class="admae-why-card">
+        <h3>Budget Without Judgment</h3>
+        <p>Tell me your number and I'll work within it. No upselling. No "well, for just a little more..." Some of our most beautiful pieces have come from tight budgets. <a href="/custom-jewelry-pricing-information">See how pricing works.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-pullquote">
+    I care more about your story and your experience than just making a sale. If custom isn't the right path for you, I'll tell you that. No hard feelings, no follow-up pressure.
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== STONE SOURCING MOAT ===================== -->
+  <section>
+    <h2>What Sets Ali Apart</h2>
+
+    <div class="admae-sourcing-callout">
+      <h3>World-Class Stone Sourcing</h3>
+      <p>Most jewelers source from a handful of preferred wholesalers and call it a day. Ali doesn't. She searches the entire global supply - every database, every network, every avenue available - to find the best quality stone at the best price for your specific project.</p>
+      <p>She's exhaustively thorough. She cross-references certifications, catches deceptive listings that other jewelers would miss, and personally evaluates every stone before it ever reaches a client. Her natural diamond pricing consistently beats competitors including major online retailers, because she's not limited to one supplier's markup.</p>
+      <p>This isn't just a skill. It's the thing clients mention most in <a href="https://maps.app.goo.gl/i5tYdY5PPwPr7JgY7">their reviews</a>.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section>
+    <h2>What Clients Say</h2>
+    <p class="admae-section-intro">
+      These are real clients describing their experience working with Ali.
+    </p>
+
+    <div class="admae-testimonial">
+      <blockquote>"After many conversations with other jewelers and jewelry companies like Brilliant Earth, we were feeling frustrated and lost. Alexandria was recommended by a friend - we are incredibly grateful to her. My ring is BEAUTIFUL, everything we wanted, and she made the process fun, easy, and exciting."</blockquote>
+      <cite>- Tiffany J. Whalen</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"I cannot tell you how many coffee-breathed, stale old men I had to talk to before finding Alexandria. She was truly a breath of fresh air and made the process fun. She carefully evaluated my taste and budget, and offered solutions I would not have otherwise thought of."</blockquote>
+      <cite>- Sydney Smith</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"I looked everywhere for an engagement ring, and nothing I found felt special. We had a conversation about what I thought I was looking for, and I can't believe how perfect the result is. If you're looking for something truly unique, you want to go to A. D'Mae."</blockquote>
+      <cite>- S C</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="admae-final-cta">
+    <h2>Ready to Start the Conversation?</h2>
+    <p>Book a free 90-minute consultation. In person at our West Los Angeles studio or virtually from anywhere. No obligation, no pressure - just an honest conversation about what you want to create.</p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">Third-Generation Jeweler</span>
+      <span class="admae-trust-item">Free Consultation</span>
+      <span class="admae-trust-item">No Inventory to Push</span>
+    </div>
+  </section>
+
+  <!-- Explore links -->
+  <div style="text-align: center; margin-top: 36px; font-size: 0.95rem;">
+    <a href="/portfolio-client-journeys">See Our Work</a> &middot; 
+    <a href="/custom-engagement-rings-los-angeles">Custom Engagement Rings</a> &middot; 
+    <a href="/custom-jewelry-pricing-information">Pricing & Budget</a> &middot; 
+    <a href="/customjewelrydesignprocess">Design Process</a>
+  </div>
+
+</div>

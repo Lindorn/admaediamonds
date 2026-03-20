@@ -8,6 +8,15 @@
   3. SEO Description: I worked at Brilliant Earth as their top salesperson. I saw the repairs, the broken promises, and the corporate machine behind the ethical branding. Here's why I left and what I built instead.
   4. After publishing: push index in Google Search Console
   5. Add internal links FROM: homepage body copy, engagement rings service page, consultation page
+  
+  UPDATED: March 2026 - P3.5 Conversion Optimization
+  Changes made:
+  - Added inline link to About page in intro ("started my own business")
+  - Added inline link to lab-grown blog post in "Things I Was Told to Say" section
+  - Added mid-article CTA block after "The Breaking Point" section
+  - Added inline link to custom engagement rings service page in "What I Took With Me"
+  - Added "Keep Reading" section before end CTA with links to other two blog posts
+  - Added .admae-blog-mid-cta and .admae-blog-keep-reading styles
 -->
 
 <style>
@@ -58,6 +67,17 @@
     line-height: 1.8;
   }
 
+  .admae-blog a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .admae-blog a:hover {
+    border-color: #d4af37;
+  }
+
   .admae-blog .blog-pullquote {
     border-left: 2px solid #d4af37;
     padding: 16px 0 16px 28px;
@@ -76,6 +96,67 @@
     border: none;
   }
 
+  /* Mid-article CTA */
+  .admae-blog .blog-mid-cta {
+    text-align: center;
+    padding: 36px 24px;
+    margin: 48px 0;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-blog .blog-mid-cta p {
+    color: #c4bfb4;
+    font-size: 1.05rem;
+    margin: 0 auto 16px;
+    max-width: 520px;
+  }
+
+  .admae-blog .blog-mid-cta a {
+    color: #d4af37;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 2px;
+  }
+
+  .admae-blog .blog-mid-cta a:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  /* Keep Reading section */
+  .admae-blog .blog-keep-reading {
+    margin: 48px 0;
+  }
+
+  .admae-blog .blog-keep-reading h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .admae-blog .blog-keep-reading p {
+    text-align: center;
+    color: #c4bfb4;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .admae-blog .blog-keep-reading a {
+    color: #d4af37;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-blog .blog-keep-reading a:hover {
+    border-color: #d4af37;
+  }
+
+  /* End CTA */
   .admae-blog .blog-cta {
     text-align: center;
     padding: 48px 24px;
@@ -136,7 +217,7 @@
 
   <p>I'm writing this because I worked there. I held the highest conversion rate in the entire company - 50% over 74 appointments. And what I saw from the inside didn't match what they were telling clients from the outside.</p>
 
-  <p>That gap is the reason I started my own business. If you're considering Brilliant Earth right now, or you've already had an experience with them that left you feeling off, I think you deserve to hear what it actually looked like from behind the counter.</p>
+  <p>That gap is the reason I <a href="/aboutadmaediamonds">started my own business</a>. If you're considering Brilliant Earth right now, or you've already had an experience with them that left you feeling off, I think you deserve to hear what it actually looked like from behind the counter.</p>
 
   <hr class="blog-divider">
 
@@ -186,7 +267,7 @@
 
   <h2>The Things I Was Told to Say</h2>
 
-  <p>I was never told to say anything outright false during a sale. But there were expectations. We were all encouraged to promote how eco-friendly lab diamonds were. I refused. I knew it wasn't true, and I wasn't going to say it.</p>
+  <p>I was never told to say anything outright false during a sale. But there were expectations. We were all encouraged to promote how eco-friendly lab diamonds were. I refused. I knew it wasn't true, and I wasn't going to say it. (I wrote a <a href="/blog/lab-grown-vs-natural-diamonds">full breakdown of lab grown vs natural diamonds</a> if you want the honest version.)</p>
 
   <p>The bigger issue was the quality claims. Early on, I could say in good conscience that the pieces were well-made. But after months of watching the repair calls stack up, I couldn't anymore. "These pieces are built to last" became a sentence I literally could not bring myself to say.</p>
 
@@ -224,7 +305,11 @@
 
   <p>That told me everything I needed to know. It wasn't me. It was the system.</p>
 
-  <hr class="blog-divider">
+  <!-- Mid-article CTA -->
+  <div class="blog-mid-cta">
+    <p>If you're shopping for an engagement ring and this story sounds familiar, you don't have to settle for it. Our consultations are free, unhurried, and honest.</p>
+    <a href="/schedule-an-appointment">Book a Free Consultation</a>
+  </div>
 
   <h2>What I Took With Me</h2>
 
@@ -232,13 +317,13 @@
 
   <p>The appointment-based model was right. Sitting down with a client, having dedicated time together, treating them like a person instead of a walk-in - that was a genuinely better way to do this. Brilliant Earth proved that people wanted it. They just didn't execute it well enough.</p>
 
-  <p>The customization instinct was right too. People want something that feels personal. They want agency in the process. They want to feel like the ring they walk away with was designed for them, not pulled from a case.</p>
+  <p>The customization instinct was right too. People want something that feels personal. They want agency in the process. They want to feel like the ring they walk away with was <a href="/custom-engagement-rings-los-angeles">designed for them</a>, not pulled from a case.</p>
 
   <p>What was missing was everything underneath. Real quality. Real honesty. Real time with clients. A jeweler who actually has the expertise to back up what they're saying. And a willingness to tell someone the truth even when it means the sale takes longer or doesn't happen at all.</p>
 
-  <p>That's what I built <a href="/custom-engagement-rings-los-angeles" style="color: #d4af37;">A. D'Mae Diamonds</a> to be.</p>
+  <p>That's what I built <a href="/custom-engagement-rings-los-angeles">A. D'Mae Diamonds</a> to be.</p>
 
-  <p>My <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37;">consultations are 90 minutes</a>, not 50. Nobody gets rushed. There's no sales manager watching a clock. I don't carry inventory, so I have no incentive to push anything. Every stone I select is one I'd personally stand behind, and every design is built from scratch around the person who'll wear it.</p>
+  <p>My <a href="/engagement-ring-consultation-los-angeles">consultations are 90 minutes</a>, not 50. Nobody gets rushed. There's no sales manager watching a clock. I don't carry inventory, so I have no incentive to push anything. Every stone I select is one I'd personally stand behind, and every design is <a href="/customjewelrydesignprocess">built from scratch</a> around the person who'll wear it.</p>
 
   <p>If something goes wrong with a piece - which is rare, because I work with manufacturers I trust and I'm involved in quality control at every stage - I fix it. Personally. No shipping it across the country. No blaming the client. No voided warranties.</p>
 
@@ -254,13 +339,22 @@
 
   <p>If you can't get clear, direct answers to those questions, that tells you something.</p>
 
-  <p>And if you've already bought from Brilliant Earth and something doesn't feel right - maybe the ring isn't what you expected, maybe you're dealing with a repair issue, maybe you just want a second opinion on a stone - I offer free <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37;">second opinions</a> from a GIA Graduate Gemologist with no strings attached. That's not a sales pitch. It's just something I think more people in this industry should be willing to do.</p>
+  <p>And if you've already bought from Brilliant Earth and something doesn't feel right - maybe the ring isn't what you expected, maybe you're dealing with a repair issue, maybe you just want a second opinion on a stone - I offer free <a href="/engagement-ring-consultation-los-angeles">second opinions</a> from a GIA Graduate Gemologist with no strings attached. That's not a sales pitch. It's just something I think more people in this industry should be willing to do.</p>
+
+  <p>If you're weighing your options on budget, I also wrote an honest breakdown of <a href="/blog/how-much-does-a-custom-engagement-ring-cost">what custom engagement rings actually cost</a> - real numbers, no vague "it depends" answers. And our <a href="/custom-jewelry-pricing-information">pricing page</a> walks through every factor that affects your quote.</p>
 
   <div class="blog-pullquote">
     The one thing they didn't do right - which to me is the most important thing - was protect and serve the customer and make them happy. I don't care how pretty the product is. If you can't do that, what's the point?
   </div>
 
   <hr class="blog-divider">
+
+  <!-- Keep Reading -->
+  <div class="blog-keep-reading">
+    <h2>Keep Reading</h2>
+    <p><a href="/blog/lab-grown-vs-natural-diamonds">Lab Grown vs Natural Diamonds: What Your Jeweler Isn't Telling You</a></p>
+    <p><a href="/blog/how-much-does-a-custom-engagement-ring-cost">How Much Does a Custom Engagement Ring Actually Cost?</a></p>
+  </div>
 
   <div class="blog-cta">
     <h2>Want a Different Experience?</h2>
