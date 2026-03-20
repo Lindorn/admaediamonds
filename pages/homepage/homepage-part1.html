@@ -1,0 +1,662 @@
+<!--
+  ================================================================
+  A. D'Mae Diamonds - HOMEPAGE
+  CODE BLOCK 1 OF 3
+  ================================================================
+  
+  HOW TO SET THIS UP IN SQUARESPACE:
+  
+  Your homepage will have 5 blocks in this order:
+  
+  1. CODE BLOCK 1 (this file) - Hero through lead magnet opening
+  2. NATIVE FORM BLOCK - Your Squarespace email capture form
+  3. CODE BLOCK 2 (homepage-part2.html) - Closes lead magnet, then testimonials heading
+  4. TRUSTINDEX WIDGET BLOCK - Your existing review widget
+  5. CODE BLOCK 3 (homepage-part3.html) - Closes testimonials, social section, end
+  
+  FORM SETUP:
+  - Edit your existing form block to EMAIL ONLY (remove name and dream piece fields)
+  - Change the submit button text to "Send Me The Guide"
+  - The CSS in this code block will automatically restyle the form
+  
+  SEO SETTINGS:
+  - Title: Custom Engagement Rings & Fine Jewelry Los Angeles | A. D'Mae Diamonds
+  - Description: Custom engagement rings and fine jewelry designed one-on-one by Alexandria, 
+    a GIA Graduate Gemologist and third-generation jeweler in West Los Angeles. Free consultations.
+  
+  ================================================================
+-->
+
+<style>
+  /* ============================================
+     HOMEPAGE STYLES
+     ============================================ */
+  
+  .admae-homepage {
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-homepage * {
+    box-sizing: border-box;
+  }
+
+  .admae-homepage-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .admae-hp-hero {
+    text-align: center;
+    padding: 0 24px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .admae-hp-hero h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hp-hero .hero-sub {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 620px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .admae-hp-hero .hero-sub a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-hp-hero .hero-sub a:hover {
+    border-color: #d4af37;
+  }
+
+  /* CTAs */
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  /* Trust bar */
+  .admae-trust-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  .admae-trust-bar span {
+    font-size: 0.75rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Divider */
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  /* ============================================
+     INTRO SECTION
+     ============================================ */
+  .admae-hp-intro {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 20px;
+  }
+
+  .admae-hp-intro h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 20px;
+  }
+
+  .admae-hp-intro p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+
+  .admae-hp-intro p a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-hp-intro p a:hover {
+    border-color: #d4af37;
+  }
+
+  .admae-hp-intro .intro-cta-line {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 24px;
+    font-style: normal;
+  }
+
+  .admae-hp-intro .intro-cta-line a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-hp-intro .intro-cta-line a:hover {
+    border-color: #d4af37;
+  }
+
+  /* ============================================
+     HERO IMAGE
+     ============================================ */
+  .admae-hp-hero-image {
+    max-width: 1100px;
+    margin: 0 auto 0;
+    padding: 0 24px;
+  }
+
+  .admae-hp-hero-image img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+
+  /* ============================================
+     SERVICE CARDS
+     ============================================ */
+  .admae-hp-services h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 40px;
+  }
+
+  .admae-service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .admae-service-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: border-color 0.3s, transform 0.3s;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-service-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-3px);
+  }
+
+  .admae-service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .admae-service-card-text {
+    padding: 20px 16px;
+  }
+
+  .admae-service-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+
+  .admae-service-card p {
+    font-size: 0.85rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ============================================
+     SEO PARAGRAPH
+     ============================================ */
+  .admae-hp-seo {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .admae-hp-seo h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 24px;
+  }
+
+  .admae-hp-seo p {
+    font-size: 1.05rem;
+    color: #e0dbd2;
+    line-height: 1.8;
+    margin: 0 0 20px;
+  }
+
+  .admae-hp-seo a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-hp-seo a:hover {
+    border-color: #d4af37;
+  }
+
+  /* ============================================
+     LEAD MAGNET SECTION
+     ============================================ */
+  .admae-hp-leadmagnet {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .admae-leadmagnet-container {
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 6px;
+    background: rgba(212, 175, 55, 0.04);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.08);
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .admae-leadmagnet-content h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 12px;
+    text-align: left;
+  }
+
+  .admae-leadmagnet-content .lead-sub {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    line-height: 1.6;
+    margin: 0 0 8px;
+    font-style: italic;
+  }
+
+  .admae-leadmagnet-content .lead-note {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0 0 24px;
+  }
+
+  .admae-leadmagnet-image img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+
+  /* ============================================
+     NATIVE SQUARESPACE FORM OVERRIDES
+     ============================================ */
+
+  /* Input fields */
+  .admae-leadmagnet-content .sqs-block-form,
+  .admae-leadmagnet-content .form-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .admae-leadmagnet-content .field-element,
+  .admae-leadmagnet-content input[type="email"],
+  .admae-leadmagnet-content input[type="text"],
+  .admae-leadmagnet-content textarea {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 3px !important;
+    color: #f0ece4 !important;
+    padding: 14px 16px !important;
+    font-size: 0.95rem !important;
+    font-family: inherit !important;
+    width: 100% !important;
+    transition: border-color 0.3s !important;
+  }
+
+  .admae-leadmagnet-content input:focus,
+  .admae-leadmagnet-content textarea:focus {
+    border-color: #d4af37 !important;
+    outline: none !important;
+  }
+
+  /* Labels */
+  .admae-leadmagnet-content .title,
+  .admae-leadmagnet-content label,
+  .admae-leadmagnet-content .caption,
+  .admae-leadmagnet-content .field-label {
+    color: #c4bfb4 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  /* Submit button */
+  .admae-leadmagnet-content .form-button-wrapper .sqs-system-button,
+  .admae-leadmagnet-content input[type="submit"],
+  .admae-leadmagnet-content button[type="submit"],
+  .admae-leadmagnet-content .sqs-editable-button {
+    background: #d4af37 !important;
+    color: #111 !important;
+    border: 2px solid #d4af37 !important;
+    border-radius: 2px !important;
+    padding: 16px 40px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: background 0.3s, border-color 0.3s !important;
+    font-family: inherit !important;
+    width: auto !important;
+  }
+
+  .admae-leadmagnet-content .form-button-wrapper .sqs-system-button:hover,
+  .admae-leadmagnet-content input[type="submit"]:hover,
+  .admae-leadmagnet-content button[type="submit"]:hover,
+  .admae-leadmagnet-content .sqs-editable-button:hover {
+    background: #c9a42e !important;
+    border-color: #c9a42e !important;
+  }
+
+  /* Hide field descriptions */
+  .admae-leadmagnet-content .description {
+    display: none !important;
+  }
+
+  /* ============================================
+     TESTIMONIALS
+     ============================================ */
+  .admae-hp-testimonials {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .admae-hp-testimonials h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 32px;
+  }
+
+  /* ============================================
+     SOCIAL
+     ============================================ */
+  .admae-hp-social {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .admae-hp-social h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 16px;
+  }
+
+  .admae-hp-social a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .admae-hp-social a:hover {
+    border-color: #d4af37;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 900px) {
+    .admae-service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 680px) {
+    .admae-homepage-inner {
+      padding: 0 18px;
+    }
+
+    .admae-service-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .admae-service-card img {
+      height: 200px;
+    }
+
+    .admae-leadmagnet-container {
+      grid-template-columns: 1fr;
+      padding: 32px 24px;
+      gap: 24px;
+    }
+
+    .admae-leadmagnet-image {
+      order: -1;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    .admae-trust-bar {
+      gap: 12px;
+    }
+
+    .admae-hp-hero {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .admae-hp-intro {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .admae-hp-seo {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .admae-hp-leadmagnet {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+</style>
+
+<div class="admae-homepage">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="admae-hp-hero">
+    <h1>Custom Engagement Rings & Fine Jewelry in Los Angeles</h1>
+    <p class="hero-sub">
+      Let <a href="/aboutadmaediamonds">Alexandria</a> translate your story into a one-of-a-kind design - one-on-one, no stress.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book 1:1 Consultation</a>
+    <div class="admae-trust-bar">
+      <span>GIA Graduate Gemologist</span>
+      <span>110+ Five-Star Google Reviews</span>
+      <span>3rd Generation Jeweler</span>
+      <span>West Los Angeles</span>
+      <span>By Appointment Only</span>
+    </div>
+  </section>
+
+  <!-- ===================== HERO IMAGE ===================== -->
+  <div class="admae-hp-hero-image">
+    <img 
+      src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/c422466a-f570-4093-b6dd-f15b0ff5b6fd/34604913-6A4C-488E-BD84-FC4763A38C98.jpg" 
+      alt="Custom engagement ring and jewelry by A. D'Mae Diamonds in Los Angeles" 
+      loading="eager"
+    >
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== INTRO ===================== -->
+  <section class="admae-hp-intro">
+    <h2>Not your grandfather's jewelry store.</h2>
+    <p>No sales floors. No pressure. No cookie-cutter designs. We start with a conversation - <a href="/portfolio-client-journeys">getting to know you, your story, and what matters most</a>. Then we sketch, design, and create something meaningful. A piece of art made just for you.</p>
+    <p class="intro-cta-line">It starts with a <a href="/engagement-ring-consultation-los-angeles">consultation</a>.</p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Now</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== SERVICE CARDS ===================== -->
+  <section class="admae-hp-services">
+    <div class="admae-homepage-inner">
+      <h2>What We Create...</h2>
+
+      <div class="admae-service-grid">
+        <a href="/custom-engagement-rings-los-angeles" class="admae-service-card">
+          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/16fbe92d-283d-46e5-a470-929e1591cc9c/1_b.jpg?content-type=image%2Fjpeg" alt="Custom engagement rings designed in Los Angeles by A. D'Mae Diamonds" loading="lazy">
+          <div class="admae-service-card-text">
+            <h3>Custom Engagement Rings</h3>
+            <p>Designed from scratch around your story.</p>
+          </div>
+        </a>
+
+        <a href="/engagement-ring-consultation-los-angeles" class="admae-service-card">
+          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/dd1b73fe-1037-4f5e-8074-1d6ebb93101c/20241118_150134.jpg?content-type=image%2Fjpeg" alt="Free engagement ring design consultation with GIA Graduate Gemologist in Los Angeles" loading="lazy">
+          <div class="admae-service-card-text">
+            <h3>Engagement Ring Consultation</h3>
+            <p>90 minutes, no pressure, no obligation.</p>
+          </div>
+        </a>
+
+        <a href="/custom-mens-wedding-bands-los-angeles" class="admae-service-card">
+          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/bed06636-e159-426e-8274-1fe628b363df/1+%282%29.jpg?content-type=image%2Fjpeg" alt="Custom men's wedding bands designed in Los Angeles by A. D'Mae Diamonds" loading="lazy">
+          <div class="admae-service-card-text">
+            <h3>Custom Men's Wedding Bands</h3>
+            <p>Because his ring should mean something too.</p>
+          </div>
+        </a>
+
+        <a href="/heirloom-jewelry-redesign-los-angeles" class="admae-service-card">
+          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/95aabc53-a096-4e66-b51c-e8a07320182d/20250307_131021.jpg?content-type=image%2Fjpeg" alt="Heirloom jewelry redesign and stone reset by GIA Graduate Gemologist in Los Angeles" loading="lazy">
+          <div class="admae-service-card-text">
+            <h3>Heirloom Jewelry Redesign</h3>
+            <p>Preserve the legacy, renew the design.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== SEO PARAGRAPH ===================== -->
+  <section class="admae-hp-seo">
+    <h2>Your Custom Jewelry Journey in Los Angeles</h2>
+
+    <p>Most people walk into a jewelry store and choose from what's behind the glass. At A. D'Mae Diamonds, nothing exists until you walk through the door.</p>
+
+    <p>Alexandria is a GIA Graduate Gemologist and third-generation jeweler working from a private studio in West Los Angeles. Every project starts the same way: a one-on-one conversation about who you are, who you're designing for, and what this piece needs to say. No inventory. No sales team. No pressure. Just a jeweler who listens first and picks up a pencil second.</p>
+
+    <p>From <a href="/custom-engagement-rings-los-angeles">custom engagement rings</a> to <a href="/custom-mens-wedding-bands-los-angeles">men's wedding bands</a>, <a href="/heirloom-jewelry-redesign-los-angeles">heirloom jewelry</a> redesigns to anniversary pieces, every design is built from scratch around <a href="/portfolio-client-journeys">your story</a>. Ali <a href="/blog/lab-grown-vs-natural-diamonds">hand-selects every stone</a>, walks you through the tradeoffs honestly, and keeps you involved at every step - from initial sketch to CAD rendering to the final reveal.</p>
+
+    <p>Whether you're planning a proposal, honoring a family tradition with an inherited stone, or creating something bold that's never existed before, the process is the same: personal, transparent, and built entirely around you. Clients visit in person at our West Los Angeles studio or work with Ali virtually from anywhere in the country. Wondering <a href="/blog/how-much-does-a-custom-engagement-ring-cost">what custom jewelry actually costs</a>? We break that down honestly. And our <a href="/custom-jewelry-pricing-information">pricing and budget guide</a> walks you through how we handle the money conversation.</p>
+
+    <p><a href="/engagement-ring-consultation-los-angeles">Your consultation is free, takes about 90 minutes</a>, and comes with zero obligation. Most clients say the same thing afterwards: "<a href="/blog/why-i-left-brilliant-earth">I wish I'd come here first.</a>"</p>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- ===================== LEAD MAGNET ===================== -->
+  <section class="admae-hp-leadmagnet">
+    <div class="admae-leadmagnet-container" style="display: block;">
+      <div class="admae-leadmagnet-content">
+        <h2>What Your Jeweler Isn't Telling You</h2>
+        <p class="lead-sub">The insider guide to buying smarter - from a third-generation jeweler and GIA Graduate Gemologist.</p>
+        <p class="lead-note">Free. No strings attached. Just enter your email.</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- closes .admae-homepage -->
+
+<!-- ================================================================
+     END OF CODE BLOCK 1
+     
+     NEXT: Place your native Squarespace FORM BLOCK here
+     (email-only, submit button text: "Send Me The Guide")
+     
+     Then place CODE BLOCK 2 after the form block.
+     ================================================================ -->
