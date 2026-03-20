@@ -372,9 +372,7 @@ pages/
     schedule-an-appointment.html
     aboutadmaediamonds.html
   homepage/
-    homepage-part1.html
-    homepage-part2.html
-    homepage-part3.html
+    homepage.html
 ```
 
 ### CSS Class Naming
