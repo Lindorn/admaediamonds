@@ -1,0 +1,413 @@
+<!--
+  A. D'Mae Diamonds - GIA Gemologist Los Angeles
+  Service Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /gia-gemologist-los-angeles
+  2. SEO Title: GIA Graduate Gemologist Los Angeles | A. D'Mae Diamonds
+  3. SEO Description: Looking for a GIA Graduate Gemologist in Los Angeles? Alexandria Necker completed the rigorous Graduate Gemologist program at the Gemological Institute of America. Third-generation jeweler. Free consultation for custom engagement rings and fine jewelry.
+  4. Add to "Services" nav folder
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: homepage, about, engagement rings page, diamond sourcing page, pricing page
+  8. GIA COMPLIANCE: "GIA Graduate Gemologist" or "GIA GG" ONLY. Never "GIA certified." This applies to all text, alt text, schema, and comments.
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * { box-sizing: border-box; }
+
+  .admae-hero { text-align: center; margin-bottom: 72px; }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em { font-style: italic; color: #d4af37; }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover { background: #d4af37; color: #111; }
+
+  .admae-cta-filled { background: #d4af37; color: #111; border-color: #d4af37; font-weight: 700; }
+  .admae-cta-filled:hover { background: #c9a42e; border-color: #c9a42e; }
+
+  .admae-divider { width: 60px; height: 1px; background: #d4af37; margin: 56px auto; border: none; }
+
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  .admae-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 16px; }
+
+  .admae-why-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 32px 28px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-why-card h3 { font-size: 1.1rem; font-weight: 600; color: #d4af37; margin: 0 0 12px; letter-spacing: 0.02em; }
+  .admae-why-card p { margin: 0; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; }
+
+  /* Credential Block */
+  .admae-credential-block {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(212, 175, 55, 0.04);
+    padding: 48px 40px;
+    border-radius: 3px;
+    margin: 48px 0;
+  }
+
+  .admae-credential-block h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+
+  .admae-credential-block p {
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 16px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .admae-credential-block p:last-child { margin-bottom: 0; }
+
+  /* Content Prose */
+  .admae-prose {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .admae-prose p {
+    color: #c4bfb4;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin: 0 0 20px;
+  }
+
+  .admae-prose strong { color: #f0ece4; font-weight: 600; }
+
+  .admae-highlight-box {
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: rgba(212, 175, 55, 0.04);
+    padding: 36px 32px;
+    border-radius: 3px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .admae-highlight-box h3 { font-size: 1.2rem; font-weight: 400; color: #fff; margin: 0 0 12px; }
+  .admae-highlight-box p { color: #c4bfb4; margin: 0; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 0.95rem; line-height: 1.65; }
+
+  .admae-testimonial { border-left: 2px solid #d4af37; padding-left: 28px; margin-bottom: 40px; }
+  .admae-testimonial blockquote { margin: 0 0 12px; font-style: italic; color: #ddd; font-size: 1rem; line-height: 1.7; }
+  .admae-testimonial cite { color: #999; font-size: 0.85rem; font-style: normal; letter-spacing: 0.03em; }
+
+  .admae-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0; }
+  .admae-faq-q { padding: 20px 0; font-size: 1rem; font-weight: 600; color: #f0ece4; cursor: pointer; position: relative; padding-right: 32px; }
+  .admae-faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: #d4af37; font-weight: 300; transition: transform 0.2s ease; }
+  .admae-faq-item.open .admae-faq-q::after { content: '-'; }
+  .admae-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .admae-faq-item.open .admae-faq-a { max-height: 500px; }
+  .admae-faq-a p { padding: 0 0 20px; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; margin: 0; }
+
+  .admae-final-cta { text-align: center; padding: 20px 0; }
+  .admae-final-cta h2 { margin-bottom: 16px; }
+  .admae-final-cta p { color: #c4bfb4; max-width: 560px; margin: 0 auto 32px; font-size: 1rem; line-height: 1.7; }
+
+  .admae-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+  .admae-trust-item { font-size: 0.8rem; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 680px) {
+    .admae-service-page { padding-left: 18px; padding-right: 18px; padding-bottom: 60px; }
+    .admae-why-grid { grid-template-columns: 1fr; gap: 20px; }
+    .admae-credential-block { padding: 32px 24px; }
+    .admae-testimonial { padding-left: 20px; }
+    .admae-trust-signals { gap: 20px; }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>GIA Graduate Gemologist<br>in <em>Los Angeles</em></h1>
+    <p class="hero-sub">
+      When you're making one of the biggest purchases of your life, you deserve a jeweler who can see what most can't. <a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Alexandria</a> is a GIA Graduate Gemologist, a third-generation jeweler, and someone who will always tell you the truth about what you're buying.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT THAT MEANS -->
+  <section>
+    <h2>What "GIA Graduate Gemologist" Actually Means</h2>
+
+    <div class="admae-prose">
+      <p>The Gemological Institute of America is the institution that created the standardized system for grading and describing diamonds. Before GIA, there was no consistent way to talk about what you were buying. Color, clarity, and cut were described in vague, unregulated terms. GIA changed that by establishing the grading standards that the entire industry now uses.</p>
+
+      <p>The Graduate Gemologist program is GIA's most comprehensive and rigorous credential. It covers diamond grading, colored stone identification, and the full range of gemological evaluation. Only a few hundred people earn the Graduate Gemologist diploma in the US each year. The majority of working jewelers have not completed this level of training. In a city with thousands of jewelers, the number who hold this credential is a small fraction.</p>
+
+      <p><strong>But here's what matters more than the title:</strong> the credential means Alexandria has spent years training her eye to see things that most people, including most jewelers, cannot see. The difference between a stone that looks identical on paper and one that actually performs differently in real life. The subtle signs that a diamond's grading report might not tell the full story. The confidence to recommend a slightly lower grade that actually looks better and saves her client thousands of dollars.</p>
+
+      <p>The paper gives you confidence that your jeweler knows what she's talking about. The experience, the <a href="/diamond-sourcing-verification-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">sourcing network</a>, and the obsessive attention to detail are what actually protect your investment.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY IT MATTERS -->
+  <section>
+    <h2>Why Credentials Matter When Buying Custom Jewelry</h2>
+    <p class="admae-section-intro">
+      You wouldn't hire an architect who couldn't read blueprints. Working with a GIA Graduate Gemologist means you have someone in your corner who can evaluate every stone, every material, and every tradeoff with trained precision.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Seeing What Paper Can't Show</h3>
+        <p>Two diamonds with identical grading reports can look dramatically different in person. Ali evaluates stones beyond the report, looking at light performance, visual warmth, and the characteristics that actually determine whether a diamond has life to it. She always requests photos and videos before recommending anything.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Protecting You From Bad Purchases</h3>
+        <p>Ali has caught stones with deceptive listings, stock photos hiding real flaws, and grading reports from labs that are known to be lenient. She <a href="/diamond-sourcing-verification-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">cross-references certifications across databases</a> to verify that what you're buying is actually what's being advertised. This is the kind of protection most buyers don't even know they need.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Honest Guidance on What You Actually Need</h3>
+        <p>Many clients come in believing they need a colorless, VVS clarity diamond because that's what the internet told them. Ali asks why. Often, she can recommend a slightly different combination that looks just as beautiful to the naked eye and redirects thousands of dollars toward a more meaningful design or a larger stone.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Third-Generation Knowledge</h3>
+        <p>Ali didn't just earn a credential. She grew up in the industry. Her father runs a major regional jewelry store in the Midwest. She's been working in jewelry since she was 14. The GIA training formalized expertise she'd been building for over a decade. She also worked at Brilliant Earth before starting A. D'Mae, an experience that shaped <a href="/blog/why-i-left-brilliant-earth" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">her perspective on what the industry gets wrong</a>. That combination of academic rigor and real-world experience is rare.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-credential-block">
+    <h3>A Designer Who Happens to Be a Gemologist</h3>
+    <p>Ali leads with design, not diplomas. Her first question in every consultation is about you: your story, your partner, your vision. The gemological expertise shows up in the sourcing, the material selection, and the quality control. It's the infrastructure that makes her designs exceptional, not the headline.</p>
+    <p>When you work with Ali, you're not getting a lecture on the 4Cs. You're getting a creative partner who uses her training to protect your investment while translating your story into something physical and permanent.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria's depth of experience and industry knowledge are truly invaluable. I absolutely love my ring and couldn't be happier with both the piece and the process."</blockquote>
+      <cite>- Christie Konkle</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"I met Alexandria in our Graduate Gemology courses together at GIA. She's super relatable, especially for nervous, overwhelmed men looking to design engagement rings, and very particular about how pieces should be designed and finished to ensure long-term stability and correct aesthetics."</blockquote>
+      <cite>- Monica Kitt, Fellow GIA Graduate Gemologist</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Extremely knowledgeable and professional. She was able to help me get my engagement ring set and it came out perfect!"</blockquote>
+      <cite>- Jake Lurvey</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"She explained where the stones came from and how the earrings were made. It felt so honest. If you're looking for a Los Angeles jeweler who makes the process fun and personal, go to Ali."</blockquote>
+      <cite>- Michael Walker</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About Working With a GIA Graduate Gemologist</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What is the difference between a GIA Graduate Gemologist and a regular jeweler?
+      </div>
+      <div class="admae-faq-a">
+        <p>A GIA Graduate Gemologist has completed the most rigorous gemological education program in the world, covering diamond grading, colored stone identification, and gem evaluation. The majority of working jewelers have not completed this training. A GG can evaluate stones with precision that goes far beyond what's printed on a grading report, catching issues and opportunities that untrained eyes miss.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do I need to work with a gemologist to buy an engagement ring?
+      </div>
+      <div class="admae-faq-a">
+        <p>You don't need to, but it protects you. A gemologist can verify that the stone you're buying matches what's being advertised, evaluate whether you're getting genuine value for your budget, and help you avoid overpaying for characteristics that won't actually matter to you. Think of it like having an independent inspector when buying a house.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Will the consultation be a gemology lecture?
+      </div>
+      <div class="admae-faq-a">
+        <p>Not at all. Ali's <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">consultations</a> start with your story, not a textbook. She'll ask about who you're designing for, what matters to you, and what you're envisioning. The gemological expertise shows up naturally as she helps you make decisions about stones and materials. She explains tradeoffs clearly so you feel confident, not overwhelmed.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can a GIA Graduate Gemologist save me money?
+      </div>
+      <div class="admae-faq-a">
+        <p>Often, yes. Ali regularly helps clients redirect their budget by recommending slightly different stone characteristics that look identical to the naked eye but cost significantly less. She also catches overpriced or misrepresented stones during sourcing. Her loyalty is to you, not to any vendor or inventory. Read more about <a href="/blog/how-much-does-a-custom-engagement-ring-cost" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">what custom engagement rings actually cost</a> and our approach to <a href="/custom-jewelry-pricing-information" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">transparent pricing</a>.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Does Ali do appraisals?
+      </div>
+      <div class="admae-faq-a">
+        <p>Ali provides appraisals for pieces she creates. If you need an independent appraisal for insurance or other purposes on a piece you didn't purchase through us, she can point you in the right direction. Every custom piece from A. D'Mae Diamonds comes with an appraisal included in your completion package.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Work With a GIA Graduate Gemologist</h2>
+    <p>
+      Book a free consultation with Alexandria. Whether you're starting a <a href="/custom-engagement-rings-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">custom engagement ring</a>, designing <a href="/custom-wedding-bands-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">wedding bands</a>, or <a href="/heirloom-jewelry-redesign-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">redesigning an heirloom piece</a>, you'll have a trained gemologist and experienced designer guiding every decision.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">Third-Generation Jeweler</span>
+      <span class="admae-trust-item">5.0 Stars on Google</span>
+      <span class="admae-trust-item">West Los Angeles</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "description": "Custom jewelry design by Alexandria Necker, a GIA Graduate Gemologist and third-generation jeweler in Los Angeles. Specializing in custom engagement rings, wedding bands, and fine jewelry.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1832 S. Barrington Ave",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90025"
+  },
+  "telephone": "+1-424-359-9009",
+  "priceRange": "$$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "62"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Alexandria Necker",
+    "jobTitle": "GIA Graduate Gemologist, Jewelry Designer",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Graduate Gemologist",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Gemological Institute of America"
+      }
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a GIA Graduate Gemologist and a regular jeweler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A GIA Graduate Gemologist has completed the most rigorous gemological education program in the world. The majority of working jewelers have not completed this training. A GG can evaluate stones with precision that goes beyond grading reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to work with a gemologist to buy an engagement ring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You don't need to, but it protects you. A gemologist can verify stones match what's advertised, evaluate whether you're getting genuine value, and help you avoid overpaying for characteristics that won't matter to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a GIA Graduate Gemologist save me money on an engagement ring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, yes. Alexandria regularly helps clients redirect their budget by recommending stone characteristics that look identical to the naked eye but cost significantly less, and by catching overpriced or misrepresented stones during sourcing."
+      }
+    }
+  ]
+}
+</script>

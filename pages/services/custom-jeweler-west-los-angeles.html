@@ -1,0 +1,296 @@
+<!--
+  A. D'Mae Diamonds - Custom Jeweler West Los Angeles & Brentwood
+  Service Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /custom-jeweler-west-los-angeles
+  2. SEO Title: Custom Jeweler West LA & Brentwood | A. D'Mae Diamonds
+  3. SEO Description: Looking for a custom jeweler in West Los Angeles? Alexandria is a GIA Graduate Gemologist based in West LA, designing custom engagement rings, wedding bands, and fine jewelry by appointment. Serving Brentwood, Westwood, Santa Monica, and Beverly Hills adjacent. Free consultation.
+  4. Add to "Services" nav folder
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: homepage, about, engagement rings, wedding bands, GIA gemologist page
+  8. NOTE: Do NOT describe manufacturing as LA-based. Ali is LA-based. Manufacturing partners are nationwide.
+-->
+
+<style>
+  .admae-service-page { max-width: 900px; margin: 0 auto; padding: 0px 24px 80px; font-family: inherit; color: #f0ece4; line-height: 1.7; background-color: transparent; }
+  .admae-service-page * { box-sizing: border-box; }
+  .admae-hero { text-align: center; margin-bottom: 72px; }
+  .admae-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; margin: 0 0 20px; color: #fff; }
+  .admae-hero h1 em { font-style: italic; color: #d4af37; }
+  .admae-hero .hero-sub { font-size: 1.1rem; font-style: italic; color: #c4bfb4; max-width: 640px; margin: 0 auto 36px; line-height: 1.6; }
+  .admae-cta { display: inline-block; padding: 20px 48px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.3s ease, color 0.3s ease; border-radius: 2px; }
+  .admae-cta:hover { background: #d4af37; color: #111; }
+  .admae-cta-filled { background: #d4af37; color: #111; border-color: #d4af37; font-weight: 700; }
+  .admae-cta-filled:hover { background: #c9a42e; border-color: #c9a42e; }
+  .admae-divider { width: 60px; height: 1px; background: #d4af37; margin: 56px auto; border: none; }
+  .admae-service-page h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 400; text-align: center; margin: 0 0 16px; color: #fff; letter-spacing: 0.01em; }
+  .admae-section-intro { text-align: center; color: #c4bfb4; max-width: 640px; margin: 0 auto 48px; font-size: 1.05rem; }
+  .admae-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 16px; }
+  .admae-why-card { border: 1px solid rgba(212, 175, 55, 0.2); padding: 32px 28px; border-radius: 3px; background: rgba(255, 255, 255, 0.02); }
+  .admae-why-card h3 { font-size: 1.1rem; font-weight: 600; color: #d4af37; margin: 0 0 12px; letter-spacing: 0.02em; }
+  .admae-why-card p { margin: 0; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; }
+  .admae-prose { max-width: 700px; margin: 0 auto; }
+  .admae-prose p { color: #c4bfb4; font-size: 0.98rem; line-height: 1.75; margin: 0 0 20px; }
+  .admae-prose strong { color: #f0ece4; font-weight: 600; }
+  .admae-highlight-box { border: 1px solid rgba(212, 175, 55, 0.25); background: rgba(212, 175, 55, 0.04); padding: 36px 32px; border-radius: 3px; margin: 48px 0; text-align: center; }
+  .admae-highlight-box h3 { font-size: 1.2rem; font-weight: 400; color: #fff; margin: 0 0 12px; }
+  .admae-highlight-box p { color: #c4bfb4; margin: 0 auto; max-width: 600px; font-size: 0.95rem; line-height: 1.65; }
+
+  /* Services Grid */
+  .admae-services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px; }
+  .admae-service-card { border: 1px solid rgba(212, 175, 55, 0.2); padding: 28px 24px; border-radius: 3px; background: rgba(255, 255, 255, 0.02); }
+  .admae-service-card h3 { font-size: 1.05rem; font-weight: 600; color: #fff; margin: 0 0 10px; }
+  .admae-service-card p { margin: 0 0 14px; color: #c4bfb4; font-size: 0.9rem; line-height: 1.6; }
+  .admae-service-card a { color: #d4af37; text-decoration: none; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 2px; }
+
+  .admae-testimonial { border-left: 2px solid #d4af37; padding-left: 28px; margin-bottom: 40px; }
+  .admae-testimonial blockquote { margin: 0 0 12px; font-style: italic; color: #ddd; font-size: 1rem; line-height: 1.7; }
+  .admae-testimonial cite { color: #999; font-size: 0.85rem; font-style: normal; letter-spacing: 0.03em; }
+
+  .admae-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0; }
+  .admae-faq-q { padding: 20px 0; font-size: 1rem; font-weight: 600; color: #f0ece4; cursor: pointer; position: relative; padding-right: 32px; }
+  .admae-faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: #d4af37; font-weight: 300; }
+  .admae-faq-item.open .admae-faq-q::after { content: '-'; }
+  .admae-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .admae-faq-item.open .admae-faq-a { max-height: 500px; }
+  .admae-faq-a p { padding: 0 0 20px; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; margin: 0; }
+
+  .admae-final-cta { text-align: center; padding: 20px 0; }
+  .admae-final-cta h2 { margin-bottom: 16px; }
+  .admae-final-cta p { color: #c4bfb4; max-width: 560px; margin: 0 auto 32px; font-size: 1rem; line-height: 1.7; }
+  .admae-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+  .admae-trust-item { font-size: 0.8rem; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 680px) {
+    .admae-service-page { padding-left: 18px; padding-right: 18px; padding-bottom: 60px; }
+    .admae-why-grid, .admae-services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .admae-testimonial { padding-left: 20px; }
+    .admae-trust-signals { gap: 20px; }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Your Custom Jeweler<br>in <em>West Los Angeles</em></h1>
+    <p class="hero-sub">
+      A. D'Mae Diamonds is a private, appointment-only jewelry studio in West LA. Alexandria designs custom engagement rings, wedding bands, and fine jewelry one-on-one. No showroom. No pressure. Just a relaxed conversation about what you want to create.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- LOCAL CONTEXT -->
+  <section>
+    <h2>A Different Kind of Jeweler in Your Neighborhood</h2>
+
+    <div class="admae-prose">
+      <p>If you live in Westwood, Brentwood, Santa Monica, or anywhere on the west side, you probably know the feeling of walking into a jewelry store and immediately being approached by someone whose job it is to sell you what's behind the counter. The music is playing, the cases are gleaming, and within five minutes you're standing over a display feeling like you're on a used car lot.</p>
+
+      <p>Ali's studio is the opposite of that. It's an appointment-only space in West LA where you sit down with a coffee or a cocktail and just talk. About who you're designing for, what matters to you, what your budget looks like, and what would make this piece feel like it was always meant to exist. There's no inventory to push. No sales floor. No standing at a counter for two hours.</p>
+
+      <p><strong>Ali is a <a href="/gia-gemologist-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">GIA Graduate Gemologist</a> and a third-generation jeweler</strong> who designs every piece from scratch based on your conversation. She <a href="/diamond-sourcing-verification-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">sources stones globally</a>, works with trusted artisan partners for production, and personally oversees every detail from first sketch to final delivery.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY LOCAL MATTERS -->
+  <section>
+    <h2>Why Clients Love Working With a Local Custom Jeweler</h2>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Meet In Person, In Your Neighborhood</h3>
+        <p>Ali's studio is on Barrington Ave in West LA. Consultations happen in person or virtually, whatever works for your schedule. No fighting for parking at a mall. No navigating the DTLA jewelry district. Just a comfortable, private meeting close to home.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Appointment-Only Privacy</h3>
+        <p>You're never sharing your consultation with other customers. There's no one browsing behind you while you discuss your budget. Every meeting is private, unhurried, and focused entirely on you. Most <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">consultations</a> run 90 minutes because Ali believes this decision deserves real time.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>LA Culture Meets Personal Design</h3>
+        <p>People on the west side get it. Jewelry is personal expression, not just an obligation. Whether you want something bold and modern or understated and classic, Ali designs for the person, not the trend. She's designed for doctors, tech professionals, creatives, and couples who just want something that feels like them.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>A Relationship, Not a Transaction</h3>
+        <p>Many of Ali's clients become repeat customers and friends. When you work with a local jeweler who knows your taste, your story, and your preferences, every future piece builds on that relationship. Need a gift? A wedding band? An anniversary upgrade? Ali already knows you.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- SERVICES -->
+  <section>
+    <h2>What We Design</h2>
+    <p class="admae-section-intro">
+      Every piece starts with a conversation and ends with something that didn't exist before you walked in.
+    </p>
+
+    <div class="admae-services-grid">
+      <div class="admae-service-card">
+        <h3>Custom Engagement Rings</h3>
+        <p>Designed from scratch around your partner's style, personality, and story. Ali sources the stone, designs the setting, and guides you through every decision. Looking for something truly one-of-a-kind? Explore our <a href="/bespoke-engagement-ring-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">bespoke engagement rings</a>.</p>
+        <a href="/custom-engagement-rings-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Wedding Bands</h3>
+        <p>His, hers, or both designed together. Custom metals, finishes, engravings, and hidden details that make each band irreplaceable.</p>
+        <a href="/custom-wedding-bands-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Heirloom Redesign</h3>
+        <p>Give your family jewelry a second life. Ali specializes in transforming inherited pieces into something you'll wear every day while honoring their history.</p>
+        <a href="/heirloom-jewelry-redesign-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Custom Fine Jewelry</h3>
+        <p>Necklaces, earrings, bracelets, and gifts designed for any occasion. Whether it's an anniversary, a milestone, or something just for you.</p>
+        <a href="/schedule-an-appointment">Start designing</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>Serving West LA and Beyond</h3>
+    <p>Ali's studio is in West Los Angeles, and she sees clients from Brentwood, Westwood, Santa Monica, Beverly Hills, Pacific Palisades, Mar Vista, Culver City, and across greater LA. She also works with clients nationwide through virtual consultations.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Local Clients Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"If you're in Los Angeles and want custom jewelry that tells your story, Alexandria is THE one to trust. We're so happy we found her!"</blockquote>
+      <cite>- Chris Vaughn</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"She asked about my mom's style and our relationship, then created a piece that brought tears to my mom's eyes. The quality is amazing, and Ali's transparency about the materials and process made me feel so confident. A. D'Mae is the top choice for personalized jewelry in Los Angeles."</blockquote>
+      <cite>- Austin Carbo</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"As someone new to buying jewelry, I was intimidated by the prospect of visiting a high-end jeweler. Alexandria was the complete opposite of stuffy! She made me feel so comfortable with her down to earth vibe."</blockquote>
+      <cite>- Michael Walker</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria deserves more than 5 stars for her helpful service, knowledge, and guidance. After many conversations with other jewelers and jewelry companies like Brilliant Earth, we were feeling frustrated and lost. Alexandria was recommended by a friend and we are incredibly grateful."</blockquote>
+      <cite>- Tiffany J. Whalen (Read: <a href="/blog/why-i-left-brilliant-earth" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Why Ali left Brilliant Earth</a>)</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About Working With a Local Custom Jeweler</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Where exactly is your studio?
+      </div>
+      <div class="admae-faq-a">
+        <p>Ali's studio is located on Barrington Ave in West Los Angeles (90025), close to Brentwood and Westwood. All consultations are by appointment only, ensuring a private and relaxed experience. There is convenient street parking available.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do I need to come in person?
+      </div>
+      <div class="admae-faq-a">
+        <p>No. Ali works with clients both in person and virtually. Many couples in the LA area prefer the in-person experience, but the virtual consultation process is equally thorough. Several of Ali's best projects have been designed entirely remotely.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How is this different from going to a jeweler in the DTLA jewelry district?
+      </div>
+      <div class="admae-faq-a">
+        <p>The jewelry district is great if you know exactly what you want and you're comfortable evaluating stones and settings on your own. Ali's approach is different: she sits down with you, learns about you, and handles the entire process from design through sourcing through production. You're not navigating a wholesale market alone. You have a personal designer and gemologist guiding every step.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What does a consultation cost?
+      </div>
+      <div class="admae-faq-a">
+        <p>Consultations are always free, and there's no obligation to move forward. Ali wants you to feel comfortable and confident before committing to anything. Most consultations run about 90 minutes.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much does custom jewelry cost?
+      </div>
+      <div class="admae-faq-a">
+        <p>Custom engagement rings start at $3,000 with no ceiling. The cost depends on your stone selection, metal choice, and design complexity. Ali is transparent about pricing throughout the process and will give you a clear estimate after your consultation. You can learn more on our <a href="/custom-jewelry-pricing-information" style="color: #d4af37;">pricing page</a> or read <a href="/blog/how-much-does-a-custom-engagement-ring-cost" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">how much a custom engagement ring actually costs</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Ready to Meet Your Jeweler?</h2>
+    <p>
+      Book a free consultation with <a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Alexandria</a>. In person at her West LA studio or virtually from anywhere. No pressure, no sales tactics. Just a conversation about what you want to create.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">West Los Angeles Studio</span>
+      <span class="admae-trust-item">5.0 Stars on Google</span>
+      <span class="admae-trust-item">By Appointment Only</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "description": "Custom jewelry design studio in West Los Angeles. Alexandria, a GIA Graduate Gemologist, designs custom engagement rings, wedding bands, and fine jewelry by appointment only. Serving Brentwood, Westwood, Santa Monica, and Beverly Hills.",
+  "address": { "@type": "PostalAddress", "streetAddress": "1832 S. Barrington Ave", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025" },
+  "geo": { "@type": "GeoCoordinates", "latitude": "34.0369", "longitude": "-118.4499" },
+  "telephone": "+1-424-359-9009",
+  "priceRange": "$$$$",
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "62" },
+  "areaServed": [
+    { "@type": "Place", "name": "West Los Angeles" },
+    { "@type": "Place", "name": "Brentwood" },
+    { "@type": "Place", "name": "Westwood" },
+    { "@type": "Place", "name": "Santa Monica" },
+    { "@type": "Place", "name": "Beverly Hills" },
+    { "@type": "Place", "name": "Pacific Palisades" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Where is A. D'Mae Diamonds located?", "acceptedAnswer": { "@type": "Answer", "text": "A. D'Mae Diamonds is located on Barrington Ave in West Los Angeles (90025), close to Brentwood and Westwood. All consultations are by appointment only." } },
+    { "@type": "Question", "name": "How much does custom jewelry cost at A. D'Mae Diamonds?", "acceptedAnswer": { "@type": "Answer", "text": "Custom engagement rings start at $3,000 with no ceiling. Cost depends on stone selection, metal choice, and design complexity. Consultations are always free." } },
+    { "@type": "Question", "name": "How is a custom jeweler different from the DTLA jewelry district?", "acceptedAnswer": { "@type": "Answer", "text": "Alexandria handles the entire process: design, stone sourcing, production oversight, and delivery. You have a personal designer and GIA Graduate Gemologist guiding every step rather than navigating a wholesale market alone." } }
+  ]
+}
+</script>

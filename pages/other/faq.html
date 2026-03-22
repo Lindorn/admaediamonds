@@ -1,0 +1,479 @@
+<!--
+  A. D'Mae Diamonds - Frequently Asked Questions
+  FAQ Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /faq (KEEP EXISTING)
+  2. SEO Title: Custom Jewelry FAQ | A. D'Mae Diamonds LA
+  3. SEO Description: Get answers about custom jewelry pricing, timelines, diamond sourcing, the design process, and what to expect working with a GIA Graduate Gemologist in Los Angeles.
+  4. Keep in main nav as "FAQ"
+  5. Padding set to 340px (same as service pages)
+  6. After updating: push re-index in Google Search Console
+  7. GIA COMPLIANCE: "GIA Graduate Gemologist" or "GIA GG" ONLY. Never "GIA certified."
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* FAQ */
+  .admae-faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 0;
+  }
+
+  .admae-faq-q {
+    padding: 20px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0ece4;
+    cursor: pointer;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .admae-faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #d4af37;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-q::after {
+    content: '-';
+  }
+
+  .admae-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-a {
+    max-height: 500px;
+  }
+
+  .admae-faq-a p {
+    padding: 0 0 20px;
+    color: #c4bfb4;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Highlight Box */
+  .admae-highlight-box {
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: rgba(212, 175, 55, 0.04);
+    padding: 36px 32px;
+    border-radius: 3px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .admae-highlight-box h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+
+  .admae-highlight-box p {
+    color: #c4bfb4;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* Final CTA */
+  .admae-final-cta {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 16px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 560px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Trust Signals */
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 60px;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Frequently Asked <em>Questions</em></h1>
+    <p class="hero-sub">
+      Everything you need to know about working with A. D'Mae Diamonds. If your question isn't here, <a href="/schedule-an-appointment" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">book a free consultation</a> or email <a href="mailto:alexandria@admaediamonds.com" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">alexandria@admaediamonds.com</a>.
+    </p>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WORKING WITH ALI -->
+  <section>
+    <h2>Working With Ali</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Why work with a private jeweler instead of a store?
+      </div>
+      <div class="admae-faq-a">
+        <p><a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Alexandria</a> is a <a href="/gia-gemologist-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">GIA Graduate Gemologist</a> and third-generation jeweler who works with you one-on-one. She takes the time to understand what you're looking for, guides you through every decision, and designs your piece from scratch. There's no inventory to push, no showroom pressure, and no sales team. When you work with Ali, she's your personal jeweler, and that relationship doesn't end after you take your piece home.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Is working with a private jeweler expensive?
+      </div>
+      <div class="admae-faq-a">
+        <p>Actually, it can save you money. Without the overhead costs of a retail storefront, display inventory, and a sales staff, Ali passes those savings directly to you. There's no extra fee for custom design. She'll work within your budget to make sure you get a high-quality piece that represents the person it's made for. You can learn more about our approach to <a href="/custom-jewelry-pricing-information" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">transparent pricing</a> or read about <a href="/blog/how-much-does-a-custom-engagement-ring-cost" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">what custom engagement rings actually cost</a>.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What is the consultation like?
+      </div>
+      <div class="admae-faq-a">
+        <p>Your <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">free 90-minute consultation</a> is a relaxed conversation, not a sales pitch. Ali will ask about who you're designing for, what matters to you, what your style preferences are, and what your budget looks like. She'll share ideas, show examples, and help you start forming a vision. You can come as a couple or solo. In person at the West LA studio or virtually. There's no obligation to move forward.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you work with clients outside of Los Angeles?
+      </div>
+      <div class="admae-faq-a">
+        <p>Absolutely. Ali works with clients from across the country through virtual consultations via FaceTime, Zoom, or Google Meet. The process is the same: a thorough conversation, sketches, curated stone options with photos and videos, CAD renders for approval, and your finished piece shipped with insured delivery in beautiful packaging. Some of her best projects have been designed entirely remotely.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- DESIGN & PROCESS -->
+  <section>
+    <h2>Design &amp; Process</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        I'm new to jewelry shopping. Can you help?
+      </div>
+      <div class="admae-faq-a">
+        <p>This is exactly what Ali is here for. <a href="/custom-engagement-rings-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Searching for an engagement ring</a> is overwhelming, especially with the amount of information online. Ali guides you through the process, asks the right questions, shows curated options, and educates you along the way so you feel confident in every decision. You don't need to know anything about diamonds or jewelry coming in.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does it take to create a custom piece?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most custom jewelry takes about 6-8 weeks from approved design to finished piece. <a href="/bespoke-engagement-ring-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Bespoke engagement rings</a> with complex designs or rare stones can take 8-10 weeks. Rush orders can often be accommodated depending on the design. Ali will give you an honest timeline upfront and keep you updated throughout. We recommend booking your consultation at least 3 months before any deadline. You can see the full <a href="/customjewelrydesignprocess" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">step-by-step design process here</a>.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What kinds of gemstones do you work with?
+      </div>
+      <div class="admae-faq-a">
+        <p>Ali creates jewelry with all fine gemstones: natural diamonds, lab-grown diamonds, sapphires, rubies, emeralds, opals, moissanite, and more. She <a href="/diamond-sourcing-verification-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">sources stones globally</a> to find the best value for your specific needs. If you have a particular gemstone in mind, Ali can find it. You can also read our guide on <a href="/blog/lab-grown-vs-natural-diamonds" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">lab-grown vs. natural diamonds</a> if you're exploring that decision.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can I use my own stone or redesign a family piece?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. Ali specializes in <a href="/heirloom-jewelry-redesign-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">heirloom jewelry redesign</a>, transforming inherited pieces into something you'll wear every day while honoring their history. If you have a stone from a family ring, an old piece you never wear, or a diamond you purchased elsewhere, Ali can incorporate it into a new custom design.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can we design both wedding bands in one consultation?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes, and most couples do exactly that. Your 90-minute consultation gives plenty of time to discuss both <a href="/custom-wedding-bands-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">wedding bands</a>, explore how they relate to each other, and start the design process for both. One meeting, two rings, one experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- PRACTICAL DETAILS -->
+  <section>
+    <h2>Practical Details</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much does custom jewelry cost?
+      </div>
+      <div class="admae-faq-a">
+        <p>Custom engagement rings start at $3,000 with no ceiling. The cost depends on your stone selection, metal choice, and design complexity. Wedding bands, necklaces, earrings, and other pieces vary based on the same factors. Ali is fully transparent about pricing throughout the process and will give you a detailed estimate after your consultation so there are no surprises. Your consultation is always free. Visit our <a href="/custom-jewelry-pricing-information" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">pricing page</a> for more detail.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How do I figure out my ring size?
+      </div>
+      <div class="admae-faq-a">
+        <p>The best way to determine your ring size is to <a href="/schedule-an-appointment" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">visit us in person</a> at the West LA studio. If you're not in Los Angeles, we recommend visiting a local jeweler to have sizing done professionally. As a backup, findmyringsize.com offers a manual guide, though professional sizing is always more accurate. If you're designing a surprise engagement ring, Ali has strategies for getting an accurate size without giving anything away.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Should I insure my jewelry?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. We recommend insuring your custom jewelry immediately upon receiving it. Every custom piece from A. D'Mae Diamonds comes with an appraisal that can be submitted for insurance coverage. We recommend Jewelers Mutual or BriteCo for the depth and quality of their coverage. Once a piece has been delivered, A. D'Mae Diamonds no longer provides insurance coverage, so having your own policy in place is important. Ask your insurance agent how often you should have your jewelry reappraised, and contact us anytime for updated appraisals.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What payment methods do you accept?
+      </div>
+      <div class="admae-faq-a">
+        <p>We accept all major debit and credit cards, cash, bank transfers, and PayPal. Through PayPal, you can access 6 months of interest-free financing or use Pay in 4 (which splits your purchase into 4 payments, with the first due at the time of transaction and 3 subsequent payments every 2 weeks). We also accept A. D'Mae Diamonds gift cards.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Where is the studio located?
+      </div>
+      <div class="admae-faq-a">
+        <p>A. D'Mae Diamonds is located at 1832 S. Barrington Ave in <a href="/custom-jeweler-west-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">West Los Angeles</a> (90025), close to Brentwood and Westwood. All consultations are by appointment only, ensuring a private and relaxed experience. Street parking is available. Ali also maintains a virtual appointment option for clients in Denver and nationwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Still Have Questions?</h2>
+    <p>
+      Book a free consultation with <a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Alexandria</a> and ask in person. Or email <a href="mailto:alexandria@admaediamonds.com" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">alexandria@admaediamonds.com</a> anytime.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">5.0 Stars on Google</span>
+      <span class="admae-trust-item">West Los Angeles</span>
+      <span class="admae-trust-item">By Appointment Only</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why work with a private jeweler instead of a store?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Alexandria is a GIA Graduate Gemologist and third-generation jeweler who works one-on-one with clients. No inventory to push, no showroom pressure. She designs every piece from scratch based on your conversation." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is working with a private jeweler expensive?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It can actually save you money. Without retail storefront overhead, display inventory, and sales staff costs, savings are passed directly to you. There is no extra fee for custom design." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does custom jewelry cost at A. D'Mae Diamonds?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Custom engagement rings start at $3,000 with no ceiling. Cost depends on stone selection, metal choice, and design complexity. Consultations are always free with no obligation." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to create a custom piece of jewelry?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most custom jewelry takes 6-8 weeks from approved design to finished piece. Bespoke pieces with complex designs may take 8-10 weeks. Rush orders can often be accommodated." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with clients outside of Los Angeles?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alexandria works with clients nationwide through virtual consultations via FaceTime, Zoom, or Google Meet. The process is identical to in-person with insured delivery." }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of gemstones does A. D'Mae Diamonds work with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All fine gemstones including natural diamonds, lab-grown diamonds, sapphires, rubies, emeralds, opals, moissanite, and more. Stones are sourced globally to find the best value." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own stone or redesign a family piece?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alexandria specializes in heirloom jewelry redesign, transforming inherited pieces into something new while honoring their history." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I figure out my ring size?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The best method is professional sizing in person at the West LA studio or a local jeweler. For surprise proposals, Alexandria has strategies for getting accurate sizing discreetly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I insure my custom jewelry?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every custom piece from A. D'Mae Diamonds comes with an appraisal for insurance purposes. Jewelers Mutual and BriteCo are recommended for coverage quality." }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods does A. D'Mae Diamonds accept?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All major debit and credit cards, cash, bank transfers, PayPal (with 6-month interest-free financing or Pay in 4 option), and A. D'Mae Diamonds gift cards." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is A. D'Mae Diamonds located?",
+      "acceptedAnswer": { "@type": "Answer", "text": "1832 S. Barrington Ave in West Los Angeles (90025), near Brentwood and Westwood. By appointment only. Virtual consultations also available for clients nationwide." }
+    }
+  ]
+}
+</script>

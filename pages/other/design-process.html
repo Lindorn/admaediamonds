@@ -1,0 +1,605 @@
+<!--
+  A. D'Mae Diamonds - How Custom Jewelry Works
+  Design Process Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /customjewelrydesignprocess (KEEP EXISTING - do not change, this page has SEO equity)
+  2. SEO Title: How Custom Jewelry Works | A. D'Mae Diamonds LA
+  3. SEO Description: See the five-step custom jewelry design process at A. D'Mae Diamonds in Los Angeles. From first sketch to final reveal. Free 90-minute consultation with a GIA Graduate Gemologist.
+  4. Keep in main nav as "Design Process"
+  5. Padding set to 340px (same as service pages)
+  6. After updating: push re-index in Google Search Console
+  7. GIA COMPLIANCE: "GIA Graduate Gemologist" or "GIA GG" ONLY. Never "GIA certified."
+  8. NOTE: This replaces old native Squarespace sections with a single code block matching the service page template.
+
+  IMAGES:
+  - Step 2: Black Diamond Marquise Ring Sketch (already on Squarespace CDN)
+  - Step 3: Black Diamond Marquise stone selection (already on Squarespace CDN)
+  - Step 4: Black Diamond Marquise CAD render (already on Squarespace CDN)
+  - Step 5: Casting in progress (already on Squarespace CDN)
+  - Reveal: Finished Black Diamond Marquise ring (already on Squarespace CDN)
+  - Step 1: PLACEHOLDER - needs consultation photo from Ali's portfolio
+-->
+
+<style>
+  .admae-service-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 24px 80px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+    background-color: transparent;
+  }
+
+  .admae-service-page * {
+    box-sizing: border-box;
+  }
+
+  .admae-hero {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .admae-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  .admae-hero h1 em {
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .admae-hero .hero-sub {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  .admae-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  .admae-service-page h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-section-intro {
+    text-align: center;
+    color: #c4bfb4;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* Why Custom Cards */
+  .admae-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+
+  .admae-why-card {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 32px 28px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .admae-why-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .admae-why-card p {
+    margin: 0;
+    color: #c4bfb4;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* Process Steps with Images */
+  .admae-process-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 0;
+    align-items: center;
+  }
+
+  .admae-process-visual.reverse {
+    direction: rtl;
+  }
+
+  .admae-process-visual.reverse > * {
+    direction: ltr;
+  }
+
+  .admae-process-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+  }
+
+  .admae-process-label {
+    font-size: 0.8rem;
+    color: #d4af37;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .admae-process-visual h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 16px;
+  }
+
+  .admae-process-visual p {
+    margin: 0 0 16px;
+    color: #c4bfb4;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .admae-process-visual p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Highlight Box */
+  .admae-highlight-box {
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: rgba(212, 175, 55, 0.04);
+    padding: 36px 32px;
+    border-radius: 3px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .admae-highlight-box h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+
+  .admae-highlight-box p {
+    color: #c4bfb4;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* FAQ */
+  .admae-faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 0;
+  }
+
+  .admae-faq-q {
+    padding: 20px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0ece4;
+    cursor: pointer;
+    position: relative;
+    padding-right: 32px;
+  }
+
+  .admae-faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #d4af37;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-q::after {
+    content: '-';
+  }
+
+  .admae-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .admae-faq-item.open .admae-faq-a {
+    max-height: 500px;
+  }
+
+  .admae-faq-a p {
+    padding: 0 0 20px;
+    color: #c4bfb4;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Final CTA */
+  .admae-final-cta {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .admae-final-cta h2 {
+    margin-bottom: 16px;
+  }
+
+  .admae-final-cta p {
+    color: #c4bfb4;
+    max-width: 560px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Trust Signals */
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .admae-service-page {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-bottom: 60px;
+    }
+
+    .admae-why-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .admae-process-visual,
+    .admae-process-visual.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+      gap: 24px;
+    }
+
+    .admae-process-visual.reverse > * {
+      direction: ltr;
+    }
+
+    .admae-trust-signals {
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>How Custom Jewelry Works<br>at <em>A. D'Mae Diamonds</em></h1>
+    <p class="hero-sub">
+      Whether you're designing from scratch or <a href="/heirloom-jewelry-redesign-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">reimagining a family heirloom</a>, <a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Alexandria</a> works with you one-on-one to create something meaningful, built to last, and true to who you are.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY THIS PROCESS -->
+  <section>
+    <h2>Why the Process Matters</h2>
+    <p class="admae-section-intro">
+      Custom jewelry is personal. The way it's made should be personal too. Ali doesn't start with templates or pre-made settings. She starts by listening. Every piece follows the same five steps, but no two pieces end up the same.
+    </p>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>Nothing Exists Until You Walk In</h3>
+        <p>There's no inventory. No catalog to choose from. Ali designs your piece from scratch based on your conversation, your style, and your story. That's not a limitation. That's the whole point.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>You're Involved at Every Step</h3>
+        <p>You'll see sketches, approve stones, review a photorealistic 3D model, and give feedback before anything is made. You're never in the dark about what your piece looks like or what it costs.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>No Sales Pressure, Ever</h3>
+        <p>Your consultation is free. There's no obligation to move forward. Ali will give you honest guidance and a clear estimate. If it's not the right fit, she'll tell you. She'd rather earn your trust than a transaction.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>One Jeweler, Start to Finish</h3>
+        <p>Ali is your single point of contact from design through delivery. She's a <a href="/gia-gemologist-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">GIA Graduate Gemologist</a> and third-generation jeweler who personally oversees every detail of your piece.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- STEP 1: CONSULTATION -->
+  <section>
+    <div class="admae-process-visual">
+      <div>
+        <p class="admae-process-label">Step 1</p>
+        <h3>A Conversation, Not a Sales Pitch</h3>
+        <p>Everything starts with a free <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">90-minute design consultation</a>. Ali gets to know who the piece is for, what matters most to you, and what kind of beauty speaks your language. She'll ask about your partner, your story, your style, and your budget.</p>
+        <p>In person at the West LA studio or virtually from anywhere.</p>
+      </div>
+      <div>
+        <!-- PLACEHOLDER: Replace with consultation photo from Ali's portfolio -->
+        <!-- <img src="CONSULTATION-IMAGE-URL" alt="Free design consultation with Alexandria at A. D'Mae Diamonds in Los Angeles"> -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- STEP 2: SKETCHES -->
+  <section>
+    <div class="admae-process-visual reverse">
+      <div>
+        <p class="admae-process-label">Step 2</p>
+        <h3>From Inspiration to Original Sketches</h3>
+        <p>Ali brings your ideas to life with 2-3 initial sketches based on everything you've shared. These aren't modifications of templates. They're original designs, created from scratch for one person. You give feedback, she iterates, and together you shape the design until it feels right.</p>
+        <p>Most clients are excited by the first round.</p>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/65b227e4-5b16-4636-849e-9b8680c8a985/Black+Diamond+Marquise+Ring+Sketch.jpg" alt="Custom sketch of black marquise-cut diamond ring designed by Alexandria of A. D'Mae Diamonds">
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- STEP 3: STONE SELECTION -->
+  <section>
+    <div class="admae-process-visual">
+      <div>
+        <p class="admae-process-label">Step 3</p>
+        <h3>Selecting Your Perfect Stone</h3>
+        <p>Each stone is <a href="/diamond-sourcing-verification-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">hand-selected from the global supply</a> with your design, desired quality, and budget in mind. Ali searches across wholesale databases and trusted vendor networks to find options that represent the best possible value for your specific needs.</p>
+        <p>She'll present curated choices with photos, videos, and honest comparisons. We'll never show you stones outside your price range or below our quality standards.</p>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/b1041327-1227-40a6-9385-e53c1ec750c7/Stone+Selection+at+A.+D%27Mae+Diamonds+Black+Diamond+Marquise.jpg" alt="2.74 carat black diamond marquise hand-selected by Alexandria of A. D'Mae Diamonds">
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- STEP 4: CAD -->
+  <section>
+    <div class="admae-process-visual reverse">
+      <div>
+        <p class="admae-process-label">Step 4</p>
+        <h3>See It Come to Life in 3D</h3>
+        <p>Your design is precisely engineered into a photorealistic 3D CAD model. This is your first glimpse of how the final piece will look before anything is made. Ali walks you through the render, explains proportions and details, and makes any final adjustments.</p>
+        <p>Once you approve, the ring goes into production.</p>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/ad1aed09-bb0d-4c75-a7cc-950a0068225c/Black+Diamond+Marquise+Ring+Cad+Images+A.+D%27Mae+Diamonds.PNG" alt="3D CAD model of custom black diamond marquise ring designed by A. D'Mae Diamonds">
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- STEP 5: PRODUCTION -->
+  <section>
+    <div class="admae-process-visual">
+      <div>
+        <p class="admae-process-label">Step 5</p>
+        <h3>From Model to Metal</h3>
+        <p>Once the CAD is approved, the 3D model goes to metal with a casting of your ring. From there, stones are hand-set, design details are refined, and the piece is polished to perfection by trusted artisan partners under Ali's personal oversight.</p>
+        <p>Most custom pieces take 6-8 weeks from approved design to finished piece.</p>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/c541ae1b-19b0-49be-945c-42ca8e2551ed/a1c3cafa-e896-4e68-9812-69fc282a0ca0.png" alt="Casting and hand-setting of custom ring in progress at A. D'Mae Diamonds">
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- THE REVEAL -->
+  <section>
+    <div class="admae-process-visual reverse">
+      <div>
+        <p class="admae-process-label">The Big Reveal</p>
+        <h3>Your Piece, Ready to Wear</h3>
+        <p>Once your piece is ready, we arrange a pickup at the West LA studio or insured delivery anywhere in the country. Your jewelry arrives with an appraisal, a care guide, and a completion package designed to make this moment feel as special as the piece itself.</p>
+        <p>From this point forward, Ali is still your jeweler. Need a cleaning, a resize, or your next piece? She already knows your style and your story.</p>
+      </div>
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/22c47b30-35dd-4596-bc09-4543ff500430/A.+D%27Mae+Diamonds+Black+Diamond+Marquise+Ring.jpg" alt="Finished custom black diamond marquise ring by A. D'Mae Diamonds">
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>Every Piece Follows This Process</h3>
+    <p>Whether you're designing a <a href="/custom-engagement-rings-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">custom engagement ring</a>, <a href="/custom-wedding-bands-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">wedding bands</a>, a <a href="/bespoke-engagement-ring-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">fully bespoke piece</a>, or <a href="/heirloom-jewelry-redesign-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">reimagining an heirloom</a>, the journey starts the same way: a conversation about who you are and what this piece should mean. The details change. The care doesn't.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About the Process</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does the whole process take?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most custom pieces take 6-8 weeks from approved design to finished piece. <a href="/bespoke-engagement-ring-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Bespoke designs</a> with complex details or rare stones can take 8-10 weeks. Rush orders are often possible depending on the design. We recommend booking your consultation at least 3 months before any deadline.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How much does custom jewelry cost?
+      </div>
+      <div class="admae-faq-a">
+        <p>Custom engagement rings start at $3,000 with no ceiling. The cost depends on your stone selection, metal choice, and design complexity. There's no extra fee for custom design. Ali will give you a clear, detailed estimate after your consultation. Visit our <a href="/custom-jewelry-pricing-information" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">pricing page</a> for more detail, or read about <a href="/blog/how-much-does-a-custom-engagement-ring-cost" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">what custom engagement rings actually cost</a>.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you work with clients outside of Los Angeles?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. Ali works with clients from across the country through virtual consultations via FaceTime, Zoom, or Google Meet. The process is the same: a thorough conversation, sketches, curated stone options with photos and videos, CAD renders for approval, and your finished piece shipped with insured delivery.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can I use my own stone or redesign a family piece?
+      </div>
+      <div class="admae-faq-a">
+        <p>Absolutely. Ali specializes in <a href="/heirloom-jewelry-redesign-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">heirloom jewelry redesign</a>, transforming inherited pieces into something you'll wear every day while honoring their history. If you have a stone from a family ring, an old piece you never wear, or a diamond you purchased elsewhere, Ali can incorporate it into a new custom design.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        What happens after I receive my piece?
+      </div>
+      <div class="admae-faq-a">
+        <p>Ali is still your jeweler. Your piece comes with an appraisal and care guide. We recommend insuring your jewelry immediately. Need a cleaning, a resize, an updated appraisal, or your next piece? Just reach out. She already knows your style and your story.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Ready to Start Your Piece?</h2>
+    <p>
+      Book a free 90-minute design consultation with <a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Alexandria</a>. In person in West LA or virtually from anywhere. No pressure, no obligation. Just an honest conversation about what you want to create.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">5.0 Stars on Google</span>
+      <span class="admae-trust-item">West Los Angeles</span>
+      <span class="admae-trust-item">By Appointment Only</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How Custom Jewelry Works at A. D'Mae Diamonds",
+  "description": "The five-step custom jewelry design process at A. D'Mae Diamonds in Los Angeles, from initial consultation to final reveal.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Design Consultation",
+      "text": "A free 90-minute conversation where Alexandria gets to know you, your story, your style, and your budget. In person in West LA or virtually.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Original Sketches",
+      "text": "Alexandria creates 2-3 original sketches based on your conversation. You provide feedback and iterate until the design feels right.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Stone Selection",
+      "text": "Each stone is hand-selected from the global wholesale supply with your design, quality preferences, and budget in mind.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "3D CAD Rendering",
+      "text": "Your design is engineered into a photorealistic 3D model for your approval before production begins.",
+      "position": 4
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Crafting and Delivery",
+      "text": "The approved design is cast in metal, stones are hand-set, and the piece is polished and delivered with an appraisal and care package. Most pieces take 6-8 weeks.",
+      "position": 5
+    }
+  ]
+}
+</script>

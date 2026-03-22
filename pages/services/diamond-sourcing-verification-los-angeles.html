@@ -1,0 +1,296 @@
+<!--
+  A. D'Mae Diamonds - Diamond Sourcing & Verification Los Angeles
+  Service Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /diamond-sourcing-verification-los-angeles
+  2. SEO Title: Diamond Sourcing & Verification Los Angeles | A. D'Mae Diamonds
+  3. SEO Description: Alexandria, a GIA Graduate Gemologist in Los Angeles, searches the global diamond supply to find the best stone for your budget. She cross-references certifications, catches deceptive listings, and sources from networks most jewelers don't access. Free consultation.
+  4. Add to "Services" nav folder
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: homepage, engagement rings page, GIA gemologist page, lab-grown blog post, pricing page
+  8. GIA COMPLIANCE: "GIA Graduate Gemologist" or "GIA GG" ONLY. Never "GIA certified."
+-->
+
+<style>
+  .admae-service-page { max-width: 900px; margin: 0 auto; padding: 0px 24px 80px; font-family: inherit; color: #f0ece4; line-height: 1.7; background-color: transparent; }
+  .admae-service-page * { box-sizing: border-box; }
+  .admae-hero { text-align: center; margin-bottom: 72px; }
+  .admae-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; margin: 0 0 20px; color: #fff; }
+  .admae-hero h1 em { font-style: italic; color: #d4af37; }
+  .admae-hero .hero-sub { font-size: 1.1rem; font-style: italic; color: #c4bfb4; max-width: 640px; margin: 0 auto 36px; line-height: 1.6; }
+  .admae-cta { display: inline-block; padding: 20px 48px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.3s ease, color 0.3s ease; border-radius: 2px; }
+  .admae-cta:hover { background: #d4af37; color: #111; }
+  .admae-cta-filled { background: #d4af37; color: #111; border-color: #d4af37; font-weight: 700; }
+  .admae-cta-filled:hover { background: #c9a42e; border-color: #c9a42e; }
+  .admae-divider { width: 60px; height: 1px; background: #d4af37; margin: 56px auto; border: none; }
+  .admae-service-page h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 400; text-align: center; margin: 0 0 16px; color: #fff; letter-spacing: 0.01em; }
+  .admae-section-intro { text-align: center; color: #c4bfb4; max-width: 640px; margin: 0 auto 48px; font-size: 1.05rem; }
+  .admae-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 16px; }
+  .admae-why-card { border: 1px solid rgba(212, 175, 55, 0.2); padding: 32px 28px; border-radius: 3px; background: rgba(255, 255, 255, 0.02); }
+  .admae-why-card h3 { font-size: 1.1rem; font-weight: 600; color: #d4af37; margin: 0 0 12px; letter-spacing: 0.02em; }
+  .admae-why-card p { margin: 0; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; }
+  .admae-prose { max-width: 700px; margin: 0 auto; }
+  .admae-prose p { color: #c4bfb4; font-size: 0.98rem; line-height: 1.75; margin: 0 0 20px; }
+  .admae-prose strong { color: #f0ece4; font-weight: 600; }
+  .admae-highlight-box { border: 1px solid rgba(212, 175, 55, 0.25); background: rgba(212, 175, 55, 0.04); padding: 36px 32px; border-radius: 3px; margin: 48px 0; text-align: center; }
+  .admae-highlight-box h3 { font-size: 1.2rem; font-weight: 400; color: #fff; margin: 0 0 12px; }
+  .admae-highlight-box p { color: #c4bfb4; margin: 0 auto; max-width: 600px; font-size: 0.95rem; line-height: 1.65; }
+
+  .admae-step { display: flex; gap: 24px; margin-bottom: 40px; align-items: flex-start; }
+  .admae-step-number { flex-shrink: 0; width: 48px; height: 48px; border: 1px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #d4af37; font-size: 1rem; font-weight: 600; }
+  .admae-step-content h3 { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 4px 0 8px; }
+  .admae-step-content p { margin: 0; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; }
+
+  .admae-testimonial { border-left: 2px solid #d4af37; padding-left: 28px; margin-bottom: 40px; }
+  .admae-testimonial blockquote { margin: 0 0 12px; font-style: italic; color: #ddd; font-size: 1rem; line-height: 1.7; }
+  .admae-testimonial cite { color: #999; font-size: 0.85rem; font-style: normal; letter-spacing: 0.03em; }
+
+  .admae-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0; }
+  .admae-faq-q { padding: 20px 0; font-size: 1rem; font-weight: 600; color: #f0ece4; cursor: pointer; position: relative; padding-right: 32px; }
+  .admae-faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: #d4af37; font-weight: 300; }
+  .admae-faq-item.open .admae-faq-q::after { content: '-'; }
+  .admae-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .admae-faq-item.open .admae-faq-a { max-height: 500px; }
+  .admae-faq-a p { padding: 0 0 20px; color: #c4bfb4; font-size: 0.95rem; line-height: 1.65; margin: 0; }
+
+  .admae-final-cta { text-align: center; padding: 20px 0; }
+  .admae-final-cta h2 { margin-bottom: 16px; }
+  .admae-final-cta p { color: #c4bfb4; max-width: 560px; margin: 0 auto 32px; font-size: 1rem; line-height: 1.7; }
+  .admae-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+  .admae-trust-item { font-size: 0.8rem; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 680px) {
+    .admae-service-page { padding-left: 18px; padding-right: 18px; padding-bottom: 60px; }
+    .admae-why-grid { grid-template-columns: 1fr; gap: 20px; }
+    .admae-step { gap: 16px; }
+    .admae-step-number { width: 40px; height: 40px; font-size: 0.95rem; }
+    .admae-testimonial { padding-left: 20px; }
+    .admae-trust-signals { gap: 20px; }
+  }
+</style>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Diamond Sourcing &amp; Verification<br>in <em>Los Angeles</em></h1>
+    <p class="hero-sub">
+      Most jewelers sell from inventory. <a href="/about" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Ali</a> searches the global supply to find the right stone for you. Then she verifies everything before a dollar changes hands. Your budget deserves someone who treats sourcing like a mission, not a transaction.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- THE PROBLEM -->
+  <section>
+    <h2>Why Sourcing Matters More Than Most People Realize</h2>
+
+    <div class="admae-prose">
+      <p>Here's what most people don't know about buying a diamond: the stone you're shown is usually the stone the jeweler already has or the one their preferred vendor happens to stock. Their incentive is to move what's available, not to search the world for what's best for you.</p>
+
+      <p>Ali doesn't own inventory. She doesn't have diamonds sitting in a case that she needs to sell. When you tell her what you're looking for, she starts from scratch: searching global wholesale databases, reaching out to trusted vendors, cross-referencing certifications, and evaluating stones against each other until she finds something that represents the best possible value for your specific budget and priorities.</p>
+
+      <p><strong>Her loyalty is to you, not to any vendor or inventory.</strong> That's a fundamentally different relationship than what you get at most jewelers, and it's why her designs start with better materials at better prices.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- HOW SHE SOURCES -->
+  <section>
+    <h2>How Ali Sources Your Stone</h2>
+    <p class="admae-section-intro">
+      Every sourcing project starts with a conversation about what you actually want and need. Not what the internet says you should want.
+    </p>
+
+    <div>
+      <div class="admae-step">
+        <div class="admae-step-number">1</div>
+        <div class="admae-step-content">
+          <h3>Understanding What You Actually Need</h3>
+          <p>Most clients arrive with a list from the internet: colorless, VVS clarity, two carats. Ali's first question is always: how did you get there? Often, she can help you rethink priorities in a way that gets you a more beautiful stone for less money. She'll never talk you out of what you want. But she'll make sure you understand the tradeoffs before committing. This conversation happens during your free <a href="/engagement-ring-consultation-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">90-minute design consultation</a>.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">2</div>
+        <div class="admae-step-content">
+          <h3>Searching the Global Supply</h3>
+          <p>Ali searches across multiple wholesale databases, vendor networks, and direct contacts. She's built these relationships over years, and she's not afraid to make new ones when a project calls for something specific. For a standard stone, this takes a couple of hours. For something rare or highly specific, she's spent months. She once spent nine months tracking down a lozenge cut diamond that multiple industry veterans told her didn't exist. She found it.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">3</div>
+        <div class="admae-step-content">
+          <h3>Verification and Cross-Referencing</h3>
+          <p>Ali doesn't trust listings at face value. She cross-references certification numbers across databases, requests photos and videos of every stone she's considering, and evaluates whether the grading report matches what she's actually seeing. She's caught stock photos hiding real flaws, deceptive pricing on stones that looked too good to be true, and grading discrepancies between labs. If something doesn't add up, she walks away.</p>
+        </div>
+      </div>
+
+      <div class="admae-step">
+        <div class="admae-step-number">4</div>
+        <div class="admae-step-content">
+          <h3>Presenting Your Options</h3>
+          <p>Ali brings you a curated selection: usually the stone she believes best fits your criteria, plus a couple of alternatives that show you the range of what's possible. She'll explain exactly why she's recommending each one and what the tradeoffs are between them. You make the final call with full information, not a sales pitch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT SETS HER APART -->
+  <section>
+    <h2>What Makes This Different</h2>
+
+    <div class="admae-why-grid">
+      <div class="admae-why-card">
+        <h3>No Inventory Bias</h3>
+        <p>Ali doesn't own diamonds. She doesn't have a case to clear or a vendor to keep happy. Vendors compete for her business, which means the best value flows to you. When she recommends a stone, it's because she believes it's the right one, not because she needs to sell it.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>GIA Graduate Gemologist Eyes</h3>
+        <p>A grading report tells part of the story. Ali sees the rest. As a <a href="/gia-gemologist-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">GIA Graduate Gemologist</a>, she evaluates light performance, visual warmth, and the characteristics that determine whether a stone has genuine life to it. Two diamonds with identical paperwork can look dramatically different in person. The paper doesn't always capture that.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Natural and Lab-Grown</h3>
+        <p>Ali sources both natural and lab-grown diamonds, and she'll give you an honest breakdown of the pros, cons, and cost differences without pushing you in either direction. She believes the right stone is the one that fits your priorities and budget, regardless of how it was formed.</p>
+      </div>
+      <div class="admae-why-card">
+        <h3>Beyond Diamonds</h3>
+        <p>Ali sources colored gemstones, sapphires, emeralds, moissanite, and more. If you want something non-traditional for your <a href="/custom-engagement-rings-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">engagement ring</a> or custom piece, she has the network and the expertise to find it. She once helped a client source the perfect emerald for a custom necklace by searching across multiple suppliers until the quality and value were exactly right.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>The Protection You Didn't Know You Needed</h3>
+    <p>Most people buying a diamond are doing it for the first time. They don't know what to look for, what questions to ask, or how to tell if they're getting real value. Working with Ali means you have someone in your corner whose entire job is to make sure you don't overpay, don't get a bad stone, and walk away feeling confident in your purchase.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"Buying jewelry is intimidating for me. With Alexandria, it was like I hired someone to work with me, to find the necklace, design, and more importantly, select the emerald that would be the best quality for what's in my budget. She went out and found the materials, worked with her team to craft the piece, and deliver a personalized necklace. There was zero stress through the whole process."</blockquote>
+      <cite>- Andrew Massie</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"To me, it's always about trust. Can I trust this person to follow through? Can I trust this person in what they say is true? Can I trust this person when it comes to price? Can I trust their work? My experience with Alexandria has always been 100%."</blockquote>
+      <cite>- D Neck</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"She took the time to understand our vision, the style my girlfriend loves, the perfect stone, and all the little details that would make it uniquely hers, and brought it to life even better than I imagined. The diamond sparkles like crazy, the setting is elegant and secure, and every element feels thoughtful and flawless."</blockquote>
+      <cite>- Dan Im</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About Diamond Sourcing</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How is this different from buying a diamond at a jewelry store?
+      </div>
+      <div class="admae-faq-a">
+        <p>At a jewelry store, you're choosing from what they have in stock. Their incentive is to sell you something from their existing inventory. Ali has no inventory. She searches the global wholesale market to find the best stone for your specific criteria and budget, then verifies everything before recommending it to you. You get better selection, better value, and unbiased guidance.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can I bring a diamond I found online for Ali to evaluate?
+      </div>
+      <div class="admae-faq-a">
+        <p>Absolutely. Ali has helped clients evaluate stones they found on their own, catching issues like misleading photos, inflated grading, and pricing that doesn't match the market. She can cross-reference the certification number, check the listing across databases, and give you an honest assessment of whether it's a good purchase.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does the sourcing process take?
+      </div>
+      <div class="admae-faq-a">
+        <p>For a straightforward stone with common specifications, sourcing typically takes a few hours to a few days. For rare cuts, unusual sizes, or highly specific requirements, it can take longer. Ali will always give you an honest timeline upfront and keep you updated throughout the process.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you source lab-grown diamonds?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. Ali sources both natural and lab-grown diamonds and will give you a transparent comparison of the pros, cons, and cost differences. She has no preference and no agenda. The right stone is the one that fits your priorities. You can read more about this decision in our <a href="/blog/lab-grown-vs-natural-diamonds" style="color: #d4af37;">lab-grown vs. natural diamonds guide</a>.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Is there a fee for sourcing?
+      </div>
+      <div class="admae-faq-a">
+        <p>Sourcing is included as part of the custom jewelry design process. When you work with Ali on a <a href="/custom-engagement-rings-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">custom engagement ring</a> or any piece that requires stone selection, sourcing is built into the project. There's no separate fee for the search itself. Learn more about our approach to <a href="/custom-jewelry-pricing-information" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">pricing</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Find the Right Stone, Not Just Any Stone</h2>
+    <p>
+      Book a free consultation with Alexandria. Tell her what you're looking for, what matters to you, and what your budget looks like. She'll do the rest.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">Global Sourcing Network</span>
+      <span class="admae-trust-item">5.0 Stars on Google</span>
+      <span class="admae-trust-item">West Los Angeles</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Diamond Sourcing and Verification Los Angeles",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "A. D'Mae Diamonds",
+    "address": { "@type": "PostalAddress", "streetAddress": "1832 S. Barrington Ave", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025" },
+    "telephone": "+1-424-359-9009",
+    "priceRange": "$$$$"
+  },
+  "description": "Independent diamond sourcing and verification by a GIA Graduate Gemologist in Los Angeles. Alexandria searches the global wholesale market to find the best stone for your specific criteria and budget, then verifies certifications and quality before recommending any purchase.",
+  "areaServed": { "@type": "City", "name": "Los Angeles" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How is diamond sourcing different from buying at a jewelry store?", "acceptedAnswer": { "@type": "Answer", "text": "At a jewelry store, you choose from existing inventory. Alexandria has no inventory and searches the global wholesale market for the best stone matching your criteria and budget, with no inventory bias." } },
+    { "@type": "Question", "name": "Can I bring a diamond I found online for evaluation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alexandria can cross-reference certification numbers, check listings across databases, and give an honest assessment of whether a stone you found is a good purchase." } },
+    { "@type": "Question", "name": "Does A. D'Mae Diamonds source lab-grown diamonds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alexandria sources both natural and lab-grown diamonds and provides a transparent comparison of pros, cons, and cost differences with no agenda." } }
+  ]
+}
+</script>
