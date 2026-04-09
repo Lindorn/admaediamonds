@@ -1,1097 +1,876 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A. D'Mae Diamonds - Portfolio</title>
-
-    <!-- Resource hints for better performance -->
-    <link rel="preconnect" href="https://images.squarespace-cdn.com">
-    <link rel="dns-prefetch" href="https://images.squarespace-cdn.com">
-
-    <style>
-        /* STRONGER Squarespace header fix */
-        .portfolio-container {
-            margin-top: 0px !important;
-            padding-top: 0px !important;
-            position: relative !important;
-            z-index: 1 !important;
-        }
-
-        /* Target Squarespace's main content wrapper */
-        #page .content-wrapper {
-            padding-top: 100px !important;
-        }
-
-        /* Additional body override */
-        body {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .portfolio-container {
-                margin-top: 0px !important;
-                padding-top: 20px !important;
-            }
-
-            #page .content-wrapper {
-                padding-top: 0px !important;
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #000;
-        }
-
-        .portfolio-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-            color: #fff;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 15px;
-            color: #d4af37;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Filter Buttons */
-        .filter-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 25px;
-            font-size: 14px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #d4af37;
-            color: #000;
-        }
-
-        /* Featured Stories Grid */
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-
-        /* Story Cards */
-        .story-card {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #111;
-            height: auto;
-            min-height: 400px;
-        }
-
-        .story-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
-        }
-
-        .story-image {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            transition: all 0.3s ease;
-        }
-
-        .story-card:hover .story-image {
-            transform: scale(1.05);
-        }
-
-        .story-content {
-            padding: 15px 20px;
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            overflow: visible;
-            position: relative;
-        }
-
-        .story-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #d4af37;
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-
-        .story-preview {
-            font-size: 0.85rem;
-            color: #ccc !important;
-            line-height: 1.4;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            margin-top: 4px;
-        }
-
-        .story-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(212, 175, 55, 0.9);
-            color: #000;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* Hide Squarespace header when modal is open */
-        body.modal-open header,
-        body.modal-open .header,
-        body.modal-open #header,
-        body.modal-open .Header,
-        body.modal-open [data-header-style] {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999 !important;
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            max-width: 900px;
-            margin: 50px auto;
-            background: #111;
-            border-radius: 15px;
-            position: relative;
-            animation: modalSlideIn 0.3s ease;
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 35px;
-            color: #d4af37;
-            cursor: pointer;
-            z-index: 10001 !important;
-            background: rgba(0, 0, 0, 0.5);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            color: #fff;
-        }
-
-        /* Story Progression */
-        .story-progression {
-            padding: 30px 20px !important;
-            position: relative !important;
-            min-height: 750px !important;
-            width: 100% !important;
-        }
-
-        .story-step {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            position: absolute !important;
-            top: 30px !important;
-            left: 20px !important;
-            right: 20px !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            width: auto !important;
-        }
-
-        .story-step.visible {
-            opacity: 1;
-        }
-
-        .step-image-container {
-            position: relative !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-        }
-
-        .step-image {
-            width: 100% !important;
-            max-width: 400px !important;
-            height: 500px !important;
-            object-fit: cover !important;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            margin: 0 auto !important;
-            display: block !important;
-        }
-
-        .step-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* Navigation Arrows */
-        .story-nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: #d4af37;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            z-index: 10;
-        }
-
-        .story-nav-arrow:hover {
-            background: rgba(212, 175, 55, 0.9);
-            color: #000;
-            opacity: 1;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .story-nav-arrow.prev {
-            left: 15px;
-        }
-
-        .story-nav-arrow.next {
-            right: 15px;
-        }
-
-        .story-nav-arrow:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        .story-nav-arrow:disabled:hover {
-            background: rgba(0, 0, 0, 0.7);
-            color: #d4af37;
-            transform: translateY(-50%) scale(1);
-        }
-
-        .step-title {
-            font-size: 1.4rem;
-            color: #d4af37;
-            margin: 20px 0 15px 0;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .step-description {
-            color: #ccc;
-            line-height: 1.6;
-            font-size: 1rem;
-            padding: 0 20px;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        /* Navigation Dots */
-        .story-nav {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            gap: 10px;
-        }
-
-        .nav-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #555;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-dot.active {
-            background: #d4af37;
-            transform: scale(1.2);
-        }
-
-        /* Tablet Optimizations */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .featured-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
-        }
-
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            .portfolio-container {
-                padding: 20px 15px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .featured-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .story-card {
-                min-height: 350px;
-            }
-
-            .story-preview {
-                font-size: 0.9rem;
-                line-height: 1.35;
-            }
-
-            .modal-content {
-                margin: 20px;
-                max-width: calc(100% - 40px);
-            }
-
-            .story-progression {
-                padding: 20px 15px;
-                min-height: 650px;
-            }
-
-            .story-step {
-                top: 20px;
-                left: 15px;
-                right: 15px;
-            }
-
-            .step-image {
-                height: 400px;
-                max-width: 300px;
-                border-radius: 10px;
-            }
-
-            .step-title {
-                padding: 0 15px;
-                font-size: 1.2rem;
-            }
-
-            .step-description {
-                padding: 0 15px;
-            }
-
-            .filter-btn {
-                font-size: 12px;
-                padding: 12px 18px;
-                min-height: 44px;
-                display: inline-flex;
-                align-items: center;
-            }
-
-            .story-nav-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
-            }
-
-            .story-nav-arrow.prev {
-                left: 10px;
-            }
-
-            .story-nav-arrow.next {
-                right: 10px;
-            }
-
-            .modal-close {
-                top: 10px;
-                right: 15px;
-                width: 40px;
-                height: 40px;
-                font-size: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="portfolio-container">
-        <!-- Featured Stories Section -->
-        <section class="featured-section">
-            <div class="section-header">
-                <h1 class="section-title">Signature Stories</h1>
-                <p class="section-subtitle">Every piece tells a story. These journeys showcase how we transform personal visions into timeless jewelry.</p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All Stories</button>
-                <button class="filter-btn" data-filter="engagement">Engagement</button>
-                <button class="filter-btn" data-filter="personal">Personal Expression</button>
-                <button class="filter-btn" data-filter="anniversary">Anniversary</button>
-                <button class="filter-btn" data-filter="artist">Artists & Musicians</button>
-            </div>
-
-            <div class="featured-grid">
-                <!-- Featured Story 1 - Art Deco Engagement Ring -->
-                <div class="story-card" data-category="engagement" data-story="artdeco">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/16fbe92d-283d-46e5-a470-929e1591cc9c/1_b.jpg?content-type=image%2Fjpeg" alt="Art Deco Engagement Ring">
-                    <div class="story-content">
-                        <h3 class="story-title">The Impossible Diamond Engagement Ring</h3>
-                        <p class="story-preview">A quest for the perfect 1920's style diamond cut that they said couldn't be found.</p>
-                    </div>
-                    <span class="story-tag">Engagement</span>
-                </div>
-
-                <!-- Featured Story 2 - Rock Star Necklace -->
-                <div class="story-card" data-category="artist personal" data-story="rockstar">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3b1f7d-c846-4241-b8fa-6af12347ec11/File_000.jpeg?content-type=image%2Fjpeg" alt="Rockstar Stage Performance">
-                    <div class="story-content">
-                        <h3 class="story-title">The Rockstar's Vision</h3>
-                        <p class="story-preview">From Glam-Rock dreams to stage-ready statement</p>
-                    </div>
-                    <span class="story-tag">Artist</span>
-                </div>
-
-                <!-- Featured Story 3 - Grandmother's Rainbow Ring -->
-                <div class="story-card" data-category="personal" data-story="grandmother">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/8de840d9-9db7-4697-8e2d-612eacc95c65/prideringfinal.jpg?content-type=image%2Fjpeg" alt="Rainbow Stone Ring" loading="lazy">
-                    <div class="story-content">
-                        <h3 class="story-title">A Statement of Pride</h3>
-                        <p class="story-preview">Honoring the memory of his earliest supporter.</p>
-                    </div>
-                    <span class="story-tag">Personal</span>
-                </div>
-
-                <!-- Featured Story 4 - Raven Claw Ring -->
-                <div class="story-card" data-category="engagement" data-story="ravenclaw">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/77fda166-f95f-4f56-9971-2141db334b28/IMG_8818+%281%29.jpeg?content-type=image%2Fjpeg" alt="Raven Claw Ring" loading="lazy">
-                    <div class="story-content">
-                        <h3 class="story-title">A Shared Mythology</h3>
-                        <p class="story-preview">A museum moment that realized a deep bond.</p>
-                    </div>
-                    <span class="story-tag">Engagement</span>
-                </div>
-
-                <!-- Featured Story 5 - Male Engagement Ring -->
-                <div class="story-card" data-category="engagement" data-story="maleengagement">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/56959f07-4b76-4475-b3d3-32b0babf005a/2_a01.jpg?content-type=image%2Fjpeg" alt="Male Engagement Ring" loading="lazy">
-                    <div class="story-content">
-                        <h3 class="story-title">Breaking with Tradition</h3>
-                        <p class="story-preview">The male engagement that isn't just personal - it's turning heads</p>
-                    </div>
-                    <span class="story-tag">Engagement</span>
-                </div>
-
-                <!-- Featured Story 6 - Berlin Iron Earrings -->
-                <div class="story-card" data-category="anniversary" data-story="berliniron">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg" alt="Berlin Iron Earrings" loading="lazy" style="object-position: center 40%;">
-                    <div class="story-content">
-                        <h3 class="story-title">A Tradition Transformed</h3>
-                        <p class="story-preview">Transforming travel memories into Anniversary Tradition</p>
-                    </div>
-                    <span class="story-tag">Anniversary</span>
-                </div>
-
-                <!-- Featured Story 7 - Truly Seen -->
-                <div class="story-card" data-category="personal" data-story="trulyseen">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39fcbc61-a001-4d05-925a-be053f63cac1/IMG_6530+%281%29.jpg?content-type=image%2Fjpeg" alt="Emerald Ring" loading="lazy">
-                    <div class="story-content">
-                        <h3 class="story-title">Truly Seen</h3>
-                        <p class="story-preview">Surprising her with her dream Emerald Ring</p>
-                    </div>
-                    <span class="story-tag">Personal</span>
-                </div>
-
-                <!-- Featured Story 8 - Old Mine Cut with Modern Style -->
-                <div class="story-card" data-category="engagement" data-story="oldminecut">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5393a587-e501-4d73-98e3-879f433835a5/2F468A45-9F54-451E-A216-2E9EDB7BF839.jpeg?content-type=image%2Fjpeg" alt="Old Mine Cut Diamond Ring" loading="lazy">
-                    <div class="story-content">
-                        <h3 class="story-title">Old Mine Cut with Modern Style</h3>
-                        <p class="story-preview">She fell in love with unique diamond</p>
-                    </div>
-                    <span class="story-tag">Engagement</span>
-                </div>
-
-                <!-- Featured Story 9 - An Emerald Gift for his Wife -->
-                <div class="story-card" data-category="anniversary" data-story="emeraldgift">
-                    <img class="story-image" src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2a097bce-747a-4304-8b83-64d843a2e5ac/IMG_0198+%281%29.JPG?content-type=image%2Fjpeg" alt="Emerald Necklace" loading="lazy">
-                    <div class="story-content">
-                        <h3 class="story-title">An Emerald Gift for his Wife</h3>
-                        <p class="story-preview">Emerald was both of their birthstones. He'd been planning this for some time.</p>
-                    </div>
-                    <span class="story-tag">Anniversary</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Coming Soon Section -->
-        <section class="coming-soon-section">
-            <div class="section-header">
-                <h2 class="section-title">More Client Stories Coming Soon!</h2>
-                <p class="section-subtitle">We're currently documenting more incredible journeys of personal transformation through custom jewelry design</p>
-            </div>
-        </section>
+<!--
+  A. D'Mae Diamonds - Portfolio & Client Stories
+  For Squarespace Code Block (Body-Level) Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /portfolio-client-journeys (DO NOT CHANGE - linked from homepage)
+  2. SEO Title: Custom Jewelry Portfolio & Client Stories | A. D'Mae Los Angeles
+  3. SEO Description: See real client stories and custom jewelry designed from scratch by Alexandria, a GIA Graduate Gemologist in Los Angeles. Engagement rings, wedding bands, heirloom redesigns, and more.
+  4. Single code block - paste this entire file
+  5. Padding: match other pages (340px or site default)
+  
+  REVISION: April 2026 - Full portfolio rebuild
+  - Restyled in admae design system
+  - 15 stories (9 original refreshed + 6 new)
+  - Updated filter categories
+  - Final CTA block added
+  - Schema markup added
+  - All copy revised in Ali's voice
+-->
+
+<style>
+  .admae-portfolio {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+    font-family: inherit;
+    color: #f0ece4;
+    line-height: 1.7;
+  }
+
+  .admae-portfolio * { box-sizing: border-box; }
+
+  /* Hero */
+  .admae-port-hero {
+    text-align: center;
+    padding: 0 0 40px;
+  }
+
+  .admae-port-hero h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 16px;
+    letter-spacing: 0.01em;
+  }
+
+  .admae-port-hero h1 em { font-style: italic; color: #d4af37; }
+
+  .admae-port-hero p {
+    font-size: 1.05rem;
+    color: #c4bfb4;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Filters */
+  .admae-port-filters {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .admae-filter-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #d4af37;
+    padding: 10px 22px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .admae-filter-btn:hover, .admae-filter-btn.active {
+    background: #d4af37;
+    color: #111;
+  }
+
+  /* Card Grid */
+  .admae-port-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 16px;
+  }
+
+  /* Story Cards */
+  .admae-story-card {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  .admae-story-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2);
+    border-color: #d4af37;
+  }
+
+  .admae-story-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+  }
+
+  .admae-story-card:hover img { transform: scale(1.03); }
+
+  .admae-story-info { padding: 18px 16px; }
+
+  .admae-story-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 6px;
+    line-height: 1.3;
+  }
+
+  .admae-story-info p {
+    font-size: 0.85rem;
+    color: #c4bfb4;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .admae-story-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(212, 175, 55, 0.9);
+    color: #111;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Divider */
+  .admae-port-divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 56px auto;
+    border: none;
+  }
+
+  /* Final CTA */
+  .admae-port-cta {
+    text-align: center;
+    padding: 56px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
+  }
+
+  .admae-port-cta h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+
+  .admae-port-cta p {
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .admae-port-cta-btn {
+    display: inline-block;
+    padding: 20px 48px;
+    background: #d4af37;
+    color: #111 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 2px solid #d4af37;
+    border-radius: 2px;
+    transition: background 0.3s, border-color 0.3s;
+    border-bottom: 2px solid #d4af37 !important;
+  }
+
+  .admae-port-cta-btn:hover { background: #c9a42e; border-color: #c9a42e; }
+
+  .admae-port-trust {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-port-trust span {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Explore links */
+  .admae-port-explore {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .admae-port-explore p {
+    font-size: 0.95rem;
+    color: #c4bfb4;
+    line-height: 1.8;
+  }
+
+  .admae-port-explore a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .admae-port-explore a:hover { border-color: #d4af37; }
+
+  /* ============ MODAL ============ */
+  body.modal-open header,
+  body.modal-open .header,
+  body.modal-open #header,
+  body.modal-open .Header,
+  body.modal-open [data-header-style] {
+    display: none !important;
+  }
+
+  body.modal-open .admae-sticky-cta {
+    display: none !important;
+  }
+
+  .admae-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    overflow-y: auto;
+  }
+
+  .admae-modal-content {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #111;
+    border-radius: 6px;
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    animation: admaeModalIn 0.3s ease;
+    overflow: hidden;
+  }
+
+  @keyframes admaeModalIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .admae-modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 32px;
+    color: #d4af37;
+    cursor: pointer;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.6);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+    border: none;
+    font-family: inherit;
+  }
+
+  .admae-modal-close:hover { color: #fff; }
+
+  /* Story Steps */
+  .admae-step-area {
+    padding: 30px 20px;
+    position: relative;
+    min-height: 720px;
+    width: 100%;
+  }
+
+  .admae-story-step {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 30px; left: 20px; right: 20px;
+  }
+
+  .admae-story-step.visible { opacity: 1; }
+
+  .admae-step-img-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .admae-step-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    background: #111;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .admae-step-img:hover { transform: scale(1.02); }
+
+  /* Nav Arrows */
+  .admae-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #d4af37;
+    border: none;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    z-index: 10;
+  }
+
+  .admae-arrow:hover {
+    background: rgba(212, 175, 55, 0.9);
+    color: #000;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .admae-arrow.prev { left: 15px; }
+  .admae-arrow.next { right: 15px; }
+  .admae-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+  .admae-arrow:disabled:hover { background: rgba(0,0,0,0.7); color: #d4af37; transform: translateY(-50%) scale(1); }
+
+  .admae-step-title {
+    font-size: 1.3rem;
+    color: #d4af37;
+    margin: 20px 0 12px;
+    padding: 0 20px;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .admae-step-desc {
+    color: #c4bfb4;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0 20px;
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 28px;
+  }
+
+  /* Nav Dots */
+  .admae-nav-dots {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .admae-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #444;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+  }
+
+  .admae-dot.active {
+    background: #d4af37;
+    transform: scale(1.3);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .admae-port-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 680px) {
+    .admae-portfolio { padding-left: 18px; padding-right: 18px; }
+    .admae-port-grid { grid-template-columns: 1fr; gap: 20px; }
+
+    .admae-modal-content {
+      margin: 15px;
+      max-width: calc(100% - 30px);
+    }
+
+    .admae-step-area { min-height: 620px; padding: 20px 12px; }
+    .admae-story-step { top: 20px; left: 12px; right: 12px; }
+    .admae-step-img { max-height: 360px; }
+    .admae-step-title { font-size: 1.1rem; padding: 0 12px; }
+    .admae-step-desc { padding: 0 12px; font-size: 0.95rem; }
+    .admae-arrow { width: 40px; height: 40px; font-size: 16px; }
+    .admae-arrow.prev { left: 8px; }
+    .admae-arrow.next { right: 8px; }
+    .admae-modal-close { top: 10px; right: 12px; width: 38px; height: 38px; font-size: 28px; }
+    .admae-filter-btn { font-size: 0.7rem; padding: 10px 16px; min-height: 44px; }
+    .admae-port-trust { gap: 20px; }
+  }
+</style>
+
+<div class="admae-portfolio">
+
+  <!-- HERO -->
+  <section class="admae-port-hero">
+    <h1>Our <em>Stories</em></h1>
+    <p>Every piece tells a story. These are the journeys behind the jewelry - from first conversation to finished design.</p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="admae-port-filters">
+    <button class="admae-filter-btn active" data-filter="all">All Stories</button>
+    <button class="admae-filter-btn" data-filter="engagement">Engagement Rings</button>
+    <button class="admae-filter-btn" data-filter="wedding">Wedding Bands</button>
+    <button class="admae-filter-btn" data-filter="heirloom">Heirloom & Redesign</button>
+    <button class="admae-filter-btn" data-filter="personal">Personal & Anniversary</button>
+    <button class="admae-filter-btn" data-filter="artists">Artists & Musicians</button>
+  </div>
+
+  <!-- CARD GRID -->
+  <div class="admae-port-grid">
+
+    <div class="admae-story-card" data-category="engagement" data-story="artdeco">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/16fbe92d-283d-46e5-a470-929e1591cc9c/1_b.jpg?content-type=image%2Fjpeg" alt="Custom Art Deco engagement ring with lozenge cut diamond in 18k gold" loading="lazy">
+      <div class="admae-story-info"><h3>The Impossible Diamond</h3><p>A quest for a 1920s diamond cut that every jeweler said couldn't be found.</p></div>
+      <span class="admae-story-tag">Engagement</span>
     </div>
 
-    <!-- Modal Template -->
-    <div id="storyModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div class="story-progression" id="storyProgression">
-                <!-- Story steps will be loaded here -->
-            </div>
-            <div class="story-nav" id="storyNav">
-                <!-- Navigation dots will be generated here -->
-            </div>
-        </div>
+    <div class="admae-story-card" data-category="artists personal" data-story="rockstar">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3b1f7d-c846-4241-b8fa-6af12347ec11/File_000.jpeg?content-type=image%2Fjpeg" alt="Custom stage pendant for Love Stallion lead singer Aaron Hart" loading="lazy">
+      <div class="admae-story-info"><h3>The Rockstar's Vision</h3><p>From glam-rock dreams to a stage-ready statement piece.</p></div>
+      <span class="admae-story-tag">Artist</span>
     </div>
 
-    <script>
-        // Story data structure with all completed stories
-        const stories = {
-            artdeco: {
-                title: "The Impossible Diamond Engagement Ring",
-                steps: [
-                    {
-                        title: "Inspired by Art Deco",
-                        description: "As a designer creating her own engagement ring, she had always wanted a special diamond cut that was popular in the 1920's. Every jeweler told her it was impossible to find.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/cf601a0d-08b4-4a03-8681-3311070b2a0d/chrysler-building_nathaniel-lindsey7.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Designed to Express Her Style.",
-                        description: "Cast in 18k gold, a filigree gallery with a two \"A's\" for her and her fiancé, with a knife edge band, including small diamonds on each side, accented by black rhodium",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/c926094f-fda8-49a1-90ff-d6425a5ac7ce/IMG_8782.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Finally the Diamond!",
-                        description: "After 8 months of searching, she finally found someone who could custom-cut the diamond of her dreams.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/e18cbce4-94a5-41de-9705-085fbe53e957/IMG_8781.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "A Personal Statement to Last a Lifetime.",
-                        description: "After waiting so long to find all of the right pieces, she finally had the engagement ring she had been dreaming of since she was a young girl.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/d44cffc3-5243-4b93-94e1-b23812271956/1_a.jpg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            rockstar: {
-                title: "The Rockstar's Vision",
-                steps: [
-                    {
-                        title: "Meet the Artist",
-                        description: "Lead Singer of Glam Rock Band Love Stallion, Aaron Hart, had a vision to complete his on-stage persona",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5f3d03b0-13d6-4de2-9d9e-5be93df59d82/Aaron+Hart+of+Love+Stallion.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "The Inspiration",
-                        description: "One of his rock idols, Michael Starr, was a big artistic & stylistic influence throughout his career.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fffee14e-54ec-41e2-b48b-324c1a809f1a/Michael+Starr+Inspiration+Photo.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Crafting for Stage Presence",
-                        description: "A custom 3D heart pendant that looks killer from any angle on stage, with hand-engraving and a bold chain.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/7f5bd878-5408-45af-99c2-ed681510f252/IMG_7667.jpeg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Ready to Rock",
-                        description: "Now with him for every show for maximum stage presence.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3b1f7d-c846-4241-b8fa-6af12347ec11/File_000.jpeg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            grandmother: {
-                title: "A Statement of Pride",
-                steps: [
-                    {
-                        title: "A Tender and Personal Story",
-                        description: "When his grandmother passed away, she left him a box full of colored stones. She was the first person to really support him when he came out.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/974c8bc1-094e-413e-89e4-002097e783af/IMG_8817+%281%29.jpeg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Iterating to Find the Right Fit",
-                        description: "choosing a classic and timeless design with a focus on his personal journey.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/d8ea729f-769a-4e12-801a-a1e03877a5cd/IMG_0680.JPG?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "The Finished Statement",
-                        description: "Cast in 14k yellow gold, with the stones arranged in a rainbow.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/8de840d9-9db7-4697-8e2d-612eacc95c65/prideringfinal.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "A Point of Pride",
-                        description: "The ring is an outward statement, showing the world who he is during his many travels, while always keeping his grandmother close.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/f37d3194-15c4-47e6-a9f5-4fa21ecf5479/20230726_171743.jpg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            ravenclaw: {
-                title: "A Shared Mythology",
-                steps: [
-                    {
-                        title: "A Museum Moment",
-                        description: "Walking through the exhibit, the massive jade stopped them both. Unlike shiny gemstones, the earthy stone felt authentic.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/17c5161f-31f3-4289-8292-9f9797df338f/jademuseumexhibit.png?content-type=image%2Fpng"
-                    },
-                    {
-                        title: "Shared Mythology",
-                        description: "They both loved Norse legends. They wanted something that captured their 'inside connection. A ring only they would fully understand.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fddc43ec-8fc7-4fa8-938d-cd5ab247a28b/odinsraven.png?content-type=image%2Fpng"
-                    },
-                    {
-                        title: "The Raven Claw Ring",
-                        description: "A marquise cut Jade centerstone held by raven claw prongs, and crafted in gold. A piece as unique as their bond.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2c29b08b-2505-4ae6-8cbc-a9e1ed976452/9D133B04-7694-42DB-B0EA-9D27FCA6A529.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Carried Forever",
-                        description: "Every glance at her ring brings back the moment they knew they saw the world the same way.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/77fda166-f95f-4f56-9971-2141db334b28/IMG_8818+%281%29.jpeg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            maleengagement: {
-                title: "Breaking with Tradition",
-                steps: [
-                    {
-                        title: "New Territory",
-                        description: "He'd never worn jewelry before. Male engagement rings weren't common, but neither was their relationship.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a4768015-dec4-492e-8d49-d4cb3af3bed6/Group.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Stories in Stone",
-                        description: "He discovered jewelry could tell stories connecting him to history and ancient craftsmanship.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2b8596ef-eddd-4125-82ad-b36e45efea49/2IMG_8782.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "The Perfect Ring",
-                        description: "Thick white gold band, geometric design, 6-carat Asscher cut diamond. Hidden 'AA' engraving for their names underneath.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eb693bb4-520f-41dd-8eca-a44b58c115f5/2_b.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "A Conversation Starting Piece",
-                        description: "People love hearing the story behind this bold choice. And seeing a man wearing an engagement ring!",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/56959f07-4b76-4475-b3d3-32b0babf005a/2_a01.jpg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            berliniron: {
-                title: "A Tradition Transformed",
-                steps: [
-                    {
-                        title: "Planning Ahead",
-                        description: "They loved the 'different gift each year' tradition. Iron for year six.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/e9acd808-f800-4f05-bbb3-2032536bcfbe/BerlinIronBracelet.png?content-type=image%2Fpng"
-                    },
-                    {
-                        title: "The German Discovery",
-                        description: "Shopping together in Berlin, the unique black iron caught both their eyes. Beautiful in an unconventional way.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a489a420-ff96-47c2-b79c-caaaeaaa5aee/BerlinIronNecklace.png?content-type=image%2Fpng"
-                    },
-                    {
-                        title: "A Tradition Transformed",
-                        description: "Pearl studs with detachable Berlin iron jackets, teardrop pearls, and yellow gold accents. Elegant meets industrial.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39641658-34dc-40ce-b27e-b8d15ca13e88/Berlin_Iron_Pearl_Earrings.jpeg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Special Moments Engrained",
-                        description: "That special metal they bonded over is now part of her daily life. A travel memory she can touch.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            trulyseen: {
-                title: "Truly Seen",
-                steps: [
-                    {
-                        title: "Visualizing her Dream Ring",
-                        description: "She'd had the idea for a long time. Fashion was her form of self-expression.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a9d46d97-755d-4f12-8ab7-8ba04892512c/Untitled+design.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Making it Personal",
-                        description: "She wanted an emerald. We found the perfect one. We took her inspiration pics and transformed them into something uniquely hers.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/dc124eb9-49b8-4ca1-b55e-bedd18fc392f/Untitled+design+%281%29.png?content-type=image%2Fpng"
-                    },
-                    {
-                        title: "Seen and Surprised",
-                        description: "The plan was to surprise her on her birthday with her dream ring. Her fantasy of \"one day\" became a reality.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1ba5437c-75f4-4893-9d2f-f964794da16f/IMG_1586+%281%29.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "The Ring for a Woman with Style",
-                        description: "Stylish, elegant, and beautiful like the woman who wears it.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39fcbc61-a001-4d05-925a-be053f63cac1/IMG_6530+%281%29.jpg?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            oldminecut: {
-                title: "Old Mine Cut with Modern Style",
-                steps: [
-                    {
-                        title: "When the stone steals the show",
-                        description: "She saw the diamond online and was instantly inspired",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/126e2e79-ef2d-4256-adb4-af5f07ac7868/36439574-ECEB-482D-92D6-1FF3ED2C8477+%281%29.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Re-imagining the setting",
-                        description: "She wanted the style to match her bracelet, which was deeply personal.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5fa88a3f-bf1f-432b-94ca-e2b8f6059a60/TY60132-%28ADM-MINE-CUT+102324%29-U-3+%281%29.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "The final Product",
-                        description: "After building the 3D model, we turned inspiration into custom piece.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5393a587-e501-4d73-98e3-879f433835a5/2F468A45-9F54-451E-A216-2E9EDB7BF839.jpeg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "The proposal",
-                        description: "Made uniquely for them and built to last a lifetime.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eff358b4-a932-4b7a-a94b-efbb492e68ea/IMG_0507.JPG?content-type=image%2Fjpeg"
-                    }
-                ]
-            },
-            emeraldgift: {
-                title: "An Emerald Gift for his Wife",
-                steps: [
-                    {
-                        title: "Napkin math",
-                        description: "He drew out some crude ideas on a piece of paper, hoping Ali could translate it into something meaningful.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/0e505dcb-453d-4f6f-971a-2cab2956a7d6/IMG_20251203_150825.jpg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Picking the perfect Emerald",
-                        description: "Ali sourced a top quality Columbian Emerald at an incredible price.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/7c790e97-0888-466b-8a6f-27fbc2b5c3ca/att.m6vRBvUYLSz-y1BWL8j2HrtJqZKu-PgJ2tJq8sTfO3o.jpeg?content-type=image%2Fjpeg"
-                    },
-                    {
-                        title: "Bringing it all together",
-                        description: "Her love of period pieces inspired the chain - it had to be perfect in the 3D model.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eb355c4f-d6d6-497d-a6d2-2049586902b2/Untitled+design+-+2.PNG?content-type=image%2Fpng"
-                    },
-                    {
-                        title: "A Necklace fit for a Queen",
-                        description: "Bringing her love of history, their birthstones, and his passion for gold all together in this 18k Emerald beauty.",
-                        image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3eb7ce-8f54-43ef-a2e1-53242daa60c8/IMG_0208.JPG?content-type=image%2Fjpeg"
-                    }
-                ]
-            }
-        };
+    <div class="admae-story-card" data-category="personal" data-story="grandmother">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/8de840d9-9db7-4697-8e2d-612eacc95c65/prideringfinal.jpg?content-type=image%2Fjpeg" alt="Custom rainbow stone ring honoring a grandmother's memory" loading="lazy">
+      <div class="admae-story-info"><h3>A Statement of Pride</h3><p>Honoring the memory of his earliest supporter.</p></div>
+      <span class="admae-story-tag">Personal</span>
+    </div>
 
-        // DOM elements
-        const modal = document.getElementById('storyModal');
-        const modalClose = document.querySelector('.modal-close');
-        const storyProgression = document.getElementById('storyProgression');
-        const storyNav = document.getElementById('storyNav');
-        const filterBtns = document.querySelectorAll('.filter-btn');
+    <div class="admae-story-card" data-category="engagement" data-story="ravenclaw">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/77fda166-f95f-4f56-9971-2141db334b28/IMG_8818+%281%29.jpeg?content-type=image%2Fjpeg" alt="Custom jade raven claw engagement ring in gold" loading="lazy">
+      <div class="admae-story-info"><h3>A Shared Mythology</h3><p>A museum moment that became a ring only they would fully understand.</p></div>
+      <span class="admae-story-tag">Engagement</span>
+    </div>
 
-        let currentStory = null;
-        let currentStep = 0;
-        let cachedStoryCards = null;
+    <div class="admae-story-card" data-category="engagement" data-story="maleengagement">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/56959f07-4b76-4475-b3d3-32b0babf005a/2_a01.jpg?content-type=image%2Fjpeg" alt="Custom men's Art Deco engagement ring with 6-carat Asscher cut diamond" loading="lazy">
+      <div class="admae-story-info"><h3>Breaking with Tradition</h3><p>A male engagement ring that isn't just personal - it's turning heads.</p></div>
+      <span class="admae-story-tag">Engagement</span>
+    </div>
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cache story cards once
-            cachedStoryCards = Array.from(document.querySelectorAll('.story-card'));
-            initializeEventListeners();
-            addImageErrorHandlers();
-        });
+    <div class="admae-story-card" data-category="personal" data-story="berliniron">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg" alt="Custom Berlin iron and pearl anniversary earrings" loading="lazy" style="object-position: center 40%;">
+      <div class="admae-story-info"><h3>A Tradition Transformed</h3><p>Transforming travel memories into an anniversary tradition.</p></div>
+      <span class="admae-story-tag">Anniversary</span>
+    </div>
 
-        function initializeEventListeners() {
-            // Story card clicks - optimized with early return
-            document.addEventListener('click', (e) => {
-                // Early return if clicking outside story grid
-                if (!e.target.closest('.featured-grid')) return;
+    <div class="admae-story-card" data-category="personal" data-story="trulyseen">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39fcbc61-a001-4d05-925a-be053f63cac1/IMG_6530+%281%29.jpg?content-type=image%2Fjpeg" alt="Custom emerald ring as surprise birthday gift" loading="lazy">
+      <div class="admae-story-info"><h3>Truly Seen</h3><p>He surprised her with the dream ring she thought was years away.</p></div>
+      <span class="admae-story-tag">Personal</span>
+    </div>
 
-                const storyCard = e.target.closest('.story-card');
-                if (storyCard) {
-                    const storyId = storyCard.getAttribute('data-story');
-                    openStory(storyId);
-                }
-            }, { passive: true });
+    <div class="admae-story-card" data-category="engagement" data-story="oldminecut">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5393a587-e501-4d73-98e3-879f433835a5/2F468A45-9F54-451E-A216-2E9EDB7BF839.jpeg?content-type=image%2Fjpeg" alt="Custom old mine cut diamond engagement ring" loading="lazy">
+      <div class="admae-story-info"><h3>Old Mine Cut, Modern Style</h3><p>She fell in love with a unique diamond and built a ring that honored both past and present.</p></div>
+      <span class="admae-story-tag">Engagement</span>
+    </div>
 
-            // Filter buttons
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const filter = btn.getAttribute('data-filter');
-                    filterStories(filter);
+    <div class="admae-story-card" data-category="personal" data-story="emeraldgift">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2a097bce-747a-4304-8b83-64d843a2e5ac/IMG_0198+%281%29.JPG?content-type=image%2Fjpeg" alt="Custom 18k gold emerald necklace anniversary gift" loading="lazy">
+      <div class="admae-story-info"><h3>An Emerald Gift for His Wife</h3><p>Emerald was both of their birthstones. He'd been planning this for some time.</p></div>
+      <span class="admae-story-tag">Anniversary</span>
+    </div>
 
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                });
-            });
+    <div class="admae-story-card" data-category="wedding" data-story="landscape">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/bed06636-e159-426e-8274-1fe628b363df/Davis_Mens_Band_GoldRing_Cover.jpg?content-type=image%2Fjpeg" alt="Custom men's wedding band with hand-engraved landscape in 14k gold" loading="lazy">
+      <div class="admae-story-info"><h3>A Lake He'll Carry Forever</h3><p>Their bands aren't matching. They're complementary. Just like them.</p></div>
+      <span class="admae-story-tag">Wedding Bands</span>
+    </div>
 
-            // Modal close
-            modalClose.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
+    <div class="admae-story-card" data-category="heirloom" data-story="cluster">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/95aabc53-a096-4e66-b51c-e8a07320182d/Heirloom_Cluster_Redesign_Cover.jpg?content-type=image%2Fjpeg" alt="Heirloom diamond cluster engagement ring redesign" loading="lazy">
+      <div class="admae-story-info"><h3>A Family's Diamonds, Reimagined</h3><p>She had a dream ring and heirloom stones that didn't match it. Ali made it work.</p></div>
+      <span class="admae-story-tag">Heirloom</span>
+    </div>
 
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (modal.style.display === 'block') {
-                    if (e.key === 'Escape') closeModal();
-                    if (e.key === 'ArrowLeft') previousStep();
-                    if (e.key === 'ArrowRight') nextStep();
-                }
-            });
-        }
+    <div class="admae-story-card" data-category="engagement" data-story="heartdiamond">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/8a087725-09a0-4925-830b-476b40fc4cd9/AD_RoundBrilliant_ER_Cover.JPG?content-type=image%2Fjpeg" alt="Custom round brilliant engagement ring with infinity twist band" loading="lazy">
+      <div class="admae-story-info"><h3>The Diamond With a Heart Inside</h3><p>They came in with specs. They left with a stone that chose them.</p></div>
+      <span class="admae-story-tag">Engagement</span>
+    </div>
 
-        // Add error handling for all story card images
-        function addImageErrorHandlers() {
-            document.querySelectorAll('.story-image').forEach(img => {
-                img.addEventListener('error', function() {
-                    this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23222'/%3E%3Ctext x='150' y='100' text-anchor='middle' fill='%23d4af37' font-size='16'%3EImage unavailable%3C/text%3E%3C/svg%3E";
-                });
-            });
-        }
+    <div class="admae-story-card" data-category="heirloom" data-story="yellowdiamond">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/86fbfc64-b1e4-4aca-bebc-6a101bbf24a7/Heirloom_Redesign_YDiamond_Final_Cover.jpeg?content-type=image%2Fjpeg" alt="Heirloom yellow diamond halo engagement ring in two-tone gold" loading="lazy">
+      <div class="admae-story-info"><h3>The Start of Everything</h3><p>A baby on the way, a house to find, a wedding to plan. This ring was the nucleus of it all.</p></div>
+      <span class="admae-story-tag">Heirloom</span>
+    </div>
 
-        function filterStories(filter) {
-            // Use cached reference instead of re-querying DOM
-            cachedStoryCards.forEach(card => {
-                const categories = card.getAttribute('data-category');
-                if (filter === 'all' || categories.includes(filter)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+    <div class="admae-story-card" data-category="personal" data-story="blackdiamond">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4f3f42c8-2f0f-4a13-937d-6e6300b4dc1b/Black_Diamond_Marquise_Finished_Cover.jpeg?content-type=image%2Fjpeg" alt="Custom 2.74-carat black diamond marquise ring" loading="lazy">
+      <div class="admae-story-info"><h3>Born in the Dark</h3><p>Edgy and classic. A 2.74-carat black diamond built for a woman who wanted something just for her.</p></div>
+      <span class="admae-story-tag">Personal</span>
+    </div>
 
-        function openStory(storyId) {
-            if (!stories[storyId]) {
-                // For stories not yet defined, show placeholder
-                showPlaceholderStory(storyId);
-                return;
-            }
+    <div class="admae-story-card" data-category="engagement" data-story="cutbyhand">
+      <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/09177607-e0e1-4239-914d-dcf9be12023d/MT_OldMine_Marquise_ER_Cover.jpg?content-type=image%2Fjpeg" alt="Custom old mine cut marquise engagement ring with split shank" loading="lazy">
+      <div class="admae-story-info"><h3>Cut by Hand</h3><p>They wanted a diamond unlike anything in any store. So they had it cut by hand.</p></div>
+      <span class="admae-story-tag">Engagement</span>
+    </div>
 
-            currentStory = stories[storyId];
-            currentStep = 0;
+  </div>
 
-            // Build modal content
-            buildStoryModal();
+  <hr class="admae-port-divider">
 
-            // Show modal
-            modal.style.display = 'block';
-            document.body.classList.add('modal-open');
-            // Only disable body scroll on desktop
-            if (window.innerWidth > 768) {
-                document.body.style.overflow = 'hidden';
-            }
+  <!-- FINAL CTA -->
+  <section class="admae-port-cta">
+    <h2>Ready to Start Your Story?</h2>
+    <p>Every piece in this portfolio started the same way - a conversation. Your consultation is free, takes about 90 minutes, and comes with zero obligation. Just an honest conversation about what you want to create.</p>
+    <a href="/schedule-an-appointment" class="admae-port-cta-btn">Book Your Free Consultation</a>
+    <div class="admae-port-trust">
+      <span>GIA Graduate Gemologist</span>
+      <span>Third-Generation Jeweler</span>
+      <span>Free Consultation</span>
+      <span>No Inventory to Push</span>
+    </div>
+  </section>
 
-            // Start story progression
-            showStep(0);
-        }
+  <hr class="admae-port-divider">
 
-        function showPlaceholderStory(storyId) {
-            storyProgression.innerHTML = `
-                <div class="story-step visible">
-                    <div class="step-image-container">
-                        <img class="step-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect width='400' height='500' fill='%23222'/%3E%3Ctext x='200' y='250' text-anchor='middle' fill='%23d4af37' font-size='24'%3EComing Soon%3C/text%3E%3C/svg%3E" alt="Coming Soon">
-                    </div>
-                    <h3 class="step-title">Story Coming Soon</h3>
-                    <p class="step-description">This client story is being prepared. Check back soon to see the full journey from initial vision to final masterpiece.</p>
-                </div>
-            `;
-            storyNav.innerHTML = '';
-            modal.style.display = 'block';
-            document.body.classList.add('modal-open');
-            if (window.innerWidth > 768) {
-                document.body.style.overflow = 'hidden';
-            }
-        }
+  <!-- EXPLORE -->
+  <section class="admae-port-explore">
+    <p>Learn more about <a href="/customjewelrydesignprocess">how the design process works</a>, explore <a href="/custom-jewelry-pricing-information">pricing and budget</a>, read about <a href="/aboutadmaediamonds">Ali's background</a>, or check the <a href="/faq">FAQ</a>.</p>
+  </section>
 
-        function buildStoryModal() {
-            // Clear existing content
-            storyProgression.innerHTML = '';
-            storyNav.innerHTML = '';
+</div>
 
-            // Build story steps
-            currentStory.steps.forEach((step, index) => {
-                const stepDiv = document.createElement('div');
-                stepDiv.className = 'story-step';
-                stepDiv.innerHTML = `
-                    <div class="step-image-container">
-                        <img class="step-image" src="${step.image}" alt="${step.title}">
-                        <button class="story-nav-arrow prev" ${index === 0 ? 'disabled' : ''}>
-                            &#8249;
-                        </button>
-                        <button class="story-nav-arrow next" ${index === currentStory.steps.length - 1 ? 'disabled' : ''}>
-                            &#8250;
-                        </button>
-                    </div>
-                    <h3 class="step-title">${step.title}</h3>
-                    <p class="step-description">${step.description}</p>
-                `;
-                storyProgression.appendChild(stepDiv);
+<!-- MODAL -->
+<div id="storyModal" class="admae-modal">
+  <div class="admae-modal-content">
+    <button class="admae-modal-close">&times;</button>
+    <div class="admae-step-area" id="stepArea"></div>
+    <div class="admae-nav-dots" id="navDots"></div>
+  </div>
+</div>
 
-                // Add error handling to step image (use once option to auto-cleanup)
-                const stepImage = stepDiv.querySelector('.step-image');
-                stepImage.addEventListener('error', function() {
-                    this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect width='400' height='500' fill='%23222'/%3E%3Ctext x='200' y='250' text-anchor='middle' fill='%23d4af37' font-size='18'%3EImage unavailable%3C/text%3E%3C/svg%3E";
-                }, { once: true });
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "image": "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/86583ae6-a117-491d-b221-3ca08064a099/small+website+logo.png?content-type=image%2Fpng",
+  "address": { "@type": "PostalAddress", "streetAddress": "1832 S. Barrington Ave", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025" },
+  "telephone": "+1-424-359-9009",
+  "priceRange": "$$$$",
+  "url": "https://www.admaediamonds.com/portfolio-client-journeys"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "A. D'Mae Diamonds - Custom Jewelry Portfolio",
+  "description": "Portfolio of custom engagement rings, wedding bands, heirloom redesigns, and fine jewelry designed by Alexandria, a GIA Graduate Gemologist in Los Angeles.",
+  "numberOfItems": 15,
+  "url": "https://www.admaediamonds.com/portfolio-client-journeys"
+}
+</script>
 
-                // Use onclick instead of addEventListener for auto-cleanup on innerHTML clear
-                const prevBtn = stepDiv.querySelector('.story-nav-arrow.prev');
-                const nextBtn = stepDiv.querySelector('.story-nav-arrow.next');
+<script>
+const stories = {
+  artdeco: {
+    title: "The Impossible Diamond",
+    steps: [
+      { title: "Inspired by Art Deco", description: "She'd always dreamed of a specific diamond cut popular in the 1920s - a shape with history and character that modern cuts couldn't replicate. Every jeweler she approached told her the same thing: that cut doesn't exist anymore. She refused to accept that.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/cf601a0d-08b4-4a03-8681-3311070b2a0d/chrysler-building_nathaniel-lindsey7.jpg?content-type=image%2Fjpeg" },
+      { title: "Designed to Express Her Style", description: "Cast in 18k gold with a filigree gallery hiding two \"A's\" for her and her fiance. A knife-edge band with small accent diamonds on each side, finished with black rhodium. Every detail was personal. Nothing was borrowed from a catalog.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/c926094f-fda8-49a1-90ff-d6425a5ac7ce/IMG_8782.jpg?content-type=image%2Fjpeg" },
+      { title: "Eight Months of Searching", description: "After eight months, she finally found someone who could custom-cut the diamond she'd been imagining. The stone that every jeweler said was impossible to find was now sitting in front of her. Patience rewarded.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/e18cbce4-94a5-41de-9705-085fbe53e957/IMG_8781.jpg?content-type=image%2Fjpeg" },
+      { title: "A Personal Statement to Last a Lifetime", description: "After waiting so long to find every piece, she finally had the engagement ring she'd been dreaming about since she was a young girl. Proof that when you refuse to settle, the right things eventually find you.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/d44cffc3-5243-4b93-94e1-b23812271956/1_a.jpg?content-type=image%2Fjpeg" }
+    ]
+  },
+  rockstar: {
+    title: "The Rockstar's Vision",
+    steps: [
+      { title: "Meet the Artist", description: "Aaron Hart, lead singer of glam rock band Love Stallion, had a vision to complete his on-stage persona. He didn't need jewelry. He needed armor. Something that would catch the light and command a room the way he commands a stage.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5f3d03b0-13d6-4de2-9d9e-5be93df59d82/Aaron+Hart+of+Love+Stallion.jpg?content-type=image%2Fjpeg" },
+      { title: "The Inspiration", description: "One of his rock idols, Michael Starr, had been a major artistic and stylistic influence throughout his career. That energy - bold, unapologetic, impossible to ignore - became the design direction for a piece that had to perform as hard as he does.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fffee14e-54ec-41e2-b48b-324c1a809f1a/Michael+Starr+Inspiration+Photo.jpg?content-type=image%2Fjpeg" },
+      { title: "Crafting for Stage Presence", description: "A custom 3D heart pendant designed to look killer from every angle under stage lights. Hand-engraved details and a bold chain. This wasn't a piece meant for a jewelry box. It was built to move, to catch light, to be seen from the back row.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/7f5bd878-5408-45af-99c2-ed681510f252/IMG_7667.jpeg?content-type=image%2Fjpeg" },
+      { title: "Ready to Rock", description: "Now it's with him for every show. Part of the uniform. Part of the identity. The kind of piece that makes people ask \"where did you get that?\" and the answer is always a story worth telling.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3b1f7d-c846-4241-b8fa-6af12347ec11/File_000.jpeg?content-type=image%2Fjpeg" }
+    ]
+  },
+  grandmother: {
+    title: "A Statement of Pride",
+    steps: [
+      { title: "A Tender and Personal Story", description: "When his grandmother passed away, she left him a box full of colored stones. She was the first person to truly support him when he came out. Those stones carried decades of unconditional love. He wanted to carry them with him.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/974c8bc1-094e-413e-89e4-002097e783af/IMG_8817+%281%29.jpeg?content-type=image%2Fjpeg" },
+      { title: "Iterating to Find the Right Fit", description: "The design needed to feel classic and timeless while honoring something deeply personal. Ali worked through iterations, focusing on a layout that would let each stone shine on its own while telling a unified story when worn together.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/d8ea729f-769a-4e12-801a-a1e03877a5cd/IMG_0680.JPG?content-type=image%2Fjpeg" },
+      { title: "The Finished Statement", description: "Cast in 14k yellow gold with each stone arranged in a rainbow. Every color placed with intention. Every gem from his grandmother's collection given a permanent home. Not just a ring. A declaration, built from inherited love.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/8de840d9-9db7-4697-8e2d-612eacc95c65/prideringfinal.jpg?content-type=image%2Fjpeg" },
+      { title: "A Point of Pride", description: "He wears it everywhere. Through his travels, in his daily life, always visible. An outward statement showing the world who he is while keeping his grandmother close. People ask about it constantly. The story never gets old.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/f37d3194-15c4-47e6-a9f5-4fa21ecf5479/20230726_171743.jpg?content-type=image%2Fjpeg" }
+    ]
+  },
+  ravenclaw: {
+    title: "A Shared Mythology",
+    steps: [
+      { title: "A Museum Moment", description: "Walking through an exhibit, a massive jade stone stopped them both. Unlike flashy gemstones, the earthy, grounded quality of jade felt authentic to who they were as a couple. That moment planted a seed neither of them forgot.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/17c5161f-31f3-4289-8292-9f9797df338f/jademuseumexhibit.png?content-type=image%2Fpng" },
+      { title: "Shared Mythology", description: "They both loved Norse legends. They wanted a ring that captured their inside connection - something that held meaning only the two of them would fully understand. Not a conventional engagement ring. A piece of their shared mythology, made wearable.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fddc43ec-8fc7-4fa8-938d-cd5ab247a28b/odinsraven.png?content-type=image%2Fpng" },
+      { title: "The Raven Claw Ring", description: "A marquise-cut jade centerstone held by raven claw prongs, crafted in gold. Every element drawn from their world - the jade from the museum, the ravens from Norse myth. A piece as unique as the bond that inspired it.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2c29b08b-2505-4ae6-8cbc-a9e1ed976452/9D133B04-7694-42DB-B0EA-9D27FCA6A529.jpg?content-type=image%2Fjpeg" },
+      { title: "Carried Forever", description: "Every glance at her ring brings back that museum moment - the instant they realized they saw the world the same way. Some rings represent a promise. This one represents a language only two people speak.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/77fda166-f95f-4f56-9971-2141db334b28/IMG_8818+%281%29.jpeg?content-type=image%2Fjpeg" }
+    ]
+  },
+  maleengagement: {
+    title: "Breaking with Tradition",
+    steps: [
+      { title: "New Territory", description: "He'd never worn jewelry before. Male engagement rings weren't common, but neither was their relationship. He didn't want something borrowed from tradition. He wanted something that felt like a genuine expression of who they are together.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a4768015-dec4-492e-8d49-d4cb3af3bed6/Group.jpg?content-type=image%2Fjpeg" },
+      { title: "Stories in Stone", description: "He discovered that jewelry could tell stories - connecting the wearer to history, to craftsmanship, to ancient design traditions. What started as \"I don't know anything about this\" became genuine fascination with what a ring could represent.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/2b8596ef-eddd-4125-82ad-b36e45efea49/2IMG_8782.jpg?content-type=image%2Fjpeg" },
+      { title: "The Perfect Ring", description: "A thick white gold band with geometric, Art Deco-inspired design. A 6-carat Asscher cut diamond set with intention. And hidden underneath: an \"AA\" engraving for their names. Bold on the outside. Intimate where only they can see.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eb693bb4-520f-41dd-8eca-a44b58c115f5/2_b.jpg?content-type=image%2Fjpeg" },
+      { title: "A Conversation Starter", description: "People love hearing the story behind this ring. Seeing a man wearing an engagement ring catches attention, but the design holds it. He went from never wearing jewelry to wearing a piece that starts conversations everywhere he goes.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/56959f07-4b76-4475-b3d3-32b0babf005a/2_a01.jpg?content-type=image%2Fjpeg" }
+    ]
+  },
+  berliniron: {
+    title: "A Tradition Transformed",
+    steps: [
+      { title: "Planning Ahead", description: "They loved the tradition of giving a different material each anniversary. Year six was iron. Most couples buy something off a shelf and call it done. They wanted to make it meaningful - something that connected the material to a real memory.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/e9acd808-f800-4f05-bbb3-2032536bcfbe/BerlinIronBracelet.png?content-type=image%2Fpng" },
+      { title: "The German Discovery", description: "Shopping together in Berlin, they discovered Berlin iron jewelry - delicate black ironwork with an industrial beauty that caught both their eyes. Unusual, historical, and completely unlike anything in a conventional jewelry store. They were drawn to it immediately.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a489a420-ff96-47c2-b79c-caaaeaaa5aee/BerlinIronNecklace.png?content-type=image%2Fpng" },
+      { title: "A Tradition Transformed", description: "Ali designed pearl studs with detachable Berlin iron jackets, teardrop pearls, and yellow gold accents. Elegant meets industrial. The kind of piece that shouldn't work on paper but comes together beautifully when every element is chosen with purpose.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39641658-34dc-40ce-b27e-b8d15ca13e88/Berlin_Iron_Pearl_Earrings.jpeg?content-type=image%2Fjpeg" },
+      { title: "Special Moments Engraved", description: "That iron they bonded over in Berlin is now part of her daily life. A travel memory she can touch. A tradition that didn't just honor the calendar - it honored the specific moment that made year six theirs.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/4a1b230a-500d-48cb-ab01-dbd64ce381d0/120250318_135901.jpeg?content-type=image%2Fjpeg" }
+    ]
+  },
+  trulyseen: {
+    title: "Truly Seen",
+    steps: [
+      { title: "Visualizing Her Dream Ring", description: "She'd carried the idea for a long time. Fashion was her form of self-expression, and she knew exactly what she wanted - an emerald ring that felt like her. Personal, bold, and unmistakably hers.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a9d46d97-755d-4f12-8ab7-8ba04892512c/Untitled+design.jpg?content-type=image%2Fjpeg" },
+      { title: "Making It Personal", description: "She wanted an emerald, and Ali found the perfect one. They took her inspiration photos and transformed them into something uniquely hers - honoring the vision she'd been carrying while adding details she hadn't thought of yet.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/dc124eb9-49b8-4ca1-b55e-bedd18fc392f/Untitled+design+%281%29.png?content-type=image%2Fpng" },
+      { title: "Seen and Surprised", description: "The plan was to surprise her on her birthday with the ring she thought was still years away. Her fantasy of \"one day\" became a reality. The moment she opened the box, \"someday\" was suddenly right now.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1ba5437c-75f4-4893-9d2f-f964794da16f/IMG_1586+%281%29.jpg?content-type=image%2Fjpeg" },
+      { title: "The Ring for a Woman With Style", description: "Stylish, elegant, and expressive - like the woman who wears it. He didn't just give her a ring. He gave her proof that he'd been paying attention all along. Sometimes being truly seen is the most meaningful gift.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/39fcbc61-a001-4d05-925a-be053f63cac1/IMG_6530+%281%29.jpg?content-type=image%2Fjpeg" }
+    ]
+  },
+  oldminecut: {
+    title: "Old Mine Cut, Modern Style",
+    steps: [
+      { title: "When the Stone Steals the Show", description: "She saw the diamond online and was instantly drawn to it - an old mine cut with a warmth and character that modern cuts don't have. Everything about the project started with that stone. The diamond chose her before she chose the ring.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/126e2e79-ef2d-4256-adb4-af5f07ac7868/36439574-ECEB-482D-92D6-1FF3ED2C8477+%281%29.jpg?content-type=image%2Fjpeg" },
+      { title: "Reimagining the Setting", description: "She wanted the ring's style to complement a bracelet that was deeply personal to her. The setting couldn't just showcase the stone - it needed to connect to something she already wore and loved. Two pieces, one design language.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5fa88a3f-bf1f-432b-94ca-e2b8f6059a60/TY60132-%28ADM-MINE-CUT+102324%29-U-3+%281%29.jpg?content-type=image%2Fjpeg" },
+      { title: "From Model to Metal", description: "After building the 3D model and refining every proportion, they turned the inspiration into a finished piece. The old mine cut's vintage character held in a setting that felt contemporary. History and modernity in the same ring.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5393a587-e501-4d73-98e3-879f433835a5/2F468A45-9F54-451E-A216-2E9EDB7BF839.jpeg?content-type=image%2Fjpeg" },
+      { title: "The Proposal", description: "Built for their story, designed for a lifetime. Some rings follow trends. This one followed a feeling - starting with a diamond that caught her eye and ending with a piece that captures who they are together.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eff358b4-a932-4b7a-a94b-efbb492e68ea/IMG_0507.JPG?content-type=image%2Fjpeg" }
+    ]
+  },
+  emeraldgift: {
+    title: "An Emerald Gift for His Wife",
+    steps: [
+      { title: "Napkin Math", description: "He drew out some crude ideas on a piece of paper - circles, arrows, rough shapes. Hoping Ali could take what was in his head and translate it into something meaningful. The vision was clear even if the sketch wasn't.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/0e505dcb-453d-4f6f-971a-2cab2956a7d6/IMG_20251203_150825.jpg?content-type=image%2Fjpeg" },
+      { title: "Picking the Perfect Emerald", description: "Ali sourced a top-quality Colombian emerald at a price that honored his budget. The stone had the depth of color and clarity that would anchor the entire design. When the center stone is right, everything else falls into place around it.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/7c790e97-0888-466b-8a6f-27fbc2b5c3ca/att.m6vRBvUYLSz-y1BWL8j2HrtJqZKu-PgJ2tJq8sTfO3o.jpeg?content-type=image%2Fjpeg" },
+      { title: "Bringing It All Together", description: "His wife loved period pieces, so the chain had to feel historically inspired while still being wearable every day. Ali refined it in the 3D model until every link, every proportion, every detail felt intentional and cohesive.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/eb355c4f-d6d6-497d-a6d2-2049586902b2/Untitled+design+-+2.PNG?content-type=image%2Fpng" },
+      { title: "A Necklace Fit for a Queen", description: "Her love of history. Their shared birthstone. His passion for gold. All of it brought together in an 18k emerald necklace that carries the weight of everything they are to each other. Planned for months. Meant for a lifetime.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/ba3eb7ce-8f54-43ef-a2e1-53242daa60c8/IMG_0208.JPG?content-type=image%2Fjpeg" }
+    ]
+  },
+  landscape: {
+    title: "A Lake He'll Carry Forever",
+    steps: [
+      { title: "Two Rings, One Conversation", description: "They came in for her engagement ring and immediately wanted to design their bands at the same time. Most couples treat bands as an afterthought. Not these two. They wanted both rings designed together, from the same conversation, from the same place.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fddac3fc-d4ba-47a2-9727-63c227bb34e5/14kYellow_Oval_Purple_Leaf_OnMarble_08.jpg?content-type=image%2Fjpeg" },
+      { title: "Finding His Voice", description: "Delaney's ring had organic leaf elements - natural and alive. Davis started with the same concept, but it felt too feminine. So Ali pushed: what does feel like you? He sent a photo of a lake they'd been to together. A place that meant something to both of them.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fe612f2f-4436-43b9-9a59-a788699fbfc4/Davis_Mens_Band_Nature_Lake_Step2.png?content-type=image%2Fpng" },
+      { title: "A Landscape in Gold", description: "Ali had a hand engraver carve that lake into his band - mountains, pine trees, water wrapping around the gold. Her ring had the leaves. His had the landscape. Different expressions of the same world. Masculine and feminine. Nature, both ways.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/5aa11de2-8921-4eb6-8e34-c88c62dc974e/Davis_Mens_Band_Engraving_Closeup_Step3.JPG?content-type=image%2Fjpeg" },
+      { title: "They Belong Together", description: "Their rings don't match. They weren't supposed to. But put them next to each other and you immediately understand: they belong together.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/1e3838d2-358e-48b7-b83c-ba4b60f7b3bc/Davis_Mens_Band_PairedwithHerER_Step4.JPG?content-type=image%2Fjpeg" }
+    ]
+  },
+  cluster: {
+    title: "A Family's Diamonds, Reimagined",
+    steps: [
+      { title: "A Dream and a Box of Stones", description: "She came in with photos of her dream ring - an oval center with a halo - and a collection of heirloom diamonds from her family in completely different shapes and sizes. Nothing lined up on paper. But both mattered too much to let go of either.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/f44dbc6b-c9b6-4400-b339-4e9e79b7da70/Cluster_Old_Heirloom_Rings_Redesigned_Step1.jpg?content-type=image%2Fjpeg" },
+      { title: "Getting Creative", description: "A less creative jeweler would say \"pick one - your dream ring or your family stones.\" Ali said neither. She reworked the design to use every heirloom diamond while preserving the spirit of the ring her client had fallen in love with. The layout changed entirely.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/d31f716b-5597-426b-a563-685db6e3e62a/Heirloom_Cluster_Redesign_Sketch_Step2.jpeg?content-type=image%2Fjpeg" },
+      { title: "Designing the Cluster", description: "The result was a cluster setting that gave every family diamond a home. The halo elements from her inspiration lived on, but transformed - built around the stones she actually had. A puzzle solved through design, not compromise.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/9d29fa0d-8f86-47a5-83ed-f4de9beb4c10/Heirloom_Cluster_Redesign_CAD_Step3.jpeg?content-type=image%2Fjpeg" },
+      { title: "The Most Beautiful Thing She'd Ever Seen", description: "She got engaged over Thanksgiving and saw it for the first time. Her words: \"It is the most beautiful and unique thing I've ever seen in my whole life.\" She started name-dropping Ali immediately. The stones that sat in a drawer finally had a future.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a01a5e6d-9331-4262-82f4-7d631d1fb6f3/Heirloom_Cluster_Redesign_Final_RingonFinger_Step4.jpeg?content-type=image%2Fjpeg" }
+    ]
+  },
+  heartdiamond: {
+    title: "The Diamond With a Heart Inside",
+    steps: [
+      { title: "Thoughtful From the Start", description: "Dan and Amy had done their research - round brilliant, GIA certified, high color, high clarity. But they weren't checking boxes. They were genuinely open to the journey, trusting Ali to guide them somewhere they couldn't get on their own.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/19f5daed-8aa5-4f49-90c9-d0dbd82042e9/AD_RoundBrilliant_ER_JapanEngagement_Step1.JPG?content-type=image%2Fjpeg" },
+      { title: "When the Scope Shifts", description: "Amy realized she wanted a bigger diamond. At two and a half carats in those parameters, the budget curve climbs fast. Ali had to get creative with sourcing - finding options that maximized their budget without sacrificing what actually matters.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a61bb11c-fa66-4508-b662-50c41aa82e0f/AD_RoundBrilliant_ER_LooseDiamond_Step2.jpg?content-type=image%2Fjpeg" },
+      { title: "The Heart in the Stone", description: "One diamond - an SI2 that most people would skip - had an inclusion shaped like a heart. When Dan and Amy saw it under the microscope, they both got emotional. That wasn't a flaw. That was their diamond. Chosen for the story inside it.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/638b0cfa-b902-4cd8-b358-95bf4272b274/AD_RoundBrilliant_ER_HeartInclusion_Closeup_Step3.jpg?content-type=image%2Fjpeg" },
+      { title: "Forever, by Design", description: "The finished ring holds their heart-marked diamond in a setting with an infinity twist in the band - representing eternity. Amy said it: \"Even more beautiful than I imagined.\" They came in with a plan. They left with something better.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/00f4859c-ac07-412c-afcc-73689ec759aa/AD_RoundBrilliant_ER_Final_RingonHand_Step4.JPG?content-type=image%2Fjpeg" }
+    ]
+  },
+  yellowdiamond: {
+    title: "The Start of Everything",
+    steps: [
+      { title: "Everything at Once", description: "A baby on the way. A house to find. A wedding to plan. When Michael and Marci came to Ali, life was moving fast. This ring wasn't just a ring. It was the nucleus of a new chapter - everything starting at once.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/6df60663-ff10-4794-9aa3-3d722ea0cdb4/Heirloom_Redesign_YDiamond_Sketch_Step1.jpg?content-type=image%2Fjpeg" },
+      { title: "The Inspiration and the Heirlooms", description: "Marci had an inspiration photo with a champagne glow she couldn't stop thinking about. She also brought heirloom diamonds from her family - round accents and a half-carat marquise. They tried the marquise as the center stone, but it didn't match the vision.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/fe795dbf-eb65-448f-8aa3-3645f2ab3089/Heirloom_Redesign_YDiamond_CAD_Step+2.jpg?content-type=image%2Fjpeg" },
+      { title: "Sourcing the Missing Piece", description: "Ali searched for a yellow diamond matching that specific warmth - harder to source than most people realize. The heirloom rounds became the halo. Two-tone metal: 14k yellow gold on the band, white gold around the halo. Every family stone found its place.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/b4ecd2ef-546c-4c01-977d-cf2ed328f9c7/Heirloom_Redesign_YDiamond_Final_InBox_Step3.jpeg?content-type=image%2Fjpeg" },
+      { title: "The Nucleus", description: "Marci's reaction was immediate: \"I'm obsessed with the ring.\" She kept sending Ali photos - engagement shots, candids, the ring in different light. Weeks later: \"I still love it.\" Some rings mark a moment. This one marked the start of everything.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/6a1e1259-7965-4a51-9bf7-04a8a17968da/Heirloom_Redesign_YDiamond_Final_OnHand_Step4.jpg?content-type=image%2Fjpeg" }
+    ]
+  },
+  blackdiamond: {
+    title: "Born in the Dark",
+    steps: [
+      { title: "Something Just for Her", description: "She was a mom. A wife. And she wanted a ring that was neither of those things. Something for her right hand - a personal statement she'd wear alongside her classic engagement set. Not for anyone else. Just hers.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/c4dc965d-04c7-46a8-804a-53f168812338/Black_Diamond_Marquise_Sketch_Step1.jpeg?content-type=image%2Fjpeg" },
+      { title: "Finding the Stone", description: "Ali sourced a 2.74-carat black diamond marquise with serious presence. But the ring still needed to complement her classic engagement set while being unapologetically edgy. That tension shaped every decision that followed.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/81099f15-b503-4d0a-bd30-10412d7c5545/Black_Diamond_Marquise_LooseStone_Step2.jpg?content-type=image%2Fjpeg" },
+      { title: "Edgy Meets Classic", description: "Round white diamond accents flanking the marquise tied the ring to her existing engagement set. The round stones echoed her classic ring while the black center did its own thing entirely. Edgy and classic, all at once. Cohesive without being matchy.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/a223b68d-ae5c-4d34-8c8f-bdd8fb3a1855/Black_Diamond_Marquise_CAD_Step3.jpeg?content-type=image%2Fjpeg" },
+      { title: "This One's Mine", description: "Her left hand tells the love story. Her right hand tells hers. Not every piece of jewelry needs to be about someone else. Sometimes the most powerful design is the one a woman creates purely for herself.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/59059cff-187f-4409-93f7-40377c0c1a74/Black_Diamond_Marquise_Finished_Step4.jpeg?content-type=image%2Fjpeg" }
+    ]
+  },
+  cutbyhand: {
+    title: "Cut by Hand",
+    steps: [
+      { title: "Looking for What Didn't Exist", description: "Tori loved old mine cuts - the elongated facets, the culet, the way they catch light differently than modern stones. A marquise-shaped old mine cut would have been perfect. But the exact stone they imagined didn't exist in any dealer's inventory.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/08aff182-de21-403e-9d01-5b3714484ca3/MT_OldMine_Marquise_ER_Sketch_Step1.png?content-type=image%2Fpng" },
+      { title: "Cut by Hand", description: "When the right stone couldn't be found, they had it custom cut - shaped by hand into an excellent-cut, mathematically precise old mine cut marquise with the elongated facets and culet of a vintage diamond. A brand new stone, cut for one client.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/61058e3e-c015-4c26-bf2c-343da46ee5cc/MT_OldMine_Marquise_ER_LooseStone_Step2.jpg?content-type=image%2Fjpeg" },
+      { title: "Designed in Harmony", description: "The ring and stone weren't designed separately - both evolved together. Tori loved a split shank, and with a marquise it's a natural pairing. Setting and stone informed each other until the whole design clicked into place. One vision, realized.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/b5e03d40-bce2-473b-a9a2-46644fbb2014/MT_OldMine_Marquise_ER_CAD_Step3.jpg?content-type=image%2Fjpeg" },
+      { title: "The Accidental Email", description: "Mark planned a surprise proposal in Aspen before Christmas. To seal it, he asked Ali to \"accidentally\" send Tori an email: \"The ring won't be ready until mid-January.\" The misdirection worked. The surprise held. And somewhere in Aspen, she said yes.", image: "https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/bf83a78d-64f4-4639-9e03-aaecab6934e5/MT_OldMine_Marquise_ER_Couple_Step4.JPG?content-type=image%2Fjpeg" }
+    ]
+  }
+};
 
-                prevBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    previousStep();
-                };
-                nextBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    nextStep();
-                };
+// DOM
+const modal = document.getElementById('storyModal');
+const stepArea = document.getElementById('stepArea');
+const navDots = document.getElementById('navDots');
+const filterBtns = document.querySelectorAll('.admae-filter-btn');
+let currentStory = null;
+let currentStep = 0;
+let cachedCards = null;
 
-                // Image click to advance
-                stepImage.onclick = (e) => {
-                    e.stopPropagation();
-                    nextStep();
-                };
+document.addEventListener('DOMContentLoaded', function() {
+  cachedCards = Array.from(document.querySelectorAll('.admae-story-card'));
 
-                // Create navigation dot
-                const dot = document.createElement('div');
-                dot.className = 'nav-dot';
-                dot.onclick = () => showStep(index);
-                storyNav.appendChild(dot);
-            });
-        }
+  // Card clicks
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.admae-story-card');
+    if (card) openStory(card.getAttribute('data-story'));
+  }, { passive: true });
 
-        function showStep(stepIndex) {
-            const steps = storyProgression.querySelectorAll('.story-step');
-            const dots = storyNav.querySelectorAll('.nav-dot');
+  // Filters
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.getAttribute('data-filter');
+      cachedCards.forEach(c => {
+        c.style.display = (f === 'all' || c.getAttribute('data-category').includes(f)) ? 'block' : 'none';
+      });
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
 
-            // Hide all steps
-            steps.forEach(step => step.classList.remove('visible'));
-            dots.forEach(dot => dot.classList.remove('active'));
+  // Modal close
+  document.querySelector('.admae-modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-            // Show current step
-            const currentStepElement = steps[stepIndex];
-            if (currentStepElement) {
-                setTimeout(() => {
-                    currentStepElement.classList.add('visible');
-                    dots[stepIndex].classList.add('active');
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (modal.style.display === 'block') {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') prevStep();
+      if (e.key === 'ArrowRight') nextStep();
+    }
+  });
+});
 
-                    // Update arrow buttons inline (no additional DOM query)
-                    const prevBtn = currentStepElement.querySelector('.story-nav-arrow.prev');
-                    const nextBtn = currentStepElement.querySelector('.story-nav-arrow.next');
+function openStory(id) {
+  if (!stories[id]) return;
+  currentStory = stories[id];
+  currentStep = 0;
+  buildModal();
+  modal.style.display = 'block';
+  document.body.classList.add('modal-open');
+  if (window.innerWidth > 768) document.body.style.overflow = 'hidden';
+  showStep(0);
+}
 
-                    if (prevBtn) prevBtn.disabled = stepIndex === 0;
-                    if (nextBtn) nextBtn.disabled = stepIndex === currentStory.steps.length - 1;
-                }, 100);
-            }
+function buildModal() {
+  stepArea.innerHTML = '';
+  navDots.innerHTML = '';
+  currentStory.steps.forEach((step, i) => {
+    const div = document.createElement('div');
+    div.className = 'admae-story-step';
+    div.innerHTML = `
+      <div class="admae-step-img-wrap">
+        <img class="admae-step-img" data-src="${step.image}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect width='400' height='500' fill='%23181818'/%3E%3C/svg%3E" alt="${step.title}">
+        <button class="admae-arrow prev" ${i === 0 ? 'disabled' : ''}>&#8249;</button>
+        <button class="admae-arrow next" ${i === currentStory.steps.length - 1 ? 'disabled' : ''}>&#8250;</button>
+      </div>
+      <h3 class="admae-step-title">${step.title}</h3>
+      <p class="admae-step-desc">${step.description}</p>
+    `;
+    stepArea.appendChild(div);
+    div.querySelector('.admae-arrow.prev').onclick = (e) => { e.stopPropagation(); prevStep(); };
+    div.querySelector('.admae-arrow.next').onclick = (e) => { e.stopPropagation(); nextStep(); };
+    div.querySelector('.admae-step-img').onclick = (e) => { e.stopPropagation(); nextStep(); };
+    div.querySelector('.admae-step-img').addEventListener('error', function() {
+      this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect width='400' height='500' fill='%23222'/%3E%3Ctext x='200' y='250' text-anchor='middle' fill='%23d4af37' font-size='16'%3EImage unavailable%3C/text%3E%3C/svg%3E";
+    }, { once: true });
 
-            currentStep = stepIndex;
-        }
+    const dot = document.createElement('button');
+    dot.className = 'admae-dot';
+    dot.onclick = () => showStep(i);
+    navDots.appendChild(dot);
+  });
+}
 
-        function nextStep() {
-            if (currentStep < currentStory.steps.length - 1) {
-                showStep(currentStep + 1);
-            }
-        }
+// Load image for a step (swap data-src to src), plus preload next step
+function loadStepImage(i) {
+  const steps = stepArea.querySelectorAll('.admae-story-step');
+  [i, i + 1].forEach(idx => {
+    if (steps[idx]) {
+      const img = steps[idx].querySelector('.admae-step-img');
+      if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
+    }
+  });
+}
 
-        function previousStep() {
-            if (currentStep > 0) {
-                showStep(currentStep - 1);
-            }
-        }
+let stepTimeout = null;
+function showStep(i) {
+  const steps = stepArea.querySelectorAll('.admae-story-step');
+  const dots = navDots.querySelectorAll('.admae-dot');
+  steps.forEach(s => s.classList.remove('visible'));
+  dots.forEach(d => d.classList.remove('active'));
+  clearTimeout(stepTimeout);
+  stepTimeout = setTimeout(() => {
+    if (steps[i]) { steps[i].classList.add('visible'); dots[i].classList.add('active'); }
+    loadStepImage(i);
+  }, 80);
+  currentStep = i;
+}
 
-        function closeModal() {
-            modal.style.display = 'none';
-            document.body.classList.remove('modal-open');
-            document.body.style.overflow = '';
-        }
+function nextStep() { if (currentStep < currentStory.steps.length - 1) showStep(currentStep + 1); }
+function prevStep() { if (currentStep > 0) showStep(currentStep - 1); }
 
-        // Touch/swipe support for mobile
-        let startX = 0;
-        let startY = 0;
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.classList.remove('modal-open');
+  document.body.style.overflow = '';
+}
 
-        storyProgression.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        }, { passive: true });
-
-        storyProgression.addEventListener('touchend', (e) => {
-            if (!currentStory) return;
-
-            const endX = e.changedTouches[0].clientX;
-            const endY = e.changedTouches[0].clientY;
-            const diffX = startX - endX;
-            const diffY = startY - endY;
-
-            // Only register horizontal swipes
-            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
-                if (diffX > 0) {
-                    nextStep(); // Swipe left = next
-                } else {
-                    previousStep(); // Swipe right = previous
-                }
-            }
-        }, { passive: true });
-    </script>
-</body>
-</html>
+// Touch swipe
+let sx = 0, sy = 0;
+stepArea.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+stepArea.addEventListener('touchend', (e) => {
+  if (!currentStory) return;
+  const dx = sx - e.changedTouches[0].clientX;
+  const dy = sy - e.changedTouches[0].clientY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) { dx > 0 ? nextStep() : prevStep(); }
+}, { passive: true });
+</script>

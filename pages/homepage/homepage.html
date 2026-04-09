@@ -1,54 +1,48 @@
 <!--
   ================================================================
-  A. D'Mae Diamonds - HOMEPAGE
-  CODE BLOCK 1 OF 3
+  A. D'Mae Diamonds - HOMEPAGE (Single Code Block)
   ================================================================
   
-  HOW TO SET THIS UP IN SQUARESPACE:
+  SQUARESPACE SETUP:
+  1. This is ONE code block containing the entire homepage
+  2. After this code block, place the TRUSTINDEX WIDGET (native block)
+     - Updated to LA Google Business Profile
+  3. No other blocks needed
   
-  Your homepage will have 5 blocks in this order:
-  
-  1. CODE BLOCK 1 (this file) - Hero through lead magnet opening
-  2. NATIVE FORM BLOCK - Your Squarespace email capture form
-  3. CODE BLOCK 2 (homepage-part2.html) - Closes lead magnet, then testimonials heading
-  4. TRUSTINDEX WIDGET BLOCK - Your existing review widget
-  5. CODE BLOCK 3 (homepage-part3.html) - Closes testimonials, social section, end
-  
-  FORM SETUP:
-  - Edit your existing form block to EMAIL ONLY (remove name and dream piece fields)
-  - Change the submit button text to "Send Me The Guide"
-  - The CSS in this code block will automatically restyle the form
-  
-  SEO SETTINGS:
-  - Title: Custom Engagement Rings & Fine Jewelry Los Angeles | A. D'Mae Diamonds
-  - Description: Custom engagement rings and fine jewelry designed one-on-one by Alexandria, 
-    a GIA Graduate Gemologist and third-generation jeweler in West Los Angeles. Free consultations.
-  
-  ================================================================
+  REVISION: April 2026 - Homepage bounce rate fix
+  - Hero CTA replaced with "Explore Our Work" portfolio link
+  - Second "Book Now" button removed from intro section
+  - First booking CTA moved below service cards (earned position)
+  - Section title changed to "What We Do For You"
+  - Wedding bands card updated to /custom-wedding-bands-los-angeles
+  - Lead magnet removed (no email automation behind it yet)
+  - Final CTA block added with trust signals
+  - Single code block structure (no more multi-block splits)
 -->
 
 <style>
   /* ============================================
-     HOMEPAGE STYLES
+     HOMEPAGE WRAPPER
      ============================================ */
-  
   .admae-homepage {
-    max-width: 100%;
-    margin: 0 auto;
     font-family: inherit;
     color: #f0ece4;
     line-height: 1.7;
-    background-color: transparent;
   }
 
   .admae-homepage * {
     box-sizing: border-box;
   }
 
-  .admae-homepage-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .admae-homepage a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .admae-homepage a:hover {
+    border-color: #d4af37;
   }
 
   /* ============================================
@@ -56,95 +50,88 @@
      ============================================ */
   .admae-hp-hero {
     text-align: center;
-    padding: 0 24px 60px;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 24px;
   }
 
   .admae-hp-hero h1 {
-    font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
     letter-spacing: 0.01em;
-    line-height: 1.2;
+    line-height: 1.25;
     margin: 0 0 20px;
     color: #fff;
   }
 
   .admae-hp-hero .hero-sub {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: #c4bfb4;
-    max-width: 620px;
+    max-width: 640px;
     margin: 0 auto 32px;
     line-height: 1.6;
   }
 
-  .admae-hp-hero .hero-sub a {
-    color: #d4af37;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-  }
-
-  .admae-hp-hero .hero-sub a:hover {
-    border-color: #d4af37;
-  }
-
-  /* CTAs */
-  .admae-cta {
+  .admae-portfolio-link {
     display: inline-block;
     padding: 20px 48px;
     border: 2px solid #d4af37;
-    color: #d4af37;
-    text-decoration: none;
+    color: #d4af37 !important;
+    text-decoration: none !important;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     transition: background 0.3s ease, color 0.3s ease;
     border-radius: 2px;
+    border-bottom: 2px solid #d4af37 !important;
   }
 
-  .admae-cta:hover {
+  .admae-portfolio-link:hover {
     background: #d4af37;
-    color: #111;
+    color: #111 !important;
   }
 
-  .admae-cta-filled {
-    background: #d4af37;
-    color: #111;
-    border-color: #d4af37;
-    font-weight: 700;
-  }
-
-  .admae-cta-filled:hover {
-    background: #c9a42e;
-    border-color: #c9a42e;
-  }
-
-  /* Trust bar */
   .admae-trust-bar {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
-    margin-top: 32px;
+    margin-top: 28px;
   }
 
   .admae-trust-bar span {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #999;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    white-space: nowrap;
   }
 
-  /* Divider */
-  .admae-divider {
+  /* ============================================
+     DIVIDER
+     ============================================ */
+  .admae-hp-divider {
     width: 60px;
     height: 1px;
     background: #d4af37;
     margin: 56px auto;
     border: none;
+  }
+
+  /* ============================================
+     HERO IMAGE
+     ============================================ */
+  .admae-hp-hero-image {
+    max-width: 1100px;
+    margin: 0 auto 0;
+    padding: 0 24px;
+  }
+
+  .admae-hp-hero-image img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
   }
 
   /* ============================================
@@ -172,52 +159,23 @@
     margin: 0 0 24px;
   }
 
-  .admae-hp-intro p a {
-    color: #d4af37;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-  }
-
-  .admae-hp-intro p a:hover {
-    border-color: #d4af37;
-  }
-
   .admae-hp-intro .intro-cta-line {
     font-size: 1.3rem;
     font-weight: 700;
     color: #fff;
-    margin: 0 0 24px;
+    margin: 0;
     font-style: normal;
-  }
-
-  .admae-hp-intro .intro-cta-line a {
-    color: #d4af37;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-  }
-
-  .admae-hp-intro .intro-cta-line a:hover {
-    border-color: #d4af37;
-  }
-
-  /* ============================================
-     HERO IMAGE
-     ============================================ */
-  .admae-hp-hero-image {
-    max-width: 1100px;
-    margin: 0 auto 0;
-    padding: 0 24px;
-  }
-
-  .admae-hp-hero-image img {
-    width: 100%;
-    border-radius: 4px;
-    display: block;
   }
 
   /* ============================================
      SERVICE CARDS
      ============================================ */
+  .admae-hp-services {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
   .admae-hp-services h2 {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 700;
@@ -235,7 +193,7 @@
 
   .admae-service-card {
     display: block;
-    text-decoration: none;
+    text-decoration: none !important;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid rgba(212, 175, 55, 0.15);
@@ -274,6 +232,63 @@
   }
 
   /* ============================================
+     CTA BLOCKS
+     ============================================ */
+  .admae-hp-cta-block {
+    text-align: center;
+    padding: 56px 24px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .admae-hp-cta-block h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+
+  .admae-hp-cta-block p {
+    font-size: 1rem;
+    color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .admae-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    border: 2px solid #d4af37;
+    color: #d4af37 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 2px;
+    border-bottom: 2px solid #d4af37 !important;
+  }
+
+  .admae-cta:hover {
+    background: #d4af37;
+    color: #111 !important;
+  }
+
+  .admae-cta-filled {
+    background: #d4af37;
+    color: #111 !important;
+    border-color: #d4af37;
+    font-weight: 700;
+  }
+
+  .admae-cta-filled:hover {
+    background: #c9a42e;
+    border-color: #c9a42e;
+  }
+
+  /* ============================================
      SEO PARAGRAPH
      ============================================ */
   .admae-hp-seo {
@@ -297,155 +312,47 @@
     margin: 0 0 20px;
   }
 
-  .admae-hp-seo a {
-    color: #d4af37;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-  }
-
-  .admae-hp-seo a:hover {
-    border-color: #d4af37;
-  }
-
   /* ============================================
-     LEAD MAGNET SECTION
+     FINAL CTA
      ============================================ */
-  .admae-hp-leadmagnet {
-    max-width: 900px;
+  .admae-hp-final-cta {
+    text-align: center;
+    padding: 56px 24px;
     margin: 0 auto;
-    padding: 0 24px;
+    max-width: 800px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+    background: rgba(212, 175, 55, 0.03);
   }
 
-  .admae-leadmagnet-container {
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 6px;
-    background: rgba(212, 175, 55, 0.04);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.08);
-    padding: 48px 40px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .admae-leadmagnet-content h2 {
+  .admae-hp-final-cta h2 {
     font-size: clamp(1.4rem, 3vw, 1.8rem);
     font-weight: 400;
     color: #fff;
     margin: 0 0 12px;
-    text-align: left;
   }
 
-  .admae-leadmagnet-content .lead-sub {
-    font-size: 1rem;
+  .admae-hp-final-cta p {
     color: #c4bfb4;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    font-size: 1rem;
     line-height: 1.7;
-    margin: 0 0 8px;
-    font-style: italic;
   }
 
-  .admae-leadmagnet-content .lead-note {
+  .admae-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .admae-trust-item {
     font-size: 0.8rem;
     color: #999;
-    margin: 0 0 24px;
-  }
-
-  .admae-leadmagnet-image img {
-    width: 100%;
-    border-radius: 4px;
-    display: block;
-  }
-
-  /* ============================================
-     NATIVE SQUARESPACE FORM OVERRIDES
-     ============================================ */
-
-  /* Input fields */
-  .admae-leadmagnet-content .sqs-block-form,
-  .admae-leadmagnet-content .form-wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .admae-leadmagnet-content .field-element,
-  .admae-leadmagnet-content input[type="email"],
-  .admae-leadmagnet-content input[type="text"],
-  .admae-leadmagnet-content textarea {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(212, 175, 55, 0.3) !important;
-    border-radius: 3px !important;
-    color: #f0ece4 !important;
-    padding: 14px 16px !important;
-    font-size: 0.95rem !important;
-    font-family: inherit !important;
-    width: 100% !important;
-    transition: border-color 0.3s !important;
-  }
-
-  .admae-leadmagnet-content input:focus,
-  .admae-leadmagnet-content textarea:focus {
-    border-color: #d4af37 !important;
-    outline: none !important;
-  }
-
-  /* Labels */
-  .admae-leadmagnet-content .title,
-  .admae-leadmagnet-content label,
-  .admae-leadmagnet-content .caption,
-  .admae-leadmagnet-content .field-label {
-    color: #c4bfb4 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.03em !important;
-  }
-
-  /* Submit button */
-  .admae-leadmagnet-content .form-button-wrapper .sqs-system-button,
-  .admae-leadmagnet-content input[type="submit"],
-  .admae-leadmagnet-content button[type="submit"],
-  .admae-leadmagnet-content .sqs-editable-button {
-    background: #d4af37 !important;
-    color: #111 !important;
-    border: 2px solid #d4af37 !important;
-    border-radius: 2px !important;
-    padding: 16px 40px !important;
-    font-size: 0.9rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.12em !important;
-    text-transform: uppercase !important;
-    cursor: pointer !important;
-    transition: background 0.3s, border-color 0.3s !important;
-    font-family: inherit !important;
-    width: auto !important;
-  }
-
-  .admae-leadmagnet-content .form-button-wrapper .sqs-system-button:hover,
-  .admae-leadmagnet-content input[type="submit"]:hover,
-  .admae-leadmagnet-content button[type="submit"]:hover,
-  .admae-leadmagnet-content .sqs-editable-button:hover {
-    background: #c9a42e !important;
-    border-color: #c9a42e !important;
-  }
-
-  /* Hide field descriptions */
-  .admae-leadmagnet-content .description {
-    display: none !important;
-  }
-
-  /* ============================================
-     TESTIMONIALS
-     ============================================ */
-  .admae-hp-testimonials {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .admae-hp-testimonials h2 {
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    margin: 0 0 32px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   /* ============================================
@@ -455,28 +362,31 @@
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px 80px;
+    padding: 0 24px 24px;
   }
 
   .admae-hp-social h2 {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: 1rem;
     font-weight: 400;
-    color: #fff;
-    margin: 0 0 16px;
+    color: #999;
+    margin: 0 0 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .admae-hp-social a {
-    color: #d4af37;
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    transition: border-color 0.3s;
+    display: inline-block;
+    transition: opacity 0.3s;
   }
 
   .admae-hp-social a:hover {
-    border-color: #d4af37;
+    opacity: 0.7;
+  }
+
+  .admae-hp-social a svg {
+    width: 28px;
+    height: 28px;
+    fill: #d4af37;
   }
 
   /* ============================================
@@ -489,10 +399,6 @@
   }
 
   @media (max-width: 680px) {
-    .admae-homepage-inner {
-      padding: 0 18px;
-    }
-
     .admae-service-grid {
       grid-template-columns: 1fr;
       gap: 16px;
@@ -502,38 +408,23 @@
       height: 200px;
     }
 
-    .admae-leadmagnet-container {
-      grid-template-columns: 1fr;
-      padding: 32px 24px;
-      gap: 24px;
-    }
-
-    .admae-leadmagnet-image {
-      order: -1;
-      max-width: 240px;
-      margin: 0 auto;
-    }
-
     .admae-trust-bar {
       gap: 12px;
     }
 
-    .admae-hp-hero {
+    .admae-trust-signals {
+      gap: 20px;
+    }
+
+    .admae-hp-hero,
+    .admae-hp-intro,
+    .admae-hp-seo,
+    .admae-hp-social {
       padding-left: 18px;
       padding-right: 18px;
     }
 
-    .admae-hp-intro {
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-
-    .admae-hp-seo {
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-
-    .admae-hp-leadmagnet {
+    .admae-hp-services {
       padding-left: 18px;
       padding-right: 18px;
     }
@@ -548,7 +439,7 @@
     <p class="hero-sub">
       Let <a href="/aboutadmaediamonds">Alexandria</a> translate your story into a one-of-a-kind design - one-on-one, no stress.
     </p>
-    <a href="/schedule-an-appointment" class="admae-cta">Book 1:1 Consultation</a>
+    <a href="/portfolio-client-journeys" class="admae-portfolio-link">Explore Our Work</a>
     <div class="admae-trust-bar">
       <span>GIA Graduate Gemologist</span>
       <span>110+ Five-Star Google Reviews</span>
@@ -559,68 +450,72 @@
   </section>
 
   <!-- ===================== HERO IMAGE ===================== -->
-  <div class="admae-hp-hero-image">
+  <section class="admae-hp-hero-image">
     <img 
       src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/c422466a-f570-4093-b6dd-f15b0ff5b6fd/34604913-6A4C-488E-BD84-FC4763A38C98.jpg" 
-      alt="Custom engagement ring and jewelry by A. D'Mae Diamonds in Los Angeles" 
-      loading="eager"
+      alt="Alexandria of A. D'Mae Diamonds sketching a custom jewelry design in her West Los Angeles studio"
+      loading="lazy"
     >
-  </div>
+  </section>
 
-  <hr class="admae-divider">
+  <hr class="admae-hp-divider">
 
   <!-- ===================== INTRO ===================== -->
   <section class="admae-hp-intro">
     <h2>Not your grandfather's jewelry store.</h2>
-    <p>No sales floors. No pressure. No cookie-cutter designs. We start with a conversation - <a href="/portfolio-client-journeys">getting to know you, your story, and what matters most</a>. Then we sketch, design, and create something meaningful. A piece of art made just for you.</p>
+    <p>No sales floors. No pressure. No cookie-cutter designs. We start with a conversation - <a href="/customjewelrydesignprocess">getting to know you, your story, and what matters most</a>. Then we sketch, design, and create something meaningful. A piece of art made just for you.</p>
     <p class="intro-cta-line">It starts with a <a href="/engagement-ring-consultation-los-angeles">consultation</a>.</p>
-    <a href="/schedule-an-appointment" class="admae-cta">Book Now</a>
   </section>
 
-  <hr class="admae-divider">
+  <hr class="admae-hp-divider">
 
   <!-- ===================== SERVICE CARDS ===================== -->
   <section class="admae-hp-services">
-    <div class="admae-homepage-inner">
-      <h2>What We Create...</h2>
+    <h2>What We Do For You</h2>
 
-      <div class="admae-service-grid">
-        <a href="/custom-engagement-rings-los-angeles" class="admae-service-card">
-          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/16fbe92d-283d-46e5-a470-929e1591cc9c/1_b.jpg?content-type=image%2Fjpeg" alt="Custom engagement rings designed in Los Angeles by A. D'Mae Diamonds" loading="lazy">
-          <div class="admae-service-card-text">
-            <h3>Custom Engagement Rings</h3>
-            <p>Designed from scratch around your story.</p>
-          </div>
-        </a>
+    <div class="admae-service-grid">
+      <a href="/custom-engagement-rings-los-angeles" class="admae-service-card">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/16fbe92d-283d-46e5-a470-929e1591cc9c/1_b.jpg?content-type=image%2Fjpeg" alt="Custom engagement ring by A. D'Mae Diamonds" loading="lazy">
+        <div class="admae-service-card-text">
+          <h3>Custom Engagement Rings</h3>
+          <p>Designed from scratch around your story.</p>
+        </div>
+      </a>
 
-        <a href="/engagement-ring-consultation-los-angeles" class="admae-service-card">
-          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/dd1b73fe-1037-4f5e-8074-1d6ebb93101c/20241118_150134.jpg?content-type=image%2Fjpeg" alt="Free engagement ring design consultation with GIA Graduate Gemologist in Los Angeles" loading="lazy">
-          <div class="admae-service-card-text">
-            <h3>Engagement Ring Consultation</h3>
-            <p>90 minutes, no pressure, no obligation.</p>
-          </div>
-        </a>
+      <a href="/engagement-ring-consultation-los-angeles" class="admae-service-card">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/dd1b73fe-1037-4f5e-8074-1d6ebb93101c/20241118_150134.jpg?content-type=image%2Fjpeg" alt="Engagement ring consultation at A. D'Mae Diamonds" loading="lazy">
+        <div class="admae-service-card-text">
+          <h3>Engagement Ring Consultation</h3>
+          <p>90 minutes, no pressure, no obligation.</p>
+        </div>
+      </a>
 
-        <a href="/custom-mens-wedding-bands-los-angeles" class="admae-service-card">
-          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/bed06636-e159-426e-8274-1fe628b363df/1+%282%29.jpg?content-type=image%2Fjpeg" alt="Custom men's wedding bands designed in Los Angeles by A. D'Mae Diamonds" loading="lazy">
-          <div class="admae-service-card-text">
-            <h3>Custom Men's Wedding Bands</h3>
-            <p>Because his ring should mean something too.</p>
-          </div>
-        </a>
+      <a href="/custom-wedding-bands-los-angeles" class="admae-service-card">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/bed06636-e159-426e-8274-1fe628b363df/1+%282%29.jpg?content-type=image%2Fjpeg" alt="Custom wedding band by A. D'Mae Diamonds" loading="lazy">
+        <div class="admae-service-card-text">
+          <h3>Custom Wedding Bands</h3>
+          <p>Because his ring should mean something too.</p>
+        </div>
+      </a>
 
-        <a href="/heirloom-jewelry-redesign-los-angeles" class="admae-service-card">
-          <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/95aabc53-a096-4e66-b51c-e8a07320182d/20250307_131021.jpg?content-type=image%2Fjpeg" alt="Heirloom jewelry redesign and stone reset by GIA Graduate Gemologist in Los Angeles" loading="lazy">
-          <div class="admae-service-card-text">
-            <h3>Heirloom Jewelry Redesign</h3>
-            <p>Preserve the legacy, renew the design.</p>
-          </div>
-        </a>
-      </div>
+      <a href="/heirloom-jewelry-redesign-los-angeles" class="admae-service-card">
+        <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/95aabc53-a096-4e66-b51c-e8a07320182d/20250307_131021.jpg?content-type=image%2Fjpeg" alt="Heirloom jewelry redesign by A. D'Mae Diamonds" loading="lazy">
+        <div class="admae-service-card-text">
+          <h3>Heirloom Jewelry Redesign</h3>
+          <p>Preserve the legacy, renew the design.</p>
+        </div>
+      </a>
     </div>
   </section>
 
-  <hr class="admae-divider">
+  <!-- ===================== FIRST CTA (earned position) ===================== -->
+  <section class="admae-hp-cta-block">
+    <h2>Ready to Start the Conversation?</h2>
+    <p>Your consultation is free - 90 minutes, one-on-one with Ali. No pressure, no obligation. Just an honest conversation about what you want to create.</p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-hp-divider">
 
   <!-- ===================== SEO PARAGRAPH ===================== -->
   <section class="admae-hp-seo">
@@ -630,33 +525,42 @@
 
     <p>Alexandria is a GIA Graduate Gemologist and third-generation jeweler working from a private studio in West Los Angeles. Every project starts the same way: a one-on-one conversation about who you are, who you're designing for, and what this piece needs to say. No inventory. No sales team. No pressure. Just a jeweler who listens first and picks up a pencil second.</p>
 
-    <p>From <a href="/custom-engagement-rings-los-angeles">custom engagement rings</a> to <a href="/custom-mens-wedding-bands-los-angeles">men's wedding bands</a>, <a href="/heirloom-jewelry-redesign-los-angeles">heirloom jewelry</a> redesigns to anniversary pieces, every design is built from scratch around <a href="/portfolio-client-journeys">your story</a>. Ali <a href="/blog/lab-grown-vs-natural-diamonds">hand-selects every stone</a>, walks you through the tradeoffs honestly, and keeps you involved at every step - from initial sketch to CAD rendering to the final reveal.</p>
+    <p>From <a href="/custom-engagement-rings-los-angeles">custom engagement rings</a> to <a href="/custom-wedding-bands-los-angeles">wedding bands</a>, <a href="/heirloom-jewelry-redesign-los-angeles">heirloom jewelry</a> redesigns to anniversary pieces, every design is built from scratch around <a href="/customjewelrydesignprocess">your story</a>. Ali <a href="/diamond-sourcing-verification-los-angeles">hand-selects every stone</a>, walks you through the tradeoffs honestly, and keeps you involved at every step - from initial sketch to CAD rendering to the final reveal.</p>
 
     <p>Whether you're planning a proposal, honoring a family tradition with an inherited stone, or creating something bold that's never existed before, the process is the same: personal, transparent, and built entirely around you. Clients visit in person at our West Los Angeles studio or work with Ali virtually from anywhere in the country. Wondering <a href="/blog/how-much-does-a-custom-engagement-ring-cost">what custom jewelry actually costs</a>? We break that down honestly. And our <a href="/custom-jewelry-pricing-information">pricing and budget guide</a> walks you through how we handle the money conversation.</p>
 
-    <p><a href="/engagement-ring-consultation-los-angeles">Your consultation is free, takes about 90 minutes</a>, and comes with zero obligation. Most clients say the same thing afterwards: "<a href="/blog/why-i-left-brilliant-earth">I wish I'd come here first.</a>"</p>
+    <p><a href="/schedule-an-appointment">Your consultation is free, takes about 90 minutes</a>, and comes with zero obligation. Most clients say the same thing afterwards: "<a href="/blog/why-i-left-brilliant-earth">I wish I'd come here first</a>."</p>
   </section>
 
-  <hr class="admae-divider">
+  <hr class="admae-hp-divider">
 
-  <!-- ===================== LEAD MAGNET ===================== -->
-  <section class="admae-hp-leadmagnet">
-    <div class="admae-leadmagnet-container" style="display: block;">
-      <div class="admae-leadmagnet-content">
-        <h2>What Your Jeweler Isn't Telling You</h2>
-        <p class="lead-sub">The insider guide to buying smarter - from a third-generation jeweler and GIA Graduate Gemologist.</p>
-        <p class="lead-note">Free. No strings attached. Just enter your email.</p>
-      </div>
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="admae-hp-final-cta">
+    <h2>Curious What's Possible?</h2>
+    <p>Book a free 90-minute consultation with Ali. Bring your budget, your Pinterest board, or just your curiosity. You'll leave with clarity on what your vision looks like and what it costs - not a sales pitch.</p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">Third-Generation Jeweler</span>
+      <span class="admae-trust-item">Free Consultation</span>
+      <span class="admae-trust-item">No Inventory to Push</span>
     </div>
   </section>
 
-</div><!-- closes .admae-homepage -->
+  <hr class="admae-hp-divider">
 
-<!-- ================================================================
-     END OF CODE BLOCK 1
-     
-     NEXT: Place your native Squarespace FORM BLOCK here
-     (email-only, submit button text: "Send Me The Guide")
-     
-     Then place CODE BLOCK 2 after the form block.
-     ================================================================ -->
+  <!-- ===================== SOCIAL ===================== -->
+  <section class="admae-hp-social">
+    <h2>Stay In Touch</h2>
+    <a href="https://www.instagram.com/admaediamonds/" target="_blank" rel="noopener" aria-label="Follow A. D'Mae Diamonds on Instagram" style="border-bottom: none !important;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  </section>
+
+</div>
+
+<!--
+  Place the TRUSTINDEX WIDGET (native Squarespace block) directly
+  after this code block. It renders as the last section before the footer.
+  Ali: Update Trustindex to pull from the LA Google Business Profile.
+-->
