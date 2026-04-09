@@ -102,6 +102,83 @@
     border-color: #c9a42e;
   }
 
+  .admae-blog figure {
+    margin: 36px 0;
+    padding: 0;
+  }
+
+  .admae-blog figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .admae-blog figcaption {
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .band-width-chart {
+    margin: 36px 0;
+    padding: 32px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 3px;
+  }
+
+  .band-width-chart h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0 0 24px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .band-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .band-label {
+    width: 80px;
+    font-size: 0.9rem;
+    color: #c4bfb4;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .band-bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .band-bar {
+    height: 20px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .band-note {
+    font-size: 0.8rem;
+    color: #999;
+    white-space: nowrap;
+  }
+
+  .band-note.danger { color: #c0392b; }
+  .band-note.caution { color: #e67e22; }
+  .band-note.good { color: #d4af37; }
+  .band-note.great { color: #27ae60; }
+
   @media (max-width: 680px) {
     .admae-blog {
       padding: 40px 18px 60px;
@@ -110,6 +187,15 @@
     .admae-blog .blog-pullquote {
       padding-left: 20px;
       font-size: 1.15rem;
+    }
+
+    .band-label {
+      width: 60px;
+      font-size: 0.8rem;
+    }
+
+    .band-note {
+      font-size: 0.7rem;
     }
   }
 </style>
@@ -123,6 +209,11 @@
   <p>We talked about it. I explained the trade-offs. I told her that at that width, the ring was going to be structurally vulnerable in ways that would almost certainly cause problems. Gold is durable, but it's not indestructible. A band that thin can get out of round over time, diamonds on the band can start to shift and pop out, and in a worst case, the prongs holding the center stone can loosen to the point where you lose the stone entirely.</p>
 
   <p>She understood the risks. We compromised on 1.5 millimeters. I was still concerned, but she signed off on it.</p>
+
+  <figure>
+    <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/3338fce9-100e-48c0-9bb1-b89b657b8f93/14k-yellow-gold-whisper-thin-pear-cut-diamond-engagement-ring.jpg?content-type=image%2Fjpeg" alt="Whisper-thin 1.5mm 14k yellow gold engagement ring with pear-cut diamond before structural failure, A. D'Mae Diamonds Los Angeles" loading="lazy">
+    <figcaption>The original 1.5mm band before the center stone was lost.</figcaption>
+  </figure>
 
   <p>A couple of years later, she lost her center stone.</p>
 
@@ -144,7 +235,49 @@
 
   <p>That's how center stones fall out. The whole structure just doesn't have enough metal to keep everything secure over time.</p>
 
-  <!-- IMAGE PLACEHOLDER: Thin band structural comparison or example of warped band -->
+  <figure>
+    <img src="https://images.squarespace-cdn.com/content/5f6b9ef259389f72f87bfca4/e02425b2-3154-4c08-b86d-201501ddd9b6/14k-yellow-gold-whisper-thin-1.5mm-band.jpg?content-type=image%2Fjpeg" alt="Damaged whisper-thin 1.5mm engagement ring band showing structural failure and missing center stone, A. D'Mae Diamonds Los Angeles" loading="lazy">
+    <figcaption>The same ring after daily wear. The band warped and the center stone was lost.</figcaption>
+  </figure>
+
+  <div class="band-width-chart">
+    <h3>Band Width Comparison</h3>
+    <div class="band-row">
+      <div class="band-label">1.0 mm</div>
+      <div class="band-bar-container">
+        <div class="band-bar" style="width: 40px; background: #c0392b;"></div>
+        <span class="band-note danger">Structurally dangerous. Do not recommend.</span>
+      </div>
+    </div>
+    <div class="band-row">
+      <div class="band-label">1.5 mm</div>
+      <div class="band-bar-container">
+        <div class="band-bar" style="width: 60px; background: #e67e22;"></div>
+        <span class="band-note caution">High risk. Prongs loosen, stones shift over time.</span>
+      </div>
+    </div>
+    <div class="band-row">
+      <div class="band-label">1.7 mm</div>
+      <div class="band-bar-container">
+        <div class="band-bar" style="width: 70px; background: #d4af37;"></div>
+        <span class="band-note good">Minimum I'll work with. Still requires careful design.</span>
+      </div>
+    </div>
+    <div class="band-row">
+      <div class="band-label">2.0 mm</div>
+      <div class="band-bar-container">
+        <div class="band-bar" style="width: 80px; background: #27ae60;"></div>
+        <span class="band-note great">My recommendation. Refined look, built to last.</span>
+      </div>
+    </div>
+    <div class="band-row">
+      <div class="band-label">3.0+ mm</div>
+      <div class="band-bar-container">
+        <div class="band-bar" style="width: 120px; background: #27ae60;"></div>
+        <span class="band-note great">Bold and structural. Trending now.</span>
+      </div>
+    </div>
+  </div>
 
   <h2>The Lauren Bezos Example</h2>
 
