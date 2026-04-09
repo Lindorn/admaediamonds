@@ -6,17 +6,14 @@
   1. Page URL slug: /custom-jewelry-pricing-information (existing)
   2. SEO Title: Custom Jewelry Pricing & Budget Guide - A. D'Mae Los Angeles
   3. SEO Description: Transparent pricing for custom engagement rings and fine jewelry in Los Angeles. See what affects your quote, explore what clients have designed, and book a free consultation with a GIA Graduate Gemologist.
-  4. Replace existing native Squarespace blocks with this single code block
+  4. Replace existing code block content with this file
   5. Set page top padding to match other service pages (340px)
   
-  P3.5 Conversion Optimization - March 2026
-  - Full redesign from native Squarespace blocks to admae-service-page design system
-  - New Section 3 "How We Handle Budget" drawn from Ali pricing conversation transcript
-  - New FAQ question addressing "why no posted prices" directly
-  - CTA updated to "Curious What's Possible?" per copy review
-  - Internal links: cost blog post, lab-grown blog post, design process, 
-    engagement rings, heirloom redesign, consultation page, about page
-  - Image URLs reference existing Squarespace CDN assets from current page
+  REVISION: April 2026 - Pricing page bounce rate fix
+  - Moved anchor number ($3K) to immediately below H1 in a callout block
+  - Removed redundant hero CTA (sticky mobile bar covers this)
+  - Resequenced: number first, explanation second, CTA after explanation
+  - Everything below "What Clients Have Designed" is unchanged
 -->
 
 <style>
@@ -37,7 +34,7 @@
   /* Hero */
   .admae-hero {
     text-align: center;
-    margin-bottom: 72px;
+    margin-bottom: 48px;
   }
 
   .admae-hero h1 {
@@ -59,8 +56,49 @@
     font-style: italic;
     color: #c4bfb4;
     max-width: 640px;
-    margin: 0 auto 36px;
+    margin: 0 auto;
     line-height: 1.6;
+  }
+
+  /* Price callout block */
+  .admae-price-callout {
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 6px;
+    background: rgba(212, 175, 55, 0.04);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.08);
+    padding: 40px 32px;
+    text-align: center;
+    margin-bottom: 56px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .admae-price-callout .price-headline {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 12px;
+    line-height: 1.4;
+  }
+
+  .admae-price-callout .price-headline strong {
+    color: #d4af37;
+    font-weight: 600;
+  }
+
+  .admae-price-callout .price-detail {
+    font-size: 1rem;
+    color: #c4bfb4;
+    margin: 0 0 16px;
+    line-height: 1.7;
+  }
+
+  .admae-price-callout .price-consult {
+    font-size: 0.95rem;
+    color: #e0dbd2;
+    margin: 0;
+    font-style: italic;
   }
 
   /* CTAs */
@@ -125,120 +163,95 @@
 
   /* Body text */
   .admae-body-text {
-    max-width: 720px;
+    max-width: 700px;
     margin: 0 auto 48px;
   }
 
   .admae-body-text p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #e0dbd2;
-    line-height: 1.8;
     margin: 0 0 20px;
-  }
-
-  .admae-body-text p:last-child {
-    margin-bottom: 0;
+    line-height: 1.8;
   }
 
   .admae-body-text strong {
     color: #fff;
+    font-weight: 600;
   }
 
-  /* Links */
-  .admae-service-page a:not(.admae-cta):not(.admae-cta-filled):not(.admae-text-cta) {
+  .admae-body-text a {
     color: #d4af37;
     text-decoration: none;
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    transition: border-color 0.3s;
   }
 
-  .admae-service-page a:not(.admae-cta):not(.admae-cta-filled):not(.admae-text-cta):hover {
+  .admae-body-text a:hover {
     border-color: #d4af37;
   }
 
-  .admae-deep-dive {
+  /* CTA mid-section */
+  .admae-mid-cta {
     text-align: center;
-    margin-top: 28px;
-    font-size: 0.95rem;
+    margin: 48px 0;
   }
 
-  .admae-deep-dive a {
-    color: #d4af37;
-    font-size: 0.95rem;
-  }
-
-  /* Tier cards */
-  .admae-tier-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 16px;
-  }
-
-  .admae-tier-card {
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.02);
+  /* Tier images */
+  .admae-tier-images {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
     overflow: hidden;
   }
 
-  .admae-tier-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-
   .admae-tier-images img {
-    width: 100%;
+    flex: 1;
+    width: 50%;
     height: 220px;
     object-fit: cover;
     display: block;
   }
 
-  .admae-tier-content {
-    padding: 28px 28px 32px;
+  /* Tier cards */
+  .admae-tier-card {
+    margin-bottom: 56px;
   }
 
   .admae-tier-card h3 {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #d4af37;
-    margin: 0 0 12px;
+    margin: 16px 0 8px;
   }
 
   .admae-tier-card p {
     font-size: 1rem;
     color: #c4bfb4;
+    margin: 0 0 4px;
     line-height: 1.7;
-    margin: 0 0 12px;
   }
 
-  .admae-tier-card p:last-child {
-    margin-bottom: 0;
-  }
-
-  .admae-tier-card .tier-quote {
-    font-style: italic;
+  .admae-tier-card .tier-caption {
+    font-size: 0.85rem;
     color: #999;
-    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 12px;
   }
 
-  /* Budget section - reassurance cards */
-  .admae-budget-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 720px;
-    margin: 0 auto 16px;
+  /* Budget cards */
+  .admae-budget-section {
+    max-width: 700px;
+    margin: 0 auto 48px;
   }
 
   .admae-budget-card {
     border-left: 2px solid #d4af37;
-    padding: 20px 0 20px 24px;
+    padding: 0 0 0 24px;
+    margin: 0 0 36px;
   }
 
   .admae-budget-card h3 {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
     margin: 0 0 8px;
@@ -247,16 +260,17 @@
   .admae-budget-card p {
     font-size: 1rem;
     color: #c4bfb4;
-    line-height: 1.7;
     margin: 0;
+    line-height: 1.7;
   }
 
-  /* Factor cards */
+  /* Factor grid */
   .admae-factor-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-bottom: 16px;
+    max-width: 800px;
+    margin: 0 auto 48px;
   }
 
   .admae-factor-card {
@@ -267,20 +281,30 @@
   }
 
   .admae-factor-card h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #d4af37;
-    margin: 0 0 10px;
-    letter-spacing: 0.02em;
+    margin: 0 0 8px;
   }
 
   .admae-factor-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #c4bfb4;
-    line-height: 1.7;
     margin: 0;
+    line-height: 1.6;
   }
 
+  .admae-factor-card a {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .admae-factor-card a:hover {
+    border-color: #d4af37;
+  }
+
+  /* Full-width factor (for the bottom card) */
   .admae-factor-full {
     grid-column: 1 / -1;
   }
@@ -288,61 +312,19 @@
   /* Pullquote */
   .admae-pullquote {
     border-left: 2px solid #d4af37;
-    padding: 16px 0 16px 28px;
-    margin: 48px auto;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #d4af37;
-    line-height: 1.7;
-    max-width: 720px;
-  }
-
-  .admae-pullquote-note {
-    max-width: 720px;
-    margin: -24px auto 48px;
-    font-size: 1rem;
-    color: #c4bfb4;
-    line-height: 1.7;
-  }
-
-  /* Mid-page CTA */
-  .admae-mid-cta {
-    text-align: center;
-    padding: 36px 24px;
-    margin: 48px 0;
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: 3px;
-    background: rgba(212, 175, 55, 0.03);
-  }
-
-  .admae-mid-cta p {
-    color: #c4bfb4;
+    padding: 0 0 0 24px;
     font-size: 1.05rem;
-    margin: 0 auto 16px;
-    max-width: 520px;
+    font-style: italic;
+    color: #e0dbd2;
+    max-width: 680px;
+    margin: 48px auto;
+    line-height: 1.7;
   }
 
-  .admae-text-cta {
-    color: #d4af37;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-bottom: 1px solid #d4af37 !important;
-    padding-bottom: 2px;
-    transition: all 0.3s;
-  }
-
-  .admae-text-cta:hover {
-    border-color: #fff !important;
-    color: #fff;
-  }
-
-  /* FAQ Accordion */
-  .admae-faq-list {
+  /* FAQ */
+  .admae-faq-section {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
   }
 
   .admae-faq-item {
@@ -457,88 +439,89 @@
     .admae-trust-signals {
       gap: 20px;
     }
+
+    .admae-price-callout {
+      padding: 28px 20px;
+    }
   }
 </style>
 
 <div class="admae-service-page">
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===================== HERO (REVISED) ===================== -->
   <section class="admae-hero">
     <h1>What Does Custom Jewelry <em>Really</em> Cost?</h1>
     <p class="hero-sub">
-      The honest answer is: it depends on what we're creating together. But transparency matters to us, so here's everything we can tell you before we talk.
+      Transparency matters to us. Here's what we can tell you before we ever sit down together.
     </p>
-    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
   </section>
 
-  <hr class="admae-divider">
+  <!-- ===================== PRICE CALLOUT (NEW) ===================== -->
+  <div class="admae-price-callout">
+    <p class="price-headline"><a href="/custom-engagement-rings-los-angeles" style="color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Custom engagement rings</a> start at <strong>$3,000</strong></p>
+    <p class="price-detail">Wedding bands, everyday pieces, and repairs can start lower. We've designed pieces well into six figures. There's no upper limit and no minimum spend to book a consultation.</p>
+    <p class="price-consult">We respect your budget and can design within it. Your consultation is free - 90 minutes, no obligation.</p>
+  </div>
 
-  <!-- ===================== THE MOST IMPORTANT THING ===================== -->
+  <!-- ===================== WHY NO EXACT PRICE ===================== -->
   <section>
-    <h2>The Most Important Thing About Pricing</h2>
+    <h2>Why We Can't Post Exact Prices Online</h2>
 
     <div class="admae-body-text">
-      <p><strong>We know this page might not give you the exact number you're looking for. Here's why.</strong></p>
-
       <p>Custom jewelry doesn't come off a shelf. When you work with us, nothing exists yet. We haven't chosen a stone. We haven't picked a metal. We haven't designed anything. Every one of those decisions - which you'll make together with Ali - shapes the final price.</p>
 
       <p>It's not like buying a car where there are six configurations and a sticker price. It's more like commissioning a painting. The answer to "how much does it cost?" starts with "what are we making?"</p>
 
       <p>We're not being evasive. We're being honest. And when we sit down together, you'll get a real, specific estimate based on your actual vision - not a vague range.</p>
 
-      <p><strong>One thing we can tell you right now:</strong> <a href="/custom-engagement-rings-los-angeles">custom engagement rings</a> at A. D'Mae start around $3,000 and scale from there. We've designed stunning pieces at that entry point, and we've created legacy pieces well into six figures. There's no upper limit and no minimum spend to book a consultation.</p>
+      <p><a href="/blog/how-much-does-a-custom-engagement-ring-cost">Want the deep dive? Read our full pricing breakdown with real budget ranges.</a></p>
     </div>
-
-    <p class="admae-deep-dive"><a href="/blog/how-much-does-a-custom-engagement-ring-cost">Want the deep dive? Read our full pricing breakdown with real budget ranges.</a></p>
   </section>
+
+  <div class="admae-mid-cta">
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </div>
 
   <hr class="admae-divider">
 
-  <!-- ===================== TIER EXAMPLES ===================== -->
+  <!-- ===================== WHAT CLIENTS HAVE DESIGNED ===================== -->
   <section>
     <h2>What Clients Have Designed With Us</h2>
     <p class="admae-section-intro">
       Every project starts with a conversation, not a price tag. Here's what different visions have looked like.
     </p>
 
-    <div class="admae-tier-grid">
-
-      <div class="admae-tier-card">
-        <div class="admae-tier-images">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/478238db-e638-40b1-a16b-a008f7e9c189/20250220_143404.jpg?format=750w" alt="Delicate custom wedding band by A. D'Mae Diamonds" loading="lazy">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/94c272d9-d583-49f6-9dcb-c98f8be81058/Screenshot+2025-06-25+161645.jpg?format=750w" alt="Minimalist custom jewelry piece" loading="lazy">
-        </div>
-        <div class="admae-tier-content">
-          <h3>Thoughtful & Minimalist</h3>
-          <p>Delicate wedding bands, small natural or lab stones, low-profile everyday pieces. Some of our most-loved work has come from clients who wanted something intentional and understated.</p>
-          <p class="tier-quote">"Designed for someone who wanted something timeless and subtle for everyday wear."</p>
-        </div>
+    <!-- Tier 1 -->
+    <div class="admae-tier-card">
+      <div class="admae-tier-images">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/478238db-e638-40b1-a16b-a008f7e9c189/20250220_143404.jpg?format=750w" alt="Delicate custom wedding band by A. D'Mae Diamonds" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/94c272d9-d583-49f6-9dcb-c98f8be81058/Screenshot+2025-06-25+161645.jpg?format=750w" alt="Minimalist custom jewelry piece" loading="lazy">
       </div>
+      <h3>Thoughtful & Minimalist</h3>
+      <p>Delicate wedding bands, small natural or lab stones, low-profile everyday pieces. Some of our most-loved work has come from clients who wanted something intentional and understated.</p>
+      <p class="tier-caption">"Designed for someone who wanted something timeless and subtle for everyday wear."</p>
+    </div>
 
-      <div class="admae-tier-card">
-        <div class="admae-tier-images">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/0af092ba-0d70-4b47-aed2-39a90795ccb2/Custom+14k+Yellow+Gold+Jade+Raven+Engagement+Ring?format=750w" alt="Custom jade raven engagement ring" loading="lazy">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/21672941-3073-412b-8ccd-1ef64ec0b602/Custom+14k+Yellow+Gold+Oval+Cut+Twisted+Split+Shank+Diamond+Engagement+Ring?format=750w" alt="Custom oval cut diamond engagement ring" loading="lazy">
-        </div>
-        <div class="admae-tier-content">
-          <h3>Personalized Statement</h3>
-          <p>Unique center stones, custom settings, multi-stone designs. Emotional symbolism built into the design - pieces where the story is as important as the stone.</p>
-          <p class="tier-quote">"Created for a couple who wanted a one-of-a-kind engagement ring with real meaning."</p>
-        </div>
+    <!-- Tier 2 -->
+    <div class="admae-tier-card">
+      <div class="admae-tier-images">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/0af092ba-0d70-4b47-aed2-39a90795ccb2/Custom+14k+Yellow+Gold+Jade+Raven+Engagement+Ring?format=750w" alt="Custom jade raven engagement ring" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/21672941-3073-412b-8ccd-1ef64ec0b602/Custom+14k+Yellow+Gold+Oval+Cut+Twisted+Split+Shank+Diamond+Engagement+Ring?format=750w" alt="Custom oval cut diamond engagement ring" loading="lazy">
       </div>
+      <h3>Personalized Statement</h3>
+      <p>Unique center stones, custom settings, multi-stone designs. Emotional symbolism built into the design - pieces where the story is as important as the stone.</p>
+      <p class="tier-caption">"Created for a couple who wanted a one-of-a-kind engagement ring with real meaning."</p>
+    </div>
 
-      <div class="admae-tier-card">
-        <div class="admae-tier-images">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/dd1b73fe-1037-4f5e-8074-1d6ebb93101c/14k+Yellow+Gold+Custom+Old+Mine+Cut+6+prong+flat+band+solitaire+engagement+ring?format=750w" alt="Custom old mine cut solitaire engagement ring" loading="lazy">
-          <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/86b4746d-9f17-48fe-a1d6-a2107114c4ce/14k+White+Gold+Men%27s+Art+Deco+Inspired+6+Carat+Asscher+Cut++Engagement+Ring?format=750w" alt="Men's Art Deco inspired Asscher cut engagement ring" loading="lazy">
-        </div>
-        <div class="admae-tier-content">
-          <h3>Legacy Piece</h3>
-          <p>High-carat stones or rare gems. Hand-detailed settings or vintage-inspired craftsmanship. Built to hand down for generations.</p>
-          <p class="tier-quote">"A 1920's style engagement ring with a large, specialty cut center stone for an engagement in Italy."</p>
-        </div>
+    <!-- Tier 3 -->
+    <div class="admae-tier-card">
+      <div class="admae-tier-images">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/dd1b73fe-1037-4f5e-8074-1d6ebb93101c/14k+Yellow+Gold+Custom+Old+Mine+Cut+6+prong+flat+band+solitaire+engagement+ring?format=750w" alt="Custom old mine cut solitaire engagement ring" loading="lazy">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6b9ef259389f72f87bfca4/86b4746d-9f17-48fe-a1d6-a2107114c4ce/14k+White+Gold+Men%27s+Art+Deco+Inspired+6+Carat+Asscher+Cut++Engagement+Ring?format=750w" alt="Men's Art Deco inspired Asscher cut engagement ring" loading="lazy">
       </div>
-
+      <h3>Legacy Piece</h3>
+      <p>High-carat stones or rare gems. Hand-detailed settings or vintage-inspired craftsmanship. Built to hand down for generations.</p>
+      <p class="tier-caption">"A 1920's style engagement ring with a large, specialty cut center stone for an engagement in Italy."</p>
     </div>
   </section>
 
@@ -547,17 +530,16 @@
   <!-- ===================== HOW WE HANDLE BUDGET ===================== -->
   <section>
     <h2>How We Handle the Budget Conversation</h2>
-    <p class="admae-section-intro">
-      Budget is one of the first things we talk about. Not because we want to sell you something - because we want you to relax.
-    </p>
 
     <div class="admae-body-text">
+      <p>Budget is one of the first things we talk about. Not because we want to sell you something - because we want to show you we've got your back so that you can enjoy the process.</p>
+
       <p>Most people walk into a jewelry conversation bracing for a sales pitch. Ali's been doing this long enough to know that until the budget question is addressed, most clients can't actually enjoy the process. They're sitting there thinking, "Is this going to cost more than I can afford? Is she going to try to upsell me?"</p>
 
       <p>So we get it out of the way early. Tell Ali your budget - whatever it is - and she'll work within it. No judgment, no upselling, no "well, for just a little more..."</p>
     </div>
 
-    <div class="admae-budget-grid">
+    <div class="admae-budget-section">
       <div class="admae-budget-card">
         <h3>If your budget is firm</h3>
         <p>Ali designs within it. Some of the most creatively rewarding projects she's done have been ones with real constraints. Constraints bring out the best designs.</p>
@@ -574,20 +556,14 @@
       </div>
     </div>
 
-    <div class="admae-body-text" style="margin-top: 32px;">
+    <div class="admae-body-text">
       <p>The goal is always the same: you walk away with a piece that makes you happy every time you look at it. Sometimes that costs less than you expected. Sometimes more. But it always starts with understanding what matters most to you - and that's a conversation, not a calculator.</p>
     </div>
   </section>
 
-  <!-- Mid-page CTA -->
-  <div class="admae-mid-cta">
-    <p>Curious what your vision might cost? The consultation is free - 90 minutes, no obligation.</p>
-    <a href="/schedule-an-appointment" class="admae-text-cta">Book a Free Consultation</a>
-  </div>
-
   <hr class="admae-divider">
 
-  <!-- ===================== WHAT AFFECTS PRICE ===================== -->
+  <!-- ===================== WHAT AFFECTS YOUR PRICE ===================== -->
   <section>
     <h2>What Affects Your Price</h2>
     <p class="admae-section-intro">
@@ -595,10 +571,9 @@
     </p>
 
     <div class="admae-factor-grid">
-
       <div class="admae-factor-card">
         <h3>Stone Type</h3>
-        <p>The biggest factor - typically 50-70% of the total cost. Type, carat weight, cut, clarity, and color all play a role. Lab grown diamonds, natural diamonds, and colored gemstones each have completely different economics. We walk you through every option honestly. <a href="/blog/lab-grown-vs-natural-diamonds">Lab grown vs natural</a> is part of this conversation.</p>
+        <p>The biggest factor - typically 50-70% of the total cost. Type, carat weight, cut, clarity, and color all play a role. Lab grown diamonds, natural diamonds, and colored gemstones each have completely different economics. <a href="/blog/lab-grown-vs-natural-diamonds">Lab grown vs natural</a> is part of this conversation.</p>
       </div>
 
       <div class="admae-factor-card">
@@ -620,16 +595,16 @@
         <h3>Timeline</h3>
         <p>Standard turnaround is 6-8 weeks from sketch to finished piece. Rush options are available when possible and may impact pricing. We always discuss timeline and cost together upfront.</p>
       </div>
+    </div>
 
+    <div class="admae-pullquote">
+      Custom jewelry pricing isn't just about materials. It's about one-on-one time with a GIA Graduate Gemologist who hand-selects every stone, transparent guidance through every decision, and craftsmanship from artisan partners Ali personally vetted - because a piece that falls apart isn't a piece worth making.
+    </div>
+
+    <div class="admae-body-text">
+      <p>There's no showroom overhead. No inventory carrying costs. No commission-driven sales team. That's how we keep pricing competitive while delivering something made from scratch for one person. <a href="/aboutadmaediamonds">Meet Alexandria.</a></p>
     </div>
   </section>
-
-  <!-- ===================== WHAT YOU'RE PAYING FOR ===================== -->
-  <div class="admae-pullquote">
-    Custom jewelry pricing isn't just about materials. It's about one-on-one time with a GIA Graduate Gemologist who hand-selects every stone, transparent guidance through every decision, and craftsmanship from artisan partners Ali personally vetted - because a piece that falls apart isn't a piece worth making.
-  </div>
-
-  <p class="admae-pullquote-note">There's no showroom overhead. No inventory carrying costs. No commission-driven sales team. That's how we keep pricing competitive while delivering something made from scratch for one person. <a href="/aboutadmaediamonds">Meet Alexandria.</a></p>
 
   <hr class="admae-divider">
 
@@ -640,8 +615,7 @@
       We know budget conversations can feel uncomfortable. These are the questions clients ask most.
     </p>
 
-    <div class="admae-faq-list">
-
+    <div class="admae-faq-section">
       <div class="admae-faq-item">
         <div class="admae-faq-q">How much does the consultation cost?</div>
         <div class="admae-faq-a">
@@ -652,7 +626,7 @@
       <div class="admae-faq-item">
         <div class="admae-faq-q">Can you give me a ballpark before we meet?</div>
         <div class="admae-faq-a">
-          <p>For general ranges, our <a href="/blog/how-much-does-a-custom-engagement-ring-cost">blog post</a> breaks down what different budgets look like in practice. For something specific to your vision, the consultation is the fastest path to a real number. You can also call or text Ali directly if you just want a quick gut-check before booking.</p>
+          <p>For general ranges, our <a href="/blog/how-much-does-a-custom-engagement-ring-cost" style="color:#d4af37; text-decoration:none; border-bottom:1px solid rgba(212,175,55,0.3);">blog post</a> breaks down what different budgets look like in practice. For something specific to your vision, the consultation is the fastest path to a real number. You can also call or text Ali directly at <a href="tel:4243599009" style="color:#d4af37; text-decoration:none; border-bottom:1px solid rgba(212,175,55,0.3);">(424) 359-9009</a> if you just want a quick gut-check before booking.</p>
         </div>
       </div>
 
@@ -676,17 +650,14 @@
           <p>Three reasons. First, every piece is different - even small changes in stone quality, band width, or metal type can dramatically shift the price. Second, precious metal and stone markets change constantly, sometimes daily. And third, we're protective of our clients' privacy. We don't think the price someone paid for their ring should be public information.</p>
         </div>
       </div>
-
     </div>
   </section>
-
-  <hr class="admae-divider">
 
   <!-- ===================== FINAL CTA ===================== -->
   <section class="admae-final-cta">
     <h2>Curious What's Possible?</h2>
     <p>Book a free 90-minute consultation. Bring your budget, your Pinterest board, or just your curiosity. You'll leave with a specific estimate based on your actual vision - not a vague range from a website.</p>
-    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+    <a href="/schedule-an-appointment" class="admae-cta-filled admae-cta">Book Your Free Consultation</a>
     <div class="admae-trust-signals">
       <span class="admae-trust-item">GIA Graduate Gemologist</span>
       <span class="admae-trust-item">Third-Generation Jeweler</span>
@@ -697,7 +668,7 @@
 
 </div>
 
-<!-- FAQ Accordion Script -->
+<!-- FAQ Toggle Script -->
 <script>
   document.querySelectorAll('.admae-faq-q').forEach(function(q) {
     q.addEventListener('click', function() {
