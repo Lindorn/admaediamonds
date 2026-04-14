@@ -1,0 +1,266 @@
+<!--
+  A. D'Mae Diamonds - Custom Jeweler Beverly Hills
+  Neighborhood Service Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /custom-jeweler-beverly-hills
+  2. SEO Title: Custom Jeweler Near Beverly Hills | Private Jeweler | A. D'Mae Diamonds
+  3. SEO Description: Private custom jeweler near Beverly Hills. A GIA Graduate Gemologist designing custom engagement rings, wedding bands, and fine jewelry by appointment. No showroom. No sales pressure. Starting at $3,000. Free consultation.
+  4. Add to "Services" nav folder (or sub-nav under Custom Jeweler West LA)
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: custom-jeweler-west-los-angeles (hub page), homepage
+  8. NOTE: Do NOT describe manufacturing as LA-based.
+-->
+
+<style>
+  .admae-service-page { max-width: 900px; margin: 0 auto; padding: 0px 24px 80px; font-family: inherit; color: #f0ece4; line-height: 1.7; background-color: transparent; }
+  .admae-service-page * { box-sizing: border-box; }
+  .admae-hero { text-align: center; margin-bottom: 72px; }
+  .admae-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; margin: 0 0 20px; color: #fff; }
+  .admae-hero h1 em { font-style: italic; color: #d4af37; }
+  .admae-hero .hero-sub { font-size: 1.1rem; font-style: italic; color: #c4bfb4; max-width: 640px; margin: 0 auto 36px; line-height: 1.6; }
+  .admae-cta { display: inline-block; padding: 20px 48px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.3s ease, color 0.3s ease; border-radius: 2px; }
+  .admae-cta:hover { background: #d4af37; color: #111; }
+  .admae-cta-filled { background: #d4af37; color: #111; border-color: #d4af37; font-weight: 700; }
+  .admae-cta-filled:hover { background: #c9a42e; border-color: #c9a42e; }
+  .admae-divider { width: 60px; height: 1px; background: #d4af37; margin: 56px auto; border: none; }
+  .admae-service-page h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 400; text-align: center; margin: 0 0 16px; color: #fff; letter-spacing: 0.01em; }
+  .admae-section-intro { text-align: center; color: #c4bfb4; max-width: 640px; margin: 0 auto 48px; font-size: 1.05rem; }
+  .admae-service-page a { color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.3); transition: border-color 0.3s; }
+  .admae-service-page a:hover { border-color: #d4af37; }
+  .admae-service-page a.admae-cta { border-bottom: 2px solid #d4af37; color: #d4af37; }
+  .admae-service-page a.admae-cta:hover { border-bottom: 2px solid #d4af37; }
+  .admae-service-page a.admae-cta-filled { border-bottom: 2px solid #d4af37; color: #111; background: #d4af37; }
+  .admae-service-page a.admae-cta-filled:hover { border-bottom: 2px solid #c9a42e; color: #111; background: #c9a42e; }
+  .admae-prose { max-width: 780px; margin: 0 auto; }
+  .admae-prose p { font-size: 1rem; color: #e0dbd2; margin-bottom: 20px; line-height: 1.8; }
+  .admae-highlight-box { border: 1px solid rgba(212, 175, 55, 0.2); padding: 32px 28px; border-radius: 3px; margin: 40px 0; }
+  .admae-highlight-box h3 { font-size: 1.1rem; font-weight: 600; color: #d4af37; margin: 0 0 12px; }
+  .admae-highlight-box p { font-size: 0.95rem; color: #c4bfb4; margin: 0; line-height: 1.7; }
+  .admae-services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px; }
+  .admae-service-card { border: 1px solid rgba(212, 175, 55, 0.15); padding: 28px 24px; border-radius: 3px; }
+  .admae-service-card h3 { font-size: 1rem; font-weight: 600; color: #d4af37; margin: 0 0 8px; }
+  .admae-service-card p { font-size: 0.9rem; color: #c4bfb4; margin: 0; line-height: 1.6; }
+  .admae-service-card a { font-size: 0.85rem; color: #d4af37; display: inline-block; margin-top: 12px; }
+  .admae-testimonial { border-left: 2px solid #d4af37; padding-left: 28px; margin-bottom: 40px; }
+  .admae-testimonial blockquote { font-size: 1.05rem; font-style: italic; color: #e0dbd2; margin: 0 0 12px; line-height: 1.7; }
+  .admae-testimonial cite { color: #999; font-size: 0.85rem; font-style: normal; letter-spacing: 0.03em; }
+  .admae-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0; }
+  .admae-faq-q { padding: 20px 0; font-size: 1rem; font-weight: 600; color: #f0ece4; cursor: pointer; position: relative; padding-right: 32px; }
+  .admae-faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: #d4af37; font-weight: 300; }
+  .admae-faq-item.open .admae-faq-q::after { content: '-'; }
+  .admae-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .admae-faq-item.open .admae-faq-a { max-height: 500px; }
+  .admae-faq-a p { padding: 0 0 20px; color: #c4bfb4; font-size: 1rem; line-height: 1.7; margin: 0; }
+  .admae-final-cta { text-align: center; padding: 56px 24px; margin-top: 24px; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 3px; background: rgba(212, 175, 55, 0.03); }
+  .admae-final-cta h2 { margin-bottom: 16px; }
+  .admae-final-cta p { color: #c4bfb4; max-width: 560px; margin: 0 auto 32px; font-size: 1rem; line-height: 1.7; }
+  .admae-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+  .admae-trust-item { font-size: 0.8rem; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 680px) {
+    .admae-service-page { padding-left: 18px; padding-right: 18px; padding-bottom: 60px; }
+    .admae-services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .admae-testimonial { padding-left: 20px; }
+    .admae-trust-signals { gap: 20px; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "description": "Private custom jewelry studio near Beverly Hills. Alexandria, a GIA Graduate Gemologist, designs custom engagement rings, wedding bands, and fine jewelry by appointment only.",
+  "address": { "@type": "PostalAddress", "streetAddress": "1832 S. Barrington Ave", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025" },
+  "geo": { "@type": "GeoCoordinates", "latitude": "34.0369", "longitude": "-118.4499" },
+  "telephone": "+1-424-359-9009",
+  "priceRange": "$$$$",
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "19:00" },
+  "areaServed": [
+    { "@type": "Place", "name": "Beverly Hills" },
+    { "@type": "Place", "name": "West Los Angeles" },
+    { "@type": "Place", "name": "Century City" },
+    { "@type": "Place", "name": "Bel Air" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How is A. D'Mae different from Beverly Hills jewelry stores?", "acceptedAnswer": { "@type": "Answer", "text": "Beverly Hills stores sell from inventory. Ali designs from scratch. There are no display cases, no sales floor, and no premade rings. You work one-on-one with a GIA Graduate Gemologist who handles design, sourcing, and production. The result is something nobody else will ever have." } },
+    { "@type": "Question", "name": "How far is the studio from Beverly Hills?", "acceptedAnswer": { "@type": "Answer", "text": "About 10-15 minutes. Ali's studio is on Barrington Ave in West LA (90025), just south of Wilshire Blvd. Easy access from Beverly Hills, Century City, and Bel Air." } },
+    { "@type": "Question", "name": "Is custom jewelry more expensive than buying from a Beverly Hills store?", "acceptedAnswer": { "@type": "Answer", "text": "Often comparable or less. Custom engagement rings start at $3,000. When you buy from a Beverly Hills store, part of your money pays for their Rodeo Drive rent, display inventory, and sales commissions. With Ali, every dollar goes into your stone, your metal, and your craftsmanship." } }
+  ]
+}
+</script>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Private Jeweler<br>Near <em>Beverly Hills</em></h1>
+    <p class="hero-sub">
+      Not a store on Rodeo Drive. A private studio where a GIA Graduate Gemologist designs custom engagement rings, wedding bands, and fine jewelry one-on-one, by appointment only.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- LOCAL CONTEXT -->
+  <section>
+    <h2>A Different Approach to Fine Jewelry</h2>
+
+    <div class="admae-prose">
+      <p>Beverly Hills has no shortage of jewelry stores. You can walk down Rodeo Drive and find some of the most famous names in the industry behind glass cases, with prices to match.</p>
+
+      <p>Ali's studio is 10 minutes west on Barrington Ave, and it's a fundamentally different experience. There are no cases because there's no inventory. Everything is designed from scratch, one project at a time, in a private appointment where the only focus is you. No sales floor. No commission-driven staff. No pressure to choose from what's available.</p>
+
+      <p>A couple from the westside came to Ali for an engagement ring and later returned for matching wedding bands. They'd visited jewelry stores across LA and kept running into the same problem - beautiful rings that were close to what they wanted but never quite right. With Ali, every detail was theirs to decide. The center stone, the setting, the band width, the metal. Nothing was a compromise because nothing came out of a case. You can see how that <a href="/customjewelrydesignprocess">design process</a> works from first sketch to finished piece.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY NOT RODEO DRIVE -->
+  <section>
+    <h2>What Beverly Hills Stores Can't Offer</h2>
+
+    <div class="admae-prose">
+      <p>When you buy from a retail jewelry store, part of what you're paying for is their overhead. The lease, the display cases, the inventory they're carrying, and the commissions their sales team earns. Those costs are built into the price of every piece they sell.</p>
+
+      <p>With Ali, every dollar goes into your stone, your metal, and your craftsmanship. There's no showroom to maintain and no inventory to finance. That's how <a href="/custom-jewelry-pricing-information">custom engagement rings start at $3,000</a> while delivering a level of personalization and attention that a retail store structurally cannot match.</p>
+
+      <p>Ali also searches the entire global market for your stone - not one supplier's current inventory. That means you're seeing the best options available anywhere, not just what a store happens to have behind the counter this week. <a href="/blog/what-your-jeweler-doesnt-tell-you-about-diamonds">Here's how that sourcing process actually works.</a></p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT WE DO -->
+  <section>
+    <h2>What We Design</h2>
+    <p class="admae-section-intro">Every piece designed from a blank page. No inventory. No templates.</p>
+
+    <div class="admae-services-grid">
+      <div class="admae-service-card">
+        <h3>Custom Engagement Rings</h3>
+        <p>Starting at $3,000. Stone sourced globally, setting designed specifically for the person wearing it.</p>
+        <a href="/custom-engagement-rings-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Wedding Bands</h3>
+        <p>Custom bands built to sit perfectly against your engagement ring. Any metal, any width, any level of detail.</p>
+        <a href="/custom-wedding-bands-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Heirloom Redesign</h3>
+        <p>Transform inherited pieces into something you'll wear every day. Using family stones can cut costs by 40-60%.</p>
+        <a href="/heirloom-jewelry-redesign-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Statement & Fine Jewelry</h3>
+        <p>Necklaces, earrings, bracelets, and anniversary pieces. Custom jewelry for every occasion.</p>
+        <a href="/custom-jeweler-west-los-angeles">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>10 Minutes from Beverly Hills</h3>
+    <p>Ali's studio is at 1832 S. Barrington Ave, West LA (90025). A short drive from Beverly Hills, Century City, and Bel Air. Free street parking. Private appointments only - no walk-ins, no waiting.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria made the whole ring buying process fun and easy. I loved being able to customize it and make it special. Pricing is very competitive and the quality is incredible."</blockquote>
+      <cite>- Local client</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"She asked about my mom's style and our relationship, then created a piece that brought tears to my mom's eyes. The quality is amazing, and Ali's transparency about the materials and process made me feel so confident."</blockquote>
+      <cite>- Austin C.</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"As someone new to buying jewelry, I was intimidated by the prospect of visiting a high-end jeweler. Alexandria was the complete opposite of stuffy! She made me feel so comfortable with her down to earth vibe."</blockquote>
+      <cite>- Michael W.</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions About Working With a Private Jeweler</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How is this different from a Beverly Hills jewelry store?
+      </div>
+      <div class="admae-faq-a">
+        <p>Retail stores sell from inventory. Ali designs from scratch. There are no display cases and no premade rings. You work directly with a GIA Graduate Gemologist who handles every step. The result is a piece that was made for one person - you.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Is custom more expensive than buying from a store?
+      </div>
+      <div class="admae-faq-a">
+        <p>Often comparable or less. Custom engagement rings start at $3,000. Retail stores build their overhead into every price tag - rent, inventory, commissions. With Ali, every dollar goes into what you're actually getting: the stone, the metal, and the craftsmanship. <a href="/blog/how-much-does-a-custom-engagement-ring-cost">Full pricing breakdown here.</a></p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can you work with high-end or rare stones?
+      </div>
+      <div class="admae-faq-a">
+        <p>Absolutely. Ali sources from the global market and has access to rare cuts, exceptional quality stones, and colored gemstones at every price point. Whether you're looking for a large, investment-grade natural diamond or a rare Colombian emerald, she can find it.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How far is the studio from Beverly Hills?
+      </div>
+      <div class="admae-faq-a">
+        <p>About 10-15 minutes. The studio is on Barrington Ave in West LA (90025), just south of Wilshire. Easy access from Beverly Hills, Century City, and Bel Air. Free street parking and appointment-only means no crowds.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you work with clients on larger or more complex projects?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. Ali has designed everything from delicate everyday pieces to statement necklaces with rare gemstones. There's no upper limit on complexity or budget. <a href="/portfolio-client-journeys">See the portfolio</a> for the range of work.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>The Private Jeweler Experience</h2>
+    <p>No showroom. No inventory. No sales pressure. Just a one-on-one conversation with a GIA Graduate Gemologist about what you want to create. Everything from here is designed around you.</p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">120+ Five-Star Reviews</span>
+      <span class="admae-trust-item">Starting at $3K</span>
+      <span class="admae-trust-item">Free Consultation</span>
+    </div>
+  </section>
+
+</div>

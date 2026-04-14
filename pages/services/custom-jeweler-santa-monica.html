@@ -1,0 +1,268 @@
+<!--
+  A. D'Mae Diamonds - Custom Jeweler Santa Monica
+  Neighborhood Service Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /custom-jeweler-santa-monica
+  2. SEO Title: Custom Jeweler Santa Monica | Engagement Rings & Fine Jewelry | A. D'Mae Diamonds
+  3. SEO Description: Custom jeweler near Santa Monica. A GIA Graduate Gemologist designing custom engagement rings, wedding bands, and fine jewelry by appointment. 10 minutes from the beach. Starting at $3,000. Free consultation.
+  4. Add to "Services" nav folder (or sub-nav under Custom Jeweler West LA)
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: custom-jeweler-west-los-angeles (hub page), homepage
+  8. NOTE: Do NOT describe manufacturing as LA-based.
+-->
+
+<style>
+  .admae-service-page { max-width: 900px; margin: 0 auto; padding: 0px 24px 80px; font-family: inherit; color: #f0ece4; line-height: 1.7; background-color: transparent; }
+  .admae-service-page * { box-sizing: border-box; }
+  .admae-hero { text-align: center; margin-bottom: 72px; }
+  .admae-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; margin: 0 0 20px; color: #fff; }
+  .admae-hero h1 em { font-style: italic; color: #d4af37; }
+  .admae-hero .hero-sub { font-size: 1.1rem; font-style: italic; color: #c4bfb4; max-width: 640px; margin: 0 auto 36px; line-height: 1.6; }
+  .admae-cta { display: inline-block; padding: 20px 48px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.3s ease, color 0.3s ease; border-radius: 2px; }
+  .admae-cta:hover { background: #d4af37; color: #111; }
+  .admae-cta-filled { background: #d4af37; color: #111; border-color: #d4af37; font-weight: 700; }
+  .admae-cta-filled:hover { background: #c9a42e; border-color: #c9a42e; }
+  .admae-divider { width: 60px; height: 1px; background: #d4af37; margin: 56px auto; border: none; }
+  .admae-service-page h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 400; text-align: center; margin: 0 0 16px; color: #fff; letter-spacing: 0.01em; }
+  .admae-section-intro { text-align: center; color: #c4bfb4; max-width: 640px; margin: 0 auto 48px; font-size: 1.05rem; }
+  .admae-service-page a { color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.3); transition: border-color 0.3s; }
+  .admae-service-page a:hover { border-color: #d4af37; }
+  .admae-service-page a.admae-cta { border-bottom: 2px solid #d4af37; color: #d4af37; }
+  .admae-service-page a.admae-cta:hover { border-bottom: 2px solid #d4af37; }
+  .admae-service-page a.admae-cta-filled { border-bottom: 2px solid #d4af37; color: #111; background: #d4af37; }
+  .admae-service-page a.admae-cta-filled:hover { border-bottom: 2px solid #c9a42e; color: #111; background: #c9a42e; }
+  .admae-prose { max-width: 780px; margin: 0 auto; }
+  .admae-prose p { font-size: 1rem; color: #e0dbd2; margin-bottom: 20px; line-height: 1.8; }
+  .admae-highlight-box { border: 1px solid rgba(212, 175, 55, 0.2); padding: 32px 28px; border-radius: 3px; margin: 40px 0; }
+  .admae-highlight-box h3 { font-size: 1.1rem; font-weight: 600; color: #d4af37; margin: 0 0 12px; }
+  .admae-highlight-box p { font-size: 0.95rem; color: #c4bfb4; margin: 0; line-height: 1.7; }
+  .admae-services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px; }
+  .admae-service-card { border: 1px solid rgba(212, 175, 55, 0.15); padding: 28px 24px; border-radius: 3px; }
+  .admae-service-card h3 { font-size: 1rem; font-weight: 600; color: #d4af37; margin: 0 0 8px; }
+  .admae-service-card p { font-size: 0.9rem; color: #c4bfb4; margin: 0; line-height: 1.6; }
+  .admae-service-card a { font-size: 0.85rem; color: #d4af37; display: inline-block; margin-top: 12px; }
+  .admae-testimonial { border-left: 2px solid #d4af37; padding-left: 28px; margin-bottom: 40px; }
+  .admae-testimonial blockquote { font-size: 1.05rem; font-style: italic; color: #e0dbd2; margin: 0 0 12px; line-height: 1.7; }
+  .admae-testimonial cite { color: #999; font-size: 0.85rem; font-style: normal; letter-spacing: 0.03em; }
+  .admae-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0; }
+  .admae-faq-q { padding: 20px 0; font-size: 1rem; font-weight: 600; color: #f0ece4; cursor: pointer; position: relative; padding-right: 32px; }
+  .admae-faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: #d4af37; font-weight: 300; }
+  .admae-faq-item.open .admae-faq-q::after { content: '-'; }
+  .admae-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .admae-faq-item.open .admae-faq-a { max-height: 500px; }
+  .admae-faq-a p { padding: 0 0 20px; color: #c4bfb4; font-size: 1rem; line-height: 1.7; margin: 0; }
+  .admae-final-cta { text-align: center; padding: 56px 24px; margin-top: 24px; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 3px; background: rgba(212, 175, 55, 0.03); }
+  .admae-final-cta h2 { margin-bottom: 16px; }
+  .admae-final-cta p { color: #c4bfb4; max-width: 560px; margin: 0 auto 32px; font-size: 1rem; line-height: 1.7; }
+  .admae-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+  .admae-trust-item { font-size: 0.8rem; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 680px) {
+    .admae-service-page { padding-left: 18px; padding-right: 18px; padding-bottom: 60px; }
+    .admae-services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .admae-testimonial { padding-left: 20px; }
+    .admae-trust-signals { gap: 20px; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "description": "Custom jewelry design studio near Santa Monica in West Los Angeles. Alexandria, a GIA Graduate Gemologist, designs custom engagement rings, wedding bands, and fine jewelry by appointment only.",
+  "address": { "@type": "PostalAddress", "streetAddress": "1832 S. Barrington Ave", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025" },
+  "geo": { "@type": "GeoCoordinates", "latitude": "34.0369", "longitude": "-118.4499" },
+  "telephone": "+1-424-359-9009",
+  "priceRange": "$$$$",
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "19:00" },
+  "areaServed": [
+    { "@type": "Place", "name": "Santa Monica" },
+    { "@type": "Place", "name": "West Los Angeles" },
+    { "@type": "Place", "name": "Pacific Palisades" },
+    { "@type": "Place", "name": "Ocean Park" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How far is A. D'Mae Diamonds from Santa Monica?", "acceptedAnswer": { "@type": "Answer", "text": "Ali's studio is on Barrington Ave in West LA (90025), about 10-15 minutes from downtown Santa Monica depending on traffic. It is close to the 10 freeway and easily accessible from Montana Ave, Ocean Park, and the Palisades." } },
+    { "@type": "Question", "name": "Do you design jewelry other than engagement rings?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ali designs necklaces, earrings, bracelets, anniversary pieces, and statement jewelry. Custom jewelry goes well beyond engagement rings." } },
+    { "@type": "Question", "name": "Can I propose at a Santa Monica location and pick up the ring nearby?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Several clients have designed their rings with Ali and proposed at Santa Monica beach spots, restaurants, and local landmarks. Ali can work around your proposal timeline and have the ring ready for pickup at her West LA studio beforehand." } }
+  ]
+}
+</script>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Custom Jeweler<br>Near <em>Santa Monica</em></h1>
+    <p class="hero-sub">
+      A private jewelry studio just minutes from the beach. Custom engagement rings, wedding bands, and fine jewelry designed by appointment with a GIA Graduate Gemologist.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- LOCAL CONTEXT -->
+  <section>
+    <h2>Custom Jewelry for the Way You Live</h2>
+
+    <div class="admae-prose">
+      <p>Santa Monica people live differently. You're active. You're outdoors. You spend weekends at the farmer's market, hiking in the Palisades, or having dinner on Montana Ave. The jewelry you wear should fit that life, not fight against it.</p>
+
+      <p>Ali's studio is about 10 minutes east of downtown Santa Monica on Barrington Ave. It's not a retail store on the promenade. It's a private, appointment-only space where you sit down one-on-one with a <a href="/gia-gemologist-los-angeles">GIA Graduate Gemologist</a> and design something from scratch. No display cases. No sales floor. Just a conversation about what you want to create.</p>
+
+      <p>A couple from Santa Monica came to Ali to design an engagement ring. They were intentional about every detail - the stone, the setting, the proportions. He proposed during a trip to Aspen. The ring was designed for a life that moves between the beach and the mountains, something that could handle both without ever being taken off. That's the kind of thoughtfulness that goes into every project here.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT WE DO -->
+  <section>
+    <h2>What We Design</h2>
+    <p class="admae-section-intro">Everything starts from a blank page. Your vision, your stone, your story.</p>
+
+    <div class="admae-services-grid">
+      <div class="admae-service-card">
+        <h3>Custom Engagement Rings</h3>
+        <p>Starting at $3,000. Every stone hand-selected from the global market. Designed for the person who'll wear it every day.</p>
+        <a href="/custom-engagement-rings-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Wedding Bands</h3>
+        <p>Custom bands designed to sit flush with your engagement ring. Men's and women's in any metal and style.</p>
+        <a href="/custom-wedding-bands-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Heirloom Redesign</h3>
+        <p>Family jewelry sitting in a drawer deserves a second life. Bring it in and we'll figure out what it can become.</p>
+        <a href="/heirloom-jewelry-redesign-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Anniversary & Statement Pieces</h3>
+        <p>Not everything is an engagement ring. Custom necklaces, earrings, and milestone pieces designed from scratch.</p>
+        <a href="/custom-jeweler-west-los-angeles">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHY SANTA MONICA CLIENTS -->
+  <section>
+    <h2>An Alternative to the Jewelry District</h2>
+
+    <div class="admae-prose">
+      <p>If you're in Santa Monica and starting to think about an engagement ring or a custom piece, you've probably considered driving downtown to the jewelry district. It seems like the obvious move - hundreds of vendors, wholesale prices, endless options.</p>
+
+      <p>The reality is different. The district is overwhelming. You're navigating competing vendors on your own, evaluating stones without gemological training, and trying to figure out who to trust in an environment built around volume and negotiation. It can feel like buying a car.</p>
+
+      <p>Working with Ali is the opposite experience. You have a personal <a href="/gia-gemologist-los-angeles">GIA Graduate Gemologist</a> who handles everything - <a href="/customjewelrydesignprocess">design</a>, <a href="/diamond-sourcing-verification-los-angeles">sourcing</a>, production oversight, and delivery. She searches the entire global market for your stone, not one supplier's inventory. And the consultation is 90 minutes of focused, unhurried time. <a href="/blog/what-happens-custom-jewelry-consultation">Here's what that actually looks like.</a></p>
+
+      <p>The pricing is often comparable to what you'd spend in the district. The experience is not.</p>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>10 Minutes from Santa Monica</h3>
+    <p>Ali's studio is at 1832 S. Barrington Ave, West LA (90025). Easy access from the 10 freeway, Montana Ave, and Ocean Park. Free street parking. All consultations by appointment - your time is private and protected.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"She asked about my mom's style and our relationship, then created a piece that brought tears to my mom's eyes. The quality is amazing, and Ali's transparency about the materials and process made me feel so confident."</blockquote>
+      <cite>- Austin C.</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria deserves more than 5 stars for her helpful service, knowledge, and guidance. After many conversations with other jewelers, we were feeling frustrated and lost. Alexandria was recommended by a friend and we are incredibly grateful."</blockquote>
+      <cite>- Tiffany W.</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"If you're in Los Angeles and want custom jewelry that tells your story, Alexandria is THE one to trust!"</blockquote>
+      <cite>- Chris V.</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions From Santa Monica Clients</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How far is the studio from Santa Monica?
+      </div>
+      <div class="admae-faq-a">
+        <p>About 10-15 minutes depending on traffic. The studio is on Barrington Ave in West LA, close to the 10 freeway. Easy access from Montana Ave, Ocean Park, and the Palisades.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        I want to propose at the beach. Can you work around my timeline?
+      </div>
+      <div class="admae-faq-a">
+        <p>Absolutely. Ali has worked with multiple clients who planned proposals at Santa Monica restaurants, beach spots, and nearby landmarks. She'll design around your timeline and have the ring ready for pickup at the studio before your proposal date.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How long does a custom engagement ring take?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most custom engagement rings take 4-8 weeks from first consultation to delivery. If you're working on a tighter timeline, Ali can often accommodate that. The process is structured around you, not a factory schedule.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you design jewelry beyond engagement rings?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes. Ali designs custom necklaces, earrings, bracelets, anniversary pieces, and statement jewelry. If you have a vision for something personal, she can bring it to life. <a href="/portfolio-client-journeys">See the portfolio</a> for examples.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Is this better than going to the jewelry district?
+      </div>
+      <div class="admae-faq-a">
+        <p>Different experience entirely. In the district, you're navigating a wholesale market alone. With Ali, you have a personal GIA Graduate Gemologist guiding design, sourcing, and production. The pricing is often comparable. The experience is not.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Custom Jewelry, Minutes from the Beach</h2>
+    <p>No showroom. No pressure. Just a private conversation with a GIA Graduate Gemologist about what you want to create. Whether it's an engagement ring, a wedding band, or something entirely different.</p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">120+ Five-Star Reviews</span>
+      <span class="admae-trust-item">Starting at $3K</span>
+      <span class="admae-trust-item">Free Consultation</span>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,266 @@
+<!--
+  A. D'Mae Diamonds - Custom Jeweler Brentwood
+  Neighborhood Service Page - For Squarespace Body-Level Code Injection
+  
+  SQUARESPACE SETUP:
+  1. Page URL slug: /custom-jeweler-brentwood
+  2. SEO Title: Custom Jeweler Brentwood | Fine Jewelry by Appointment | A. D'Mae Diamonds
+  3. SEO Description: Custom jeweler in Brentwood, West LA. A GIA Graduate Gemologist designing custom engagement rings, wedding bands, necklaces, and fine jewelry by appointment. Your neighborhood jeweler. Starting at $3,000. Free consultation.
+  4. Add to "Services" nav folder (or sub-nav under Custom Jeweler West LA)
+  5. Padding set to 340px (same as other service pages)
+  6. After publishing: push index in Google Search Console
+  7. Add internal links FROM: custom-jeweler-west-los-angeles (hub page), homepage
+  8. NOTE: Do NOT describe manufacturing as LA-based.
+-->
+
+<style>
+  .admae-service-page { max-width: 900px; margin: 0 auto; padding: 0px 24px 80px; font-family: inherit; color: #f0ece4; line-height: 1.7; background-color: transparent; }
+  .admae-service-page * { box-sizing: border-box; }
+  .admae-hero { text-align: center; margin-bottom: 72px; }
+  .admae-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; margin: 0 0 20px; color: #fff; }
+  .admae-hero h1 em { font-style: italic; color: #d4af37; }
+  .admae-hero .hero-sub { font-size: 1.1rem; font-style: italic; color: #c4bfb4; max-width: 640px; margin: 0 auto 36px; line-height: 1.6; }
+  .admae-cta { display: inline-block; padding: 20px 48px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.3s ease, color 0.3s ease; border-radius: 2px; }
+  .admae-cta:hover { background: #d4af37; color: #111; }
+  .admae-cta-filled { background: #d4af37; color: #111; border-color: #d4af37; font-weight: 700; }
+  .admae-cta-filled:hover { background: #c9a42e; border-color: #c9a42e; }
+  .admae-divider { width: 60px; height: 1px; background: #d4af37; margin: 56px auto; border: none; }
+  .admae-service-page h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 400; text-align: center; margin: 0 0 16px; color: #fff; letter-spacing: 0.01em; }
+  .admae-section-intro { text-align: center; color: #c4bfb4; max-width: 640px; margin: 0 auto 48px; font-size: 1.05rem; }
+  .admae-service-page a { color: #d4af37; text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.3); transition: border-color 0.3s; }
+  .admae-service-page a:hover { border-color: #d4af37; }
+  .admae-service-page a.admae-cta { border-bottom: 2px solid #d4af37; color: #d4af37; }
+  .admae-service-page a.admae-cta:hover { border-bottom: 2px solid #d4af37; }
+  .admae-service-page a.admae-cta-filled { border-bottom: 2px solid #d4af37; color: #111; background: #d4af37; }
+  .admae-service-page a.admae-cta-filled:hover { border-bottom: 2px solid #c9a42e; color: #111; background: #c9a42e; }
+  .admae-prose { max-width: 780px; margin: 0 auto; }
+  .admae-prose p { font-size: 1rem; color: #e0dbd2; margin-bottom: 20px; line-height: 1.8; }
+  .admae-highlight-box { border: 1px solid rgba(212, 175, 55, 0.2); padding: 32px 28px; border-radius: 3px; margin: 40px 0; }
+  .admae-highlight-box h3 { font-size: 1.1rem; font-weight: 600; color: #d4af37; margin: 0 0 12px; }
+  .admae-highlight-box p { font-size: 0.95rem; color: #c4bfb4; margin: 0; line-height: 1.7; }
+  .admae-services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px; }
+  .admae-service-card { border: 1px solid rgba(212, 175, 55, 0.15); padding: 28px 24px; border-radius: 3px; }
+  .admae-service-card h3 { font-size: 1rem; font-weight: 600; color: #d4af37; margin: 0 0 8px; }
+  .admae-service-card p { font-size: 0.9rem; color: #c4bfb4; margin: 0; line-height: 1.6; }
+  .admae-service-card a { font-size: 0.85rem; color: #d4af37; display: inline-block; margin-top: 12px; }
+  .admae-testimonial { border-left: 2px solid #d4af37; padding-left: 28px; margin-bottom: 40px; }
+  .admae-testimonial blockquote { font-size: 1.05rem; font-style: italic; color: #e0dbd2; margin: 0 0 12px; line-height: 1.7; }
+  .admae-testimonial cite { color: #999; font-size: 0.85rem; font-style: normal; letter-spacing: 0.03em; }
+  .admae-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0; }
+  .admae-faq-q { padding: 20px 0; font-size: 1rem; font-weight: 600; color: #f0ece4; cursor: pointer; position: relative; padding-right: 32px; }
+  .admae-faq-q::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: #d4af37; font-weight: 300; }
+  .admae-faq-item.open .admae-faq-q::after { content: '-'; }
+  .admae-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .admae-faq-item.open .admae-faq-a { max-height: 500px; }
+  .admae-faq-a p { padding: 0 0 20px; color: #c4bfb4; font-size: 1rem; line-height: 1.7; margin: 0; }
+  .admae-final-cta { text-align: center; padding: 56px 24px; margin-top: 24px; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 3px; background: rgba(212, 175, 55, 0.03); }
+  .admae-final-cta h2 { margin-bottom: 16px; }
+  .admae-final-cta p { color: #c4bfb4; max-width: 560px; margin: 0 auto 32px; font-size: 1rem; line-height: 1.7; }
+  .admae-trust-signals { display: flex; justify-content: center; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+  .admae-trust-item { font-size: 0.8rem; color: #999; letter-spacing: 0.08em; text-transform: uppercase; }
+  @media (max-width: 680px) {
+    .admae-service-page { padding-left: 18px; padding-right: 18px; padding-bottom: 60px; }
+    .admae-services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .admae-testimonial { padding-left: 20px; }
+    .admae-trust-signals { gap: 20px; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A. D'Mae Diamonds",
+  "description": "Custom jewelry design studio in Brentwood-adjacent West Los Angeles. Alexandria, a GIA Graduate Gemologist, designs custom engagement rings, wedding bands, and fine jewelry by appointment only.",
+  "address": { "@type": "PostalAddress", "streetAddress": "1832 S. Barrington Ave", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025" },
+  "geo": { "@type": "GeoCoordinates", "latitude": "34.0369", "longitude": "-118.4499" },
+  "telephone": "+1-424-359-9009",
+  "priceRange": "$$$$",
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "19:00" },
+  "areaServed": [
+    { "@type": "Place", "name": "Brentwood" },
+    { "@type": "Place", "name": "West Los Angeles" },
+    { "@type": "Place", "name": "Pacific Palisades" },
+    { "@type": "Place", "name": "Mar Vista" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is A. D'Mae Diamonds in Brentwood?", "acceptedAnswer": { "@type": "Answer", "text": "Ali's studio is on Barrington Ave in West LA (90025), right on the Brentwood border. It is a 5-minute drive from San Vicente, the Brentwood Country Mart, and most of the Brentwood neighborhood." } },
+    { "@type": "Question", "name": "Do you make jewelry other than engagement rings?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ali designs custom necklaces, earrings, bracelets, tennis bracelets and necklaces, anniversary pieces, and statement jewelry. A recent Brentwood client had a custom platinum tennis necklace designed because she had a gold allergy and needed something beautiful that worked for her." } },
+    { "@type": "Question", "name": "How much does a custom piece cost?", "acceptedAnswer": { "@type": "Answer", "text": "Custom engagement rings start at $3,000. Other pieces vary based on materials, stones, and complexity. Consultations are always free and Ali will give you an honest estimate based on your specific vision." } }
+  ]
+}
+</script>
+
+<div class="admae-service-page">
+
+  <!-- HERO -->
+  <section class="admae-hero">
+    <h1>Your Custom Jeweler<br>in <em>Brentwood</em></h1>
+    <p class="hero-sub">
+      A private jewelry studio on the Brentwood border. Custom engagement rings, wedding bands, necklaces, and fine jewelry designed by appointment with a GIA Graduate Gemologist. Your neighborhood. Your jeweler.
+    </p>
+    <a href="/schedule-an-appointment" class="admae-cta">Book Your Free Consultation</a>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- LOCAL CONTEXT -->
+  <section>
+    <h2>A Jeweler in Your Neighborhood</h2>
+
+    <div class="admae-prose">
+      <p>Ali's studio is on Barrington Ave, right on the Brentwood border. If you live in Brentwood, she's probably closer to you than any other custom jeweler in Los Angeles. Five minutes from San Vicente. Five minutes from the Country Mart. Walking distance for some parts of the neighborhood.</p>
+
+      <p>And that proximity matters more than you'd think. Working with a custom jeweler isn't a one-visit transaction. There are consultations, stone approvals, design check-ins, and a final pickup. Having your jeweler in your neighborhood means the process fits into your life instead of requiring special trips across the city.</p>
+
+      <p>One of our Brentwood clients came to Ali for something other than an engagement ring. She wanted a custom platinum tennis necklace - six carats total weight - because she has a gold allergy and couldn't wear the yellow or rose gold that most tennis necklaces come in. Ali designed the piece in platinum specifically for her, and it became something she wears every single day. That's the kind of project that doesn't exist without a jeweler who listens first and designs second.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- MORE THAN ENGAGEMENT RINGS -->
+  <section>
+    <h2>More Than Engagement Rings</h2>
+
+    <div class="admae-prose">
+      <p>Most people find a custom jeweler when they're looking for an engagement ring. But the relationship doesn't have to stop there, and the work doesn't have to start there either.</p>
+
+      <p>Ali designs <a href="/custom-jeweler-west-los-angeles">custom necklaces, earrings, bracelets, and statement pieces</a> alongside engagement rings and <a href="/custom-wedding-bands-los-angeles">wedding bands</a>. Anniversary gifts. Birthday presents. Self-purchases for people who just want something beautiful that was made specifically for them. If you have a vision for a piece of jewelry - or even just a feeling about what you want but no clear direction yet - that's more than enough to start a conversation.</p>
+
+      <p>She also specializes in <a href="/heirloom-jewelry-redesign-los-angeles">heirloom redesign</a>. If you have family jewelry sitting in a drawer - your grandmother's ring, your mother's earrings, stones from a piece you don't wear anymore - Ali can transform them into something new that you'll wear every day. Using inherited stones can cut the total cost of a custom piece by 40-60%.</p>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- WHAT WE DO -->
+  <section>
+    <h2>What We Design</h2>
+    <p class="admae-section-intro">Everything from scratch. No inventory, no templates, no premade anything.</p>
+
+    <div class="admae-services-grid">
+      <div class="admae-service-card">
+        <h3>Custom Engagement Rings</h3>
+        <p>Starting at $3,000. Every stone sourced from the global market. Every setting designed for one person.</p>
+        <a href="/custom-engagement-rings-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Wedding Bands</h3>
+        <p>Men's and women's bands designed to fit your engagement ring perfectly. Any metal, any style.</p>
+        <a href="/custom-wedding-bands-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Custom Necklaces & Earrings</h3>
+        <p>Tennis necklaces, pendants, earrings, and statement pieces designed for how you actually live.</p>
+        <a href="/custom-jeweler-west-los-angeles">Learn more</a>
+      </div>
+      <div class="admae-service-card">
+        <h3>Heirloom Redesign</h3>
+        <p>Family pieces deserve a second life. Bring in what you have and we'll figure out what it can become.</p>
+        <a href="/heirloom-jewelry-redesign-los-angeles">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="admae-highlight-box">
+    <h3>Right on the Brentwood Border</h3>
+    <p>1832 S. Barrington Ave, West LA (90025). Five minutes from San Vicente Blvd and the Brentwood Country Mart. Free street parking. All consultations by appointment - private, relaxed, and on your schedule.</p>
+  </div>
+
+  <hr class="admae-divider">
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Clients Say</h2>
+
+    <div class="admae-testimonial">
+      <blockquote>"If you're in Los Angeles and want custom jewelry that tells your story, Alexandria is THE one to trust. We're so happy we found her!"</blockquote>
+      <cite>- Chris V.</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"Alexandria made the whole ring buying process fun and easy. I loved being able to customize it and make it special. Pricing is very competitive and the quality is incredible."</blockquote>
+      <cite>- Local client</cite>
+    </div>
+
+    <div class="admae-testimonial">
+      <blockquote>"After many conversations with other jewelers and jewelry companies like Brilliant Earth, we were feeling frustrated and lost. Alexandria was recommended by a friend and we are incredibly grateful."</blockquote>
+      <cite>- Tiffany W.</cite>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions From Brentwood Clients</h2>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How close is the studio to Brentwood?
+      </div>
+      <div class="admae-faq-a">
+        <p>Right on the border. Ali's studio is on Barrington Ave in West LA (90025), about 5 minutes from San Vicente Blvd and the Brentwood Country Mart. It's one of the closest custom jewelers to the Brentwood neighborhood.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Do you only make engagement rings?
+      </div>
+      <div class="admae-faq-a">
+        <p>Not at all. Ali designs necklaces, earrings, bracelets, tennis jewelry, anniversary pieces, and self-purchases. One of our Brentwood clients had a custom platinum tennis necklace made because she needed something that worked with her metal allergy. The design possibilities go well beyond rings.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        How many visits does the custom process take?
+      </div>
+      <div class="admae-faq-a">
+        <p>Most projects involve 2-4 visits: an initial consultation, a stone approval, a design check-in, and a final pickup. Having your jeweler in your neighborhood makes these visits easy to fit into your routine instead of requiring special trips. The first consultation is 90 minutes. After that, check-ins are shorter.</p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Can I walk in, or do I need an appointment?
+      </div>
+      <div class="admae-faq-a">
+        <p>Appointment only. This is intentional - it means your time is fully protected and private. No walk-ins, no interruptions, no competing for attention. <a href="/schedule-an-appointment">Book your consultation here.</a></p>
+      </div>
+    </div>
+
+    <div class="admae-faq-item">
+      <div class="admae-faq-q" onclick="this.parentElement.classList.toggle('open')">
+        I have family jewelry I'm not wearing. Can you do something with it?
+      </div>
+      <div class="admae-faq-a">
+        <p>Yes - this is one of Ali's specialties. Bring in whatever you have. She'll assess the stones and materials and walk you through what's possible. There's no commitment. You can bring in a box of your grandmother's jewelry and just have a conversation about options. <a href="/heirloom-jewelry-redesign-los-angeles">Learn more about heirloom redesign.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="admae-divider">
+
+  <!-- FINAL CTA -->
+  <section class="admae-final-cta">
+    <h2>Your Neighborhood Jeweler</h2>
+    <p>Five minutes from Brentwood. No showroom. No pressure. Just a private conversation with a GIA Graduate Gemologist about whatever you want to create - engagement rings, anniversary pieces, or something just for you.</p>
+    <a href="/schedule-an-appointment" class="admae-cta admae-cta-filled">Book Your Free Consultation</a>
+    <div class="admae-trust-signals">
+      <span class="admae-trust-item">GIA Graduate Gemologist</span>
+      <span class="admae-trust-item">120+ Five-Star Reviews</span>
+      <span class="admae-trust-item">Starting at $3K</span>
+      <span class="admae-trust-item">Free Consultation</span>
+    </div>
+  </section>
+
+</div>
